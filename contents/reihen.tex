@@ -1,0 +1,53 @@
+\section*{Reihen}
+
+$\displaystyle \sum_{n=0}^\infty a_n := (s_n)_{n\in\mathbb{N}}$ mit
+$\displaystyle s_n = \sum_{k=0}^n a_k$
+
+\subsection*{Besondere Reihen}
+
+\textit{Harm. Reihe:}
+$\displaystyle \sum_{n=1}^\infty\frac{1}{n}$ ist div.
+
+\textit{Geom. Reihe:}
+$\displaystyle \sum_{n=0}^\infty q^k = \frac{1}{1-q}$, wenn $|q|<1$
+
+\subsection*{Cauchy-Kriterium}
+$\displaystyle \sum_{n=0}^\infty a_n$ konv. genau dann, wenn \\
+$\displaystyle \forall \varepsilon>0: \exists n_\varepsilon: \forall m>n\ge n_\varepsilon: \left|\sum_{k=n+1}^m a_k\right|<\varepsilon$
+
+\subsection*{Nullfolgekriterium}
+$\displaystyle \sum_{n=0}^\infty a_n$ konv. $\implies a_n$ Nullfolge
+
+\subsection*{Leibniz-Kriterium}
+$a_n$ monoton fallende Nullfolge \\
+$\displaystyle \implies \sum_{n=0}^\infty (-1)^n\cdot a_n$ konv.
+
+\subsection*{Absolute Konvergenz}
+$\displaystyle \sum_{n=0}^\infty a_n \text{ abs. konv.} :\iff \sum_{n=0}^\infty|a_n| \text{ konv.}$ \\
+Eine abs. konv. Reihe ist auch konv.
+
+\subsection*{Umordnungssatz}
+Die Umordnung einer abs. konv. Folge ist abs. konv. mit gleichem Grenzwert.
+
+\subsection*{Majorantenkriterium}
+$\displaystyle \sum_{n=0}^\infty b_n \text{ abs. konv.} \land |a_n|\le|b_n|$ $(\forall n\ge n_0)$
+$\displaystyle \implies \sum_{n=0}^\infty a_n$ abs. konv.
+
+\subsection*{Minorantenkriterium}
+$\displaystyle \sum_{n=0}^\infty b_n \text{ div.} \land |a_n|\ge|b_n|\ge0$
+$\displaystyle \Rightarrow \sum_{n=0}^\infty a_n$ div.
+
+\subsection*{Quotienten-/Wurzelkriterium}
+$a_n \neq 0$ $(\forall n\ge n_0)$
+\begin{itemize}
+	\item $\displaystyle \lim\left|\frac{a_{n+1}}{a_n}\right|<1$ oder $\displaystyle \lim\sqrt[n]{|a_n|}<1$\\
+		$\displaystyle \implies \sum_{n=0}^\infty a_n$ abs. konv.
+	\item $\displaystyle \lim\left|\frac{a_{n+1}}{a_n}\right|>1$ oder $\displaystyle \lim\sqrt[n]{|a_n|}>1$\\
+		$\displaystyle \implies \sum_{n=0}^\infty a_n$ div.
+\end{itemize}
+
+\subsection*{Cauchy-Produkt}
+$\displaystyle \sum_{n=0}^\infty a_n, \sum_{n=0}^\infty b_n$ abs. konv. \\
+$\displaystyle c_n := \sum_{k=0}^n a_k\cdot b_{n-k}= \sum_{i+j=n}a_i\cdot b_j$ \\
+$\displaystyle \implies \sum_{n=0}^\infty c_n$ abs. konv. \\
+$\displaystyle \implies \sum_{n=0}^\infty c_n=\sum_{n=0}^\infty a_n \cdot \sum_{n=0}^\infty b_n$

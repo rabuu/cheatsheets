@@ -1,0 +1,44 @@
+\section*{Folgen}
+
+\subsection*{Konvergenz}
+$\forall \varepsilon>0: \exists n_\varepsilon: \forall n\ge n_\varepsilon: |a_n - a| < \varepsilon$ \\
+$:\iff a_n \longrightarrow a$
+
+\subsection*{Grenzwertsätze}
+\begin{itemize}
+	\item $a_n + b_n \longrightarrow a + b$
+	\item $a_n \cdot b_n \longrightarrow a \cdot b$
+	\item $|a_n| \longrightarrow |a|$
+\end{itemize}
+
+\subsection*{Einschachtelungssatz}
+\begin{itemize}
+	\item $a_n \le b_n \implies a \le b$
+	\item $a_n \le c_n \le b_n \land a=b \implies c_n \to a$
+\end{itemize}
+
+\subsection*{Rechnen mit Nullfolgen}
+$a_n$ Nullfolge, $b_n$ beschr. \\
+$\implies a_n\cdot b_n$ Nullfolge
+
+\subsection*{Monotoniekriterium}
+Eine monotone und beschr. Folge konv.
+
+\subsection*{Bolzano-Weierstraß}
+Jede beschr. Flg. hat eine konv. Teilfolge.
+
+\subsection*{Cauchy}
+$\forall \varepsilon>0: \exists n_\varepsilon: \forall m>n \ge n_\varepsilon: |a_m - a_n| < \varepsilon$
+$\iff$ Folge konv. (in $\mathbb{K}$)
+
+\subsection*{Landau Notation}
+
+\subsubsection*{Asymptotische obere Schranke}
+$\frac{a_n}{b_n} \text{ beschr.} \implies a_n \in\mathcal{O}(b_n)$, $\mathcal{O}(a_n)\le\mathcal{O}(b_n)$
+
+\subsubsection*{Scharfe asymptotische obere Schranke}
+$a_n \in \mathcal{O}(b_n) \land b_n \in \mathcal{O}(a_n)$\\
+$\implies a_n \in \Theta(b_n),\quad\mathcal{O}(a_n)=\mathcal{O}(b_n)$
+
+\subsubsection*{Asymptotisch vernachlässigbar}
+$\frac{a_n}{b_n} \text{ Nullfolge} \implies a_n \in o(b_n)$

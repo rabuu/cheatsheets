@@ -1,0 +1,66 @@
+\section*{Integralrechnung}
+
+$f:[a,b]$ beschr. mit $|f(x)|\le M$,\\
+$Z=(x_0,\ldots,x_n)$ Zerl. von $[a,b]$
+
+\subsection*{Zerlegung von $[a,b]$}
+$Z=(x_0, \ldots, x_n)$ mit $a=x_0<\ldots<x_n=b$
+\begin{itemize}
+	\item $l(Z):=\max\{x_i - x_{i-1}|1\le i \le n\}$
+	\item $\supp(Z) := \{x_0,\ldots,x_n\}$
+	\item $Z*Z' :=$ \enquote{alle Träger zsm., sortiert}
+\end{itemize}
+
+\subsection*{Ober-/Untersumme}
+$\displaystyle \OS(f,Z) := \sum_{i=1}^n(x_i-x_{i-1})\cdot\sup(f([x_{i-1},x_i]))$ \\
+$\displaystyle \US(f,Z) := \sum_{i=1}^n(x_i-x_{i-1})\cdot\inf(f([x_{i-1},x_i]))$
+
+\subsubsection*{Eigenschaften}
+$\forall Z,Z': \US(f,Z)\le\OS(f,Z')$ \\
+$-M(b-a)\le \US(f,Z)$, $\OS(f,Z)\le (b-a)M$
+
+\subsection*{Riemann-Integral}
+$\OI(f) := \inf\{\OS(f,Z) \mid Z \text{ Zerl. v. }[a,b]\}$ \\
+$\UI(f) := \sup\{\US(f,Z) \mid Z \text{ Zerl. v. }[a,b]\}$ \\
+$\UI(f)\le\OI(f)$ \\
+Wenn $\UI(f)=\OI(f)$, $\int_a^bf(x)dx := \OI(f)$
+
+\subsection*{Riemannsches Integrabilitätskriterium}
+$f$ int.bar auf $[a,b] \iff$ \\
+$\forall \varepsilon>0:\exists Z: \OS(f,Z)-\US(f,Z)<\varepsilon$
+
+\subsubsection*{Verschärfung}
+$f$ int.bar auf $[a,b] \implies$ \\
+$\forall \varepsilon>0:\exists \delta_\varepsilon>0: \forall Z, l(Z)<\delta_\varepsilon: \OS(f,Z)-\US(f,Z)<\varepsilon$
+
+\subsection*{Klassen int.barer Funktionen}
+stetig $\Rightarrow$ int.bar,~~
+monoton $\Rightarrow$ int.bar
+
+\subsection*{Zwischensumme}
+$\alpha=(\alpha_1,\ldots,\alpha_n)$ mit $\alpha_i\in[x_{i-1},x_i]$ \\
+$\displaystyle \implies \ZS(f,Z,\alpha) := \sum_{i=1}^n(x_i-x_{i-1})\cdot f(\alpha_i)$
+
+\subsection*{Riemannsches Folgenkriterium}
+$f$ int.bar und $\int_a^bf(x)dx=I \iff$ \\
+$\forall(Z^n,\alpha^n), l(Z^n)\to0: \ZS(f,Z^n,\alpha^n)\to I$
+
+\subsection*{Hauptsatz der Diff.- und Int.rechnung}
+\begin{itemize}
+	\item $F(y)=\int_c^yf(x)dx$ ist Stammf. von $f$
+	\item $\int_a^bf(x)dx=F(b)-F(a)$
+\end{itemize}
+
+\subsection*{Integrationtechniken}
+
+\subsubsection*{Partielle Integration}
+$u,v:[a,b]$ stetig diff.bar \\
+$\implies \int_a^bu(x)\cdot v'(x)dx$\\ $= [u(x)\cdot v(x)]_a^b - \int_a^bu'(x)\cdot v(x)dx$
+
+\subsubsection*{Substitutionsregel}
+$f:I\to\mathbb{R}$ stetig, $\varphi:[a,b]$ stetig diff.bar \\
+$\int_{\varphi(a)}^{\varphi(b)}f(z)dz = \int_a^bf(\varphi(x))\cdot\varphi'(x)dx$
+
+\subsection*{Vertauschen von Lim und Integral}
+$f_n\to f$ glm. $\Rightarrow$
+$\int_a^yf(x)dx=\lim\int_a^yf_n(x)dx$

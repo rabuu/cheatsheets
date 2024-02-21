@@ -1,0 +1,32 @@
+\section*{Differentialrechnung}
+
+\subsection*{Differenzenquotient}
+$\Diff_{f,a}(x): U\setminus\{a\}\to\mathbb{R}: x\mapsto\frac{f(x)-f(a)}{x-a}$
+
+\subsection*{Differenzierbarkeit/Ableitung}
+$\displaystyle f'(x) := \lim_{x\to a}\Diff_{f,a}(x)$, sofern existiert
+
+\textit{Stetigkeit:} diff.bar $\implies$ stetig
+
+\subsection*{Rechenregeln}
+
+\subsubsection*{Produktregel}
+$(f \cdot g)'(a)=f'(a)\cdot g(a)+f(a)\cdot g'(a)$
+
+\subsubsection*{Quotientenregel}
+$\left(\frac{f}{g}\right)'(a)=\frac{f'(a)\cdot g(a) - f(a)\cdot g'(a)}{g(a)^2}$
+
+\subsubsection*{Kettenregel}
+$(g\circ f)'(a) = g'(f(a))\cdot f'(a)$
+
+\subsection*{Umkehrfunktion}
+$f$ diff.bar in $a$, $f'(a)\neq0$, $b=f(a)$ \\
+$\implies (f^{-1})'(b) = \frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}$
+
+\subsection*{Satz von de l'H\^opital}
+$f,g$ auf $(a,b)$ diff.bar,
+
+$\displaystyle \lim_{x\to c}f(x),g(x)=0 \lor
+\lim_{x\to c}g(x)\in\{\infty,-\infty\}$
+
+$\displaystyle \implies \lim_{x\to c}\frac{f(x)}{g(x)}=\lim_{x\to c}\frac{f'(x)}{g'(x)}$

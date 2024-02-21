@@ -1,0 +1,34 @@
+\section*{Zahlenkörper}
+
+\subsection*{Die reellen Zahlen $\mathbb{R}$}
+
+\subsubsection*{Supremumsaxiom}
+Jede nicht-leere, nach oben beschränkte Teilmenge von $\mathbb{R}$
+besitzt ein $\sup$ in $\mathbb{R}$.
+
+\subsubsection*{Archimedische Anordnung}
+$\forall x,y\in\mathbb{R}, 0<x<y: \exists n\in\mathbb{N}: y<n\cdot x$ \\
+$\implies \forall x:\exists n: n \le x < n+1$ \\
+$\implies \forall \varepsilon>0:\exists n: 0 \le \frac{1}{n} < \varepsilon$
+
+\subsection*{Die komplexen Zahlen $\mathbb{C}$}
+\begin{itemize}
+	\item $(x,y)+(u,v) = (x+u,y+v)$
+	\item $(x,y)\cdot(u,v) = (xu-yv,xv-yu)$
+	\item $(x,y)^{-1} = (\frac{x}{x^2+y^2}, -\frac{y}{x^2+y^2})$
+\end{itemize}
+
+Sei $z=x+iy$.
+\begin{itemize}
+	\item $|z|=|x+iy|=\sqrt{x^2+y^2}$
+	\item $\bar{z} = x-iy$
+	\item $z\cdot\bar{z}=|z|^2$
+	\item $z^{-1}=\frac{1}{z}=\frac{\bar{z}}{|z|^2}$
+\end{itemize}
+
+Sei $(r,\alpha)=(|z|, \arg(z))$.
+\begin{itemize}
+	\item $z = r\cdot(\cos\alpha + i\cdot\sin\alpha)$
+	\item Ermittlung von $\alpha$: betrachte $\frac{z}{|z|}$. \\
+		($r=1$, $\arg = \alpha$)
+\end{itemize}
