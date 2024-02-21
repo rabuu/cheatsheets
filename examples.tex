@@ -1,0 +1,137 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+%\usepackage[LY1,T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage[top=2mm,bottom=3mm,left=2mm,right=2mm,headsep=5mm,includehead]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\usepackage{titlesec}
+\titlespacing*{\section}{0cm}{0.4\baselineskip}{0.4\baselineskip}
+\titlespacing*{\subsection}{0cm}{0.3\baselineskip}{0.3\baselineskip}
+\titlespacing*{\subsubsection}{0cm}{0.2\baselineskip}{0.2\baselineskip}
+
+\usepackage{amsmath}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\OS}{OS}
+\DeclareMathOperator{\US}{US}
+\DeclareMathOperator{\ZS}{ZS}
+\DeclareMathOperator{\OI}{OI}
+\DeclareMathOperator{\UI}{UI}
+\DeclareMathOperator{\arccot}{arccot}
+
+\usepackage{blindtext}
+
+\usepackage{hyperref}
+\newcommand\nohyper[1]{\begin{NoHyper}#1\end{NoHyper}}
+
+\usepackage{lastpage,fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Rasmus Buurman}
+\fancyhead[C]{\textsc{Analysis I}, Beispiele}
+\fancyhead[R]{Seite \thepage{}/\nohyper{\pageref{LastPage}}}
+\renewcommand\headrulewidth{0.5pt}
+
+\let\bar\overline
+
+\begin{document}
+
+\begin{minipage}{0.5\textwidth}
+\subsection*{Substitutionsregel}
+Berechne: $\displaystyle \int_a^b x\cdot\exp(x^2)dx$ für $a,b\in\mathbb{R}$
+
+Substituiere:\\
+$ \displaystyle
+z = x^2, \quad
+\varphi(x) = x^2, \quad
+\varphi'(x) = 2x, \quad
+f(z) = \frac{1}{2}\exp(z)$ \\
+
+Damit erhalten wir:
+\begin{align*}
+	\int_a^b x\cdot\exp(x^2)dx &= \int_a^b f(\varphi(x))\cdot\varphi'(x)dx = \int_{\varphi(a)}^{\varphi(b)}f(z)dz \\
+							   &= \int_{a^2}^{b^2}\frac{1}{2}\exp(z)dz = \frac{1}{2}\cdot\big(\exp(b^2)-\exp(a^2)\big)
+\end{align*}
+
+\hrule
+\vspace{1em}
+
+Berechne: $\displaystyle \int^y\tan(x)dx$
+
+Substituiere: \\
+$ \displaystyle
+z = \cos(x), \quad
+\varphi(x) = \cos(x), \quad
+\varphi'(x) = -\sin(x), \quad
+f(z) = -\frac{1}{z}$ \\
+
+Damit erhalten wir:
+\begin{align*}
+	\int^y\tan(x)dx &= \int^y-\frac{-\sin(x)}{\cos(x)}dx = \int^y f(\varphi(x))\cdot\varphi'(x) = \int^{\varphi(y)}f(z)dz \\
+					&= \int^{\cos(y)}-\frac{1}{z}dz = -\ln\big(\cos(y)\big)
+\end{align*}
+
+\hrule
+\vspace{1em}
+
+Ansatz für $\displaystyle \int^y\sqrt{1-x^2}dx$
+
+Substituiere:\\
+$ \displaystyle
+z = \sin(x), \quad
+\varphi(x) = \sin(x), \quad
+\varphi'(x) = \cos(x), \quad
+b=\arcsin(y)$
+
+\[\int^y\sqrt{1-z^2}dz=\int^{\varphi(b)}f(z)dz=\int^b f(\varphi(x))\cdot\varphi'(x)dx\]
+
+\hrule
+\vspace{1em}
+
+\subsection*{Rekursive Folgen}
+Sei $a_0 = \frac{3}{2}$ und $a_{n+1} = (a_n - 1)^2 + 1$ für $n\in\mathbb{N}$.
+
+Wir wollen den Grenzwert bestimmen.\\
+
+\begin{enumerate}[label=\alph*.]
+	\item Zeige, dass $a_n\ge1$ für alle $n\in\mathbb{N}$.
+
+		Da für jedes $n\in\mathbb{N}$ gilt $(a_n-1)^2\ge0$, ist offensichtlich auch stets $a_{n+1}=(a_n-1)^2+1 \ge 1$.
+		Auch ist der Anfangswert $a_0\ge1$.
+
+	\item Zeige, dass die Folge monoton ist, hier $a_{n+1}\le a_n$ für $n\in\mathbb{N}$.
+
+		Für $n=0$ gilt $a_1=\frac{5}{4} \le \frac{3}{2}=a_0$.\\
+		Gelte nun die Aussage $a_{n+1}\le a_n$ für ein festes $n\in\mathbb{N}$.
+		Da sowohl $a_n\ge1$ als auch $a_{n+1}\ge1$:
+		\begin{align*}
+			(a_{n+1}-1)^2 &\le (a_n-1)^2 \\
+			\implies a_{n+2}=(a_{n+1}-1)^2+1 &\le (a_n - 1)^2+1=a_{n+1}
+		\end{align*}
+		Die Aussage folgt mit vollständiger Induktion.
+
+	\item Zeige, dass die Folge beschränkt ist.
+
+		Da $1\le a_n \le a_0$ für $n\in\mathbb{N}$ ist die Folge beschränkt.
+
+	\item Bestimme den Grenzwert
+
+		Da die Folge monoton und beschränkt ist, konvergiert sie.\\
+		\[a \longleftarrow a_{n+1}=(a_n-1)^2+1 \longrightarrow (a-1)^2+1=a^2-2a+2\]
+		Die Gleichung $a=a^2-2a+2$ hat die Lösungen $1$ und $2$.
+		Aber da $2\ge a_0$ ist der Grenzwert $1$.
+\end{enumerate}
+
+\end{minipage}
+
+\end{document}
