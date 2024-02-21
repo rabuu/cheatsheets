@@ -6,8 +6,9 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
 \usepackage[nosf]{kpfonts}
-\usepackage[top=2mm,bottom=3mm,left=2mm,right=2mm,headsep=5mm,includehead]{geometry}
+\usepackage[top=2mm,bottom=3mm,left=2mm,right=2mm,headsep=2mm,includehead]{geometry}
 \usepackage[framemethod=tikz]{mdframed}
+\usepackage{multicol}
 \usepackage{microtype}
 \usepackage{pdfpages}
 \usepackage{csquotes}
@@ -15,9 +16,7 @@
 \usepackage{enumitem}
 
 \usepackage{titlesec}
-\titlespacing*{\section}{0cm}{0.4\baselineskip}{0.4\baselineskip}
-\titlespacing*{\subsection}{0cm}{0.3\baselineskip}{0.3\baselineskip}
-\titlespacing*{\subsubsection}{0cm}{0.2\baselineskip}{0.2\baselineskip}
+\input{layout/layout}
 
 \usepackage{amsmath}
 \DeclareMathOperator{\Diff}{Diff}
@@ -46,8 +45,8 @@
 
 \begin{document}
 
-\begin{minipage}{0.5\textwidth}
-\subsection*{Substitutionsregel}
+\begin{multicols*}{2}
+\section*{Substitutionsregel}
 Berechne: $\displaystyle \int_a^b x\cdot\exp(x^2)dx$ für $a,b\in\mathbb{R}$
 
 Substituiere:\\
@@ -95,10 +94,7 @@ b=\arcsin(y)$
 
 \[\int^y\sqrt{1-z^2}dz=\int^{\varphi(b)}f(z)dz=\int^b f(\varphi(x))\cdot\varphi'(x)dx\]
 
-\hrule
-\vspace{1em}
-
-\subsection*{Rekursive Folgen}
+\section*{Rekursive Folgen}
 Sei $a_0 = \frac{3}{2}$ und $a_{n+1} = (a_n - 1)^2 + 1$ für $n\in\mathbb{N}$.
 
 Wir wollen den Grenzwert bestimmen.\\
@@ -132,6 +128,60 @@ Wir wollen den Grenzwert bestimmen.\\
 		Aber da $2\ge a_0$ ist der Grenzwert $1$.
 \end{enumerate}
 
-\end{minipage}
+\vfill\null
+\columnbreak
+
+\section*{Konvergenz von Reihen}
+
+\subsection*{Majorantenkriterium}
+Für $k\ge2$ ist die Reihe $\displaystyle \sum_{n=1}^\infty\frac{1}{n^k}$ konvergent.
+
+Wir betrachten zunächst den Fall $k=2$.
+\[a_n := \frac{1}{(n+1)^2} \le \frac{1}{n\cdot(n+1)} =: b_n\]
+Die Reihe $\sum_{n=1}^\infty b_n$ ist eine konvergente Majorante von $\sum_{n=1}^\infty a_n$.
+
+Mithilfe einer Indexverschiebung sehen wir, dass folgende Reihe auch konvergiert:
+\[\sum_{n=1}^\infty\frac{1}{n^2}=1+\sum_{n=1}^\infty\frac{1}{(n+1)^2}\]
+Für $k>2$ ist wegen $0\le\frac{1}{n^k}\le\frac{1}{n^2}$ ebendiese Reihe eine Konvergente Majorante von $\sum_{n=1}^\infty\frac{1}{n^k}$.
+
+\section*{Grenzwerte von Funktionen}
+
+Betrachte $f: \mathbb{R}\to\mathbb{R}: x\mapsto x^2$ und $a=3$.
+
+Für eine Folge $(a_n)_{\mathbb{N}}$ mit $a_n\to3$ gilt:
+\[f(a_n)=a_n^2=3 \longrightarrow 3\cdot3=9 \implies \lim_{x\to3}x^2=9\]
+
+\hrule\vspace{1em}
+
+Betrachte $\displaystyle f: \mathbb{R}\setminus1\to\mathbb{R}:x\mapsto\frac{x^2-1}{x-1}$ und $a=1$.
+
+Da es in $\mathbb{R}\setminus1$ offenbar eine Folge gibt, die gegen $1$ konvergiert,\\
+ist $a$ ein Häufungspunkt von $\mathbb{R}\setminus1$.\\
+Sei nun $(a_n)_{\mathbb{N}}$ eine Folge in $\mathbb{R}\setminus1$ mit $a_n\to1$. Es gilt:
+\[f(a_n)=\frac{a_n^2-1}{a_n-1}=a_n+1\to2 \implies \lim_{x\to1}f(x)=2\]
+
+\section*{Kurvendiskussion}
+
+\subsection*{Extremstellen}
+\[f(x)=x^3-3x^2-1 \quad f'(x)=3x^2-6x \quad f''(x)=6x-6\]
+Um mögliche Extremstellen zu finden, müssen wir die Nullstellen der ersten Ableitung finden.
+Das ist für $x=0$ und $x=2$ der Fall.
+
+In diesen Punkten schauen wir uns die zweite Ableitung an.
+\begin{align*}
+	f''(0)&=-6<0 \implies \text{lokales Maximum} \\
+	f''(2)&=6>0 ~~\implies \text{lokales Minimum} \\
+\end{align*}
+
+\subsection*{Wertebereich}
+\[f(x)=\frac{x-1}{x^2+3} \qquad f'(x)=\frac{(x^2+3)-2x\cdot(x-1)}{(x^2+3)^2}\]
+Es gilt $\displaystyle \lim_{x\to\pm\infty}f(x)=\lim_{x\to\pm\infty}\frac{\frac{1}{x}-\frac{1}{x^2}}{1-\frac{3}{x^2}}=0$.
+
+Extremstellen bei $x=3$ und $x=-1$ mit $f(3)=\frac{1}{6}$ und $f(-1)=-\frac{1}{2}$.
+
+Die Funktion ist stetig und hat keine Polstellen.
+Also werden alle Werte in $W=[-\frac{1}{2},\frac{1}{6}]$ angenommen.
+
+\end{multicols*}
 
 \end{document}
