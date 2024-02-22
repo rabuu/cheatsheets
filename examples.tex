@@ -131,6 +131,11 @@ Wir wollen den Grenzwert bestimmen.\\
 \vfill\null
 \columnbreak
 
+\section*{Konvergenz von Folgen}
+Die Folge $a_n = \frac{7n^2+3}{4n^2+n+1}$ ist konvergent.
+Es gilt nämlich:
+\[a_n=\frac{7+\frac{3}{n^2}}{4+\frac{1}{n}+\frac{1}{n^2}}\to\frac{7+0}{4+0+0}=\frac{7}{4}\]
+
 \section*{Konvergenz von Reihen}
 
 \subsection*{Majorantenkriterium}
@@ -143,6 +148,21 @@ Die Reihe $\sum_{n=1}^\infty b_n$ ist eine konvergente Majorante von $\sum_{n=1}
 Mithilfe einer Indexverschiebung sehen wir, dass folgende Reihe auch konvergiert:
 \[\sum_{n=1}^\infty\frac{1}{n^2}=1+\sum_{n=1}^\infty\frac{1}{(n+1)^2}\]
 Für $k>2$ ist wegen $0\le\frac{1}{n^k}\le\frac{1}{n^2}$ ebendiese Reihe eine Konvergente Majorante von $\sum_{n=1}^\infty\frac{1}{n^k}$.
+
+\section*{Potenzreihen}
+\subsection*{Konvergenzradius}
+
+Betrachte $\displaystyle \sum_{n=1}^\infty\frac{t^n}{n}$.
+
+\subsubsection*{Cauchy-Hadamard}
+$\displaystyle \lim_{n\to\infty}\left|\frac{n}{n+1}\right|=\lim_{n\to\infty}\left(1-\frac{1}{n+1}\right)=1-0=1$\\
+$\implies r=1$
+
+\subsubsection*{Betrachtung der Grenzen}
+Für $x=-1$ erhalten wir die alternierende Harmonische Reihe $\sum_{n=1}^\infty\frac{(-1)^n}{n}$, die konvergiert.
+
+Für $x=1$ erhalten wir die Harm. Reihe $\sum_{n=1}^\infty\frac{1}{n}$, die divergiert.
+
 
 \section*{Grenzwerte von Funktionen}
 
@@ -160,9 +180,34 @@ ist $a$ ein Häufungspunkt von $\mathbb{R}\setminus1$.\\
 Sei nun $(a_n)_{\mathbb{N}}$ eine Folge in $\mathbb{R}\setminus1$ mit $a_n\to1$. Es gilt:
 \[f(a_n)=\frac{a_n^2-1}{a_n-1}=a_n+1\to2 \implies \lim_{x\to1}f(x)=2\]
 
+\vfill\null
+\columnbreak
+
+\section*{Taylor}
+\subsection*{Taylorentwicklung des $\ln$}
+\[\ln'(x)=\frac{1}{x} \qquad \ln^{(n)}(x)=(-1)^{n-1}\cdot\frac{(n-1)!}{x^n}\]
+
+Das $n$-te Taylorpolynom im Entwicklungspunkt $1$ ist also:
+\[T_{\ln,1}^n(x)=\sum_{k=0}^n\frac{\ln^{(k)}(1)}{k!}\cdot(x-1)^k=\sum_{k=1}^n(-1)^{k-1}\cdot\frac{(x-1)^k}{k}\]
+Der Betrag der Ableitungen auf $[1,2]$ ist streng monoton fallend, so dass insb. $|\ln^{(n+1)}(c)\le|\ln^{(n+1)}(1)|=n!$
+für $c\in[1,2]$.
+
+Also gibt es für $x\in[1,2]$ ein $c$ zwischen $1$ und $x\le2$ mit
+\[|\ln(x)-T_{\ln,1}^n(x)|=\frac{|\ln^{(n+1)}(c)|}{(n+1)!}\cdot|(x-1)|^{n+1}\le\frac{1}{n+1}.\]
+
+Also konvergiert die Funktionenfolge der Taylorpolynome auf $[1,2]$ gleichmäßig gegen $\ln$,
+und ebenso konvergiert sie dort gleichmäßig gegen die Taylorreihe.
+
+Es gilt also für $x\in[1,2]$: $\displaystyle \quad \ln(x)=\sum_{n=1}^\infty(-1)^{n-1}\cdot\frac{(x-1)^n}{n}$
+
+Für $x=1$ erhalten wir einen Wert für die alternierende Harmonische Reihe:
+\[\sum_{n=1}^\infty\frac{(-1)^n}{n}=-\ln(2)\]
+
 \section*{Kurvendiskussion}
 
 \subsection*{Extremstellen}
+
+\subsubsection*{Einfache Vorgehenweise}
 \[f(x)=x^3-3x^2-1 \quad f'(x)=3x^2-6x \quad f''(x)=6x-6\]
 Um mögliche Extremstellen zu finden, müssen wir die Nullstellen der ersten Ableitung finden.
 Das ist für $x=0$ und $x=2$ der Fall.
@@ -170,17 +215,56 @@ Das ist für $x=0$ und $x=2$ der Fall.
 In diesen Punkten schauen wir uns die zweite Ableitung an.
 \begin{align*}
 	f''(0)&=-6<0 \implies \text{lokales Maximum} \\
-	f''(2)&=6>0 ~~\implies \text{lokales Minimum} \\
+	f''(2)&=6>0 ~~\implies \text{lokales Minimum}
 \end{align*}
+
+\subsubsection*{Allgemeinere Vorgehensweise}
+\[f(x)=x^4 \quad f'(x)=4x^3 \quad f''(x)=12x^2 \quad f'''(x)=24x \quad f''''(x)=24\]
+Bei $a=0$ ist ein globales Minimum, was wir nur durch die allgemeinere Vorgehensweise der Extremstellenbestimmung
+zeigen können, da
+\[f'(0)=0 \quad f''(0)=0 \quad f'''(0)=0,\]
+aber $f''''(0)=24>0$.
+
 
 \subsection*{Wertebereich}
 \[f(x)=\frac{x-1}{x^2+3} \qquad f'(x)=\frac{(x^2+3)-2x\cdot(x-1)}{(x^2+3)^2}\]
 Es gilt $\displaystyle \lim_{x\to\pm\infty}f(x)=\lim_{x\to\pm\infty}\frac{\frac{1}{x}-\frac{1}{x^2}}{1-\frac{3}{x^2}}=0$.
 
-Extremstellen bei $x=3$ und $x=-1$ mit $f(3)=\frac{1}{6}$ und $f(-1)=-\frac{1}{2}$.
-
+Extremstellen der Ableitung bei $x=3$ und $x=-1$ mit $f(3)=\frac{1}{6}$ und $f(-1)=-\frac{1}{2}$.
 Die Funktion ist stetig und hat keine Polstellen.
 Also werden alle Werte in $W=[-\frac{1}{2},\frac{1}{6}]$ angenommen.
+
+\vfill\null
+\columnbreak
+
+\section*{Konvergenz von Funktionenfolgen}
+
+Die Folge $f_n:[0,1]\to\mathbb{R}: x\mapsto x^n$ konvergiert auf $[0,1]$ punktweise gegen die Funktion
+\[f:[0,1]\to\mathbb{R}:x\mapsto\lim_{n\to\infty}x^n=\begin{cases}0, & x<1,\\ 1, & x=1, \end{cases}\]
+aber die Folge konvergiert auf $[0,1]$ nicht gleichmäßig gegen $f$.
+Betrachte dafür $\varepsilon=\frac{1}{4}$ und $n_\varepsilon\in\mathbb{N}$.
+
+Setze $n := \max\{n_\varepsilon,2\}\ge n_\varepsilon$ und $x=\frac{1}{\sqrt{2}}\in[0,1)$. Dann:
+\[|f_n(x)-f(x)|=\frac{1}{2}>\frac{1}{4}=\varepsilon\]
+
+Beachte auch, dass $f$ nicht stetig in $1$ ist, obwohl alle $f_n$ stetig waren.
+
+\section*{Stetigkeit}
+\[f: \mathbb{R}\to\mathbb{R}: x\mapsto\begin{cases}0, & x=0, \\ \sin\left(\frac{1}{x}\right), & x\neq0 \end{cases}\]
+
+Die Funktion ist in allen Punkten $a\in\mathbb{R}\setminus\{0\}$ stetig, in $0$ aber nicht.
+
+Betrachte dazu die Nullfolge $a_n=\frac{1}{2n\pi+\frac{\pi}{2}}$.
+
+\[f(a_n)=\sin(2n\pi+\frac{\pi}{2})\longrightarrow1\neq0\]
+
+\section*{Differenzierbarkeit}
+\[f:\mathbb{R}\to\mathbb{R}:x\mapsto\begin{cases}x^2, & x\notin\mathbb{Q}, \\ 0, & x\in\mathbb{Q}\end{cases}\]
+$f$ ist in $0$ differenzierbar, weil
+\[\Diff_{f,0}(x)=\begin{cases}\frac{x^2-0}{x-0}=x, & x\notin\mathbb{Q}, \\ \frac{0-0}{x-0}=0, & x\in\mathbb{Q}, \end{cases}\]
+weshalb $\Diff_{f,0}(x)\to0$.\\
+
+Die Funktion ist aber in \textit{keinem} anderen Punkt differenzierbar.
 
 \end{multicols*}
 
