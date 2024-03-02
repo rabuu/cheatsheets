@@ -17,3 +17,7 @@ Deshalb empfehle ich das Projekt folgendermaßen zu kompilieren:
 $ lualatex cheatsheet.tex
 $ lualatex examples.tex
 ```
+Es kann möglicherweise nötig sein, das Projekt zweimal zu kompilieren, damit die Seitenreferenzen richtig funktionieren.
+
+## Fertige PDFs
+Die fertigen PDFs können auf der [GitHub Releases](https://github.com/rabuu/ana1-cheatsheet/releases/latest) Seite heruntergeladen werden.
