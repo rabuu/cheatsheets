@@ -1,0 +1,37 @@
+\section*{Vektorräume}
+
+Ein $K$-VR besteht aus der Menge $V$ und \\
+$+: V\times V \to V : (x,y) \mapsto x + y$ und \\
+$\cdot : K \times V \to V: (\lambda, x) \mapsto \lambda x$
+\begin{itemize}
+	\item $(V,+)$ ist abel. Gruppe
+	\item $(\lambda + \mu)\cdot x = \lambda x + \mu x$ \\
+		und $\lambda\cdot(x+y) = \lambda x + \lambda y$
+	\item $(\lambda \cdot \mu)\cdot x = \lambda \cdot (\mu \cdot x)$
+	\item $1\cdot x = x$
+\end{itemize}
+
+\subsection*{Unterraum $U \le V$}
+$\forall \lambda \in K,~ x,y \in U: \lambda\cdot x\in U$ und $x+y\in U$
+
+\subsubsection*{Durchschnitt von Unterräumen}
+Der Durchschnitt von Unterräumen ist wieder ein Unterraum.
+
+\subsection*{Lineare Hülle}
+$M\subseteq V$. \\
+$\Lin(M)=\langle M \rangle = $\\
+$\{\lambda_1 x_1 + \dots + \lambda_r x_r \mid r\in\N, x_i \in M, \lambda_i \in K\}$ \\
+$\Lin(M)\le V $
+
+\subsection*{Summe zweier Unterräume}
+VR $V$ und $U,U' \le V$.
+
+$U + U' = \{u + u' \mid u\in U, u' \in U'\}$ \\
+$= \Lin(U\cup U') \le V$
+
+\subsubsection*{Direkte Summe}
+$U = U_1 \oplus \dots \oplus U_n$, \\
+wenn jedes $x$ eindeutig $x = u_1 + \dots + u_n$.
+
+Insbesondere: \\
+$W = U \oplus U' \Leftrightarrow W = U + U' \land U\cap U' = \{0\}$
