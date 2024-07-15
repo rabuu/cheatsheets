@@ -1,0 +1,54 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+%\usepackage[LY1,T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[top=2mm,bottom=3mm,left=2mm,right=2mm,headsep=1mm,includehead]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{booktabs}
+
+\usepackage{amsmath}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\S}{\mathbb{S}}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Hom}{Hom}
+
+\usepackage{blindtext}
+
+\usepackage{titlesec}
+\input{../layout.tex}
+
+\usepackage{hyperref}
+\newcommand\nohyper[1]{\begin{NoHyper}#1\end{NoHyper}}
+
+\usepackage{lastpage,fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Rasmus Buurman}
+\fancyhead[C]{\textsc{Lineare Algebra I}}
+\fancyhead[R]{Seite \thepage{}/\nohyper{\pageref{LastPage}}}
+\renewcommand\headrulewidth{0.5pt}
+
+\let\bar\overline
+
+\begin{document}
+\small
+\begin{multicols*}{5}
+	\input{contents/gruppen-homomorphismen.tex}
+\end{multicols*}
+\end{document}

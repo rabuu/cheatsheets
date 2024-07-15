@@ -1,0 +1,44 @@
+\section*{Gruppen \& Homomorphismen}
+
+\subsection*{Gruppe $(G,\times)$}
+\begin{itemize}
+	\item $(g \times h) \times k = g \times (h \times k)$
+	\item $\exists e \in G: \forall g\in G: e\times g = g$
+	\item $\forall g\in G: \exists g^{-1}\in G: g^{-1} \times g = e$
+\end{itemize}
+In abelschen Gruppen: $g\times h = h \times g$
+
+\subsubsection*{Untergruppe $U\le G$}
+$\forall u,v\in U: u\times v \in U$ und $u^{-1}\in U$
+
+\subsection*{Erzeugnis}
+Gruppe $G$ und $M \subseteq G$.
+\[
+	\langle M \rangle := \bigcap_{M\subseteq U \le G}U
+	= \{g_1^{\alpha_1}\times\cdots\times g_n^{\alpha_n} \mid g_i\in M,\alpha_i\in\Z\}
+\]
+
+\subsection*{Gruppenhomomorphismus $\varphi:G \to H$}
+$(G, \times)$ und $(H, *)$ Gruppen.
+\[\forall g,g'\in G: \varphi(g\times g')=\varphi(g) * \varphi(g')\]
+
+\subsubsection*{Bild und Kern}
+\begin{itemize}
+	\item $\im(\varphi):=\varphi(G) \le H$
+	\item $\Ker(\varphi) := \varphi^{-1}(e_H) \le G$
+	\item $\varphi$ injektiv $\iff \Ker(\varphi)=\{e_G\}$
+\end{itemize}
+
+\subsection*{Die symmetrische Gruppe $\S_n$}
+\[\S_n := \Sym(\{1,\dots,n\})=\{\sigma \mid \sigma \text{ ist Permutation}\}\]
+($\sigma : \{1,\dots,n\}\to\{1,\dots,n\}$ bijektiv)
+
+\subsubsection*{Zyklen und Transpositionen}
+$\sigma = (a_1 \dots a_k)$ ist \textit{k-Zyklus}:
+Vertauscht $a_1$ bis $a_k$ zyklisch, lässt den Rest.
+
+$\tau  = (i j)$ ist 2-Zyklus bzw. \textit{Transposition}.
+
+\subsubsection*{Signum $\sgn$}
+$\sgn : (\S_n, \circ) \to (\{1,-1\},\cdot) \in \Hom$
+\[\sgn(\tau)=-1, \quad \sgn(\tau_1 \circ \dots \circ \tau_k)=(-1)^k\]
