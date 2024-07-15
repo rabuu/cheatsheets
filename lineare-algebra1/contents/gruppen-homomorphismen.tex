@@ -13,14 +13,13 @@ $\forall u,v\in U: u\times v \in U$ und $u^{-1}\in U$
 
 \subsection*{Erzeugnis}
 Gruppe $G$ und $M \subseteq G$.
-\[
-	\langle M \rangle := \bigcap_{M\subseteq U \le G}U
-	= \{g_1^{\alpha_1}\times\cdots\times g_n^{\alpha_n} \mid g_i\in M,\alpha_i\in\Z\}
-\]
+
+$\displaystyle \langle M \rangle := \bigcap_{M\subseteq U \le G}U$ \\
+$= \{g_1^{\alpha_1}\times\cdots\times g_n^{\alpha_n} \mid g_i\in M,\alpha_i\in\Z\} $
 
 \subsection*{Gruppenhomomorphismus $\varphi:G \to H$}
-$(G, \times)$ und $(H, *)$ Gruppen.
-\[\forall g,g'\in G: \varphi(g\times g')=\varphi(g) * \varphi(g')\]
+$(G, \times)$ und $(H, *)$ Gruppen. \\
+$\forall g,g'\in G: \varphi(g\times g')=\varphi(g) * \varphi(g')$
 
 \subsubsection*{Bild und Kern}
 \begin{itemize}
@@ -30,7 +29,8 @@ $(G, \times)$ und $(H, *)$ Gruppen.
 \end{itemize}
 
 \subsection*{Die symmetrische Gruppe $\S_n$}
-\[\S_n := \Sym(\{1,\dots,n\})=\{\sigma \mid \sigma \text{ ist Permutation}\}\]
+$\S_n := \Sym(\{1,\dots,n\})$\\
+$=\{\sigma \mid \sigma \text{ ist Permutation}\}$\\
 ($\sigma : \{1,\dots,n\}\to\{1,\dots,n\}$ bijektiv)
 
 \subsubsection*{Zyklen und Transpositionen}
@@ -41,4 +41,23 @@ $\tau  = (i j)$ ist 2-Zyklus bzw. \textit{Transposition}.
 
 \subsubsection*{Signum $\sgn$}
 $\sgn : (\S_n, \circ) \to (\{1,-1\},\cdot) \in \Hom$
-\[\sgn(\tau)=-1, \quad \sgn(\tau_1 \circ \dots \circ \tau_k)=(-1)^k\]
+$\sgn(\tau)=-1, \quad \sgn(\tau_1 \circ \dots \circ \tau_k)=(-1)^k$
+
+\subsection*{Faktorgruppen}
+
+\subsubsection*{Linksnebenklassen}
+Gruppe $G$ und $U\le G$. $g,h\in G$.
+
+$ g \sim h \iff g^{-1}h\in U,\quad \bar g = gU$\\
+$ G/U = \{gU \mid g \in G \}, \quad |G:U| = |G/U| $
+
+\subsubsection*{Satz von Lagrange}
+Endl. Gruppe $G$ und $U \le G$.
+
+$|G| = |U|\cdot|G:U|$
+
+\subsubsection*{Faktorgruppe (G/U,\times)}
+Abel. Gruppe $(G,\times)$ und $U \le G$.
+
+$(G/U,\times)$ ist abel. Gruppe mit
+Neutralem $\bar e$ und Inverse $\bar{g^{-1}}$.
