@@ -1,0 +1,64 @@
+\section*{Ringe und Körper}
+
+\subsection*{Ring mit Eins $(R,+,\cdot)$}
+\begin{itemize}
+	\item $(R,+)$ ist abel. Gruppe mit $0$
+	\item $a\cdot(b\cdot c) = (a\cdot b)\cdot c$
+	\item $\exists 1\in R: 1\cdot a = a \cdot 1 = a$
+	\item $a \cdot (b+c)=a\cdot b + a\cdot c$ \\
+		und $(b+c)\cdot a = b\cdot a + c \cdot a$
+	\item Kommutativ: $a\cdot b=b \cdot a$
+\end{itemize}
+
+\subsubsection*{Einheit in $R$}
+$\exists a^{-1}\in R: a\cdot a^{-1}=a^{-1}\cdot a = 1$ \\
+$\implies a$ ist Einheit \\
+$R^* = \{a\in R \mid a \text{ ist Einheit}\}$ Gruppe
+
+\subsubsection*{Unterring $S\le R$}
+$1,~ a+b,~ -a,~ a\cdot b \in S$
+
+\subsection*{Körper $(K,+,\cdot)$}
+Komm. Ring mit Eins, wobei $K^* = K\setminus\{0\}$ \\
+($(K\setminus\{0\},\cdot)$ ist abel. Gruppe)
+
+\subsubsection*{Nullteilerfreiheit von Körpern}
+$(K,+,\cdot)$ Körper. \\
+$a,b\in K \setminus\{0\} \implies a\cdot b \neq 0$
+
+\subsection*{$\Z_n=\Z / n\Z$}
+$\Z_n$ ist ein komm. Ring mit Eins. \\
+Wenn $n$ Primzahl, dann sogar Körper.
+
+\subsection*{Der Polynomring $K[t]$}
+$\displaystyle K[t] = \left\{\sum_{k=0}^n a_k\cdot t^k \mid a_k \in K, n\in\N \right\}$ \\
+ist komm. Ring mit Eins $t^0$.
+
+\subsubsection*{Grad und Leitkoeffizient}
+$\deg(f)=n, \quad \lc(f)=a_n$
+\begin{itemize}
+	\item $\deg(f+g) \le \max\{\deg(f),\deg(g)\}$
+	\item $\deg(f\cdot g) = \deg(f)+\deg(g)$
+\end{itemize}
+
+\subsubsection*{Ideal $I$ von $K[t]$}
+$I\subseteq K[t]$, $f,g\in I$ und $h\in K[t]$. \\
+$f+g \in I$ und $h \cdot f \in I$
+
+\subsubsection*{Division mit Rest}
+$f,g \in K[t]\setminus\{0\}$
+\begin{itemize}
+	\item $\exists q,r \in K[t]: f=q\cdot g + r$ \\
+		und $\deg(r) < \deg(g)$
+	\item $\lambda\in K$ Nullstelle von $f$\\
+		$\implies\exists q\in K[t]: f=q\cdot(t-\lambda)$
+	\item Nullstellen $\le \deg(f)$
+\end{itemize}
+
+\subsubsection*{Fundamentalsatz der Algebra}
+$\C$ ist algebraisch abgeschlossen, d.h.
+jedes nicht-konstante Polynom in $\C[t]$ zerfällt über $\C$ in Linearfaktoren.
+
+\subsubsection*{Irreduzible Polynome}
+$f\in K[t]\setminus K$ ist irreduzibel, wenn \\
+$f=g\cdot h \implies \deg(g)=0 \lor \deg(h)=0$
