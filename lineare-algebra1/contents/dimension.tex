@@ -1,0 +1,44 @@
+\section*{Dimension von VR}
+
+$\dim_K(V)=\begin{cases}
+	n, & \text{Basis hat $n$ Elemente}\\
+	\infty & \text{nicht endlich erzeugt}
+\end{cases}$
+
+\subsection*{Dimension als Invariante}
+$V,W$ sind $K$-Vektorräume.
+
+$V \cong W \iff \dim_K(V) = \dim_K(W)$
+
+\subsubsection*{Lin. Abb. zwischen gleichdim. VR}
+$V,W$ VR mit $\dim_K(V)=\dim_K(W)$, \\
+$f:V\to W$ linear, dann für $f$: \\
+inj. $\iff$ surj. $\iff$ bij.
+
+\subsection*{Dimensionsformeln}
+Ist $\dim_K(V)<\infty$ und $U \le V$:
+
+$\dim_K(U) \le \dim_K(V)$ und \\
+$U = V \iff \dim_K(U) = \dim_K(V)$
+
+\subsubsection*{Für Unterräume}
+$U,U' \le V$, dann:
+$\dim_K(U+U')$ \\ $=\dim_K(U)+\dim_K(U')-\dim_K(U\cap U')$
+
+\subsubsection*{Für Komplemente}
+Für $U,U' \le V$ sind äquivalent:
+\begin{itemize}
+	\item $V=U \oplus U'$
+	\item $V=U+U'$ und \\ $\dim_K V = \dim_K U + \dim_K U'$
+	\item $U \cap U'$ und \\ $\dim_K V = \dim_K U + \dim_K U'$
+\end{itemize}
+
+\subsubsection*{Für Faktorräume}
+$U \le V$, dann:
+
+$\dim_K(V/U) = \dim_K(V)-\dim_K(U)$
+
+\subsubsection*{Für lineare Abbildungen}
+$f: V \to W$ linear, dann:
+
+$\dim_K(V) = \dim_K(\Ker(f)) + \dim_K(\im(f))$
