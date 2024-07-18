@@ -1,0 +1,51 @@
+\section*{Gauß-Algorithmus}
+
+\subsection*{Bestimmung des Rangs}
+Anzahl der Nicht-Nullzeilen einer ZSF von $A$.
+
+\subsection*{Bestimmung der Inversen}
+\begin{enumerate}
+	\item Stelle $C = (A, \mathbbm{1}_n)$ auf
+	\item Überführe $C$ in ZSF: $C'=(A',B)$
+	\item $\rang(A')=n \implies $ Inverse ist $B$
+\end{enumerate}
+
+\subsection*{Bestimmung der Normalform}
+\begin{enumerate}
+	\item $A$ mit Zeilenoperationen in $\rZSF$,
+		analog $\mathbbm{1}_m$ in $S$.
+	\item $\rZSF(A)$ mit Spaltenoperationen in Normalform,
+		analog $\mathbbm{1}_n$ in $T$.
+	\item $S \circ A \circ T = $ Normalform
+\end{enumerate}
+
+\subsection*{Basisberechnung}
+$F$ ist EZS von $U \subseteq K^n$.
+\begin{enumerate}
+	\item Vektoren aus $F$ als Spalten in $A$
+	\item $A$ in ZSF
+	\item Erste $\rang(A)$ Zeilen sind Basis
+\end{enumerate}
+
+\subsection*{Injektiv/Surjektiv/Bijektiv}
+\begin{itemize}
+	\item $\rang(A)=m=n$: $f_A$ bijektiv
+	\item $\rang(A)=m<n$: $f_A$ surjektiv
+	\item $\rang(A)=n<m$: $f_A$ injektiv
+\end{itemize}
+
+\subsection*{Summe zweier Unterräume}
+$F,G$ EZS von $U,U' \le K^n$.
+
+Basis von $U+U'=\langle F \cup G \rangle$ wie vorher.
+
+\subsection*{Test auf lin. Unabhängigkeit}
+$F$ Familie von $m$ Vektoren aus $K^n$.
+
+\begin{enumerate}
+	\item $F$ als Spalten in $A$
+	\item $\rang(A)=m \iff $ lin. unabh.
+\end{enumerate}
+
+\subsection*{Bild von $f_A$}
+Erste $\rang(A)$ Spalten von $(\text{ZSF}(A^t))^t$ sind Basis von $\im(f)$.
