@@ -1,0 +1,65 @@
+\section*{Lineare Gleichungssysteme}
+
+\subsection*{Struktur von Lös$(A,b)$}
+$c$ eine Lösung von $Ax=b$.
+
+Lös$(A,b)=c+$ Lös$(A,0)$.
+
+\subsection*{Lösbarkeit}
+$Ax=b$ lösbar $\Leftrightarrow \rang(A) = \rang(A \mid b)$
+
+\subsection*{Gauß-Alg. zur Lösung eines LGS}
+\begin{enumerate}
+	\item $\rZSF(A|b)=(A'|b')$, $r=\rang(A)$
+	\item $b'_{r+1}\neq 0 \implies$ nicht lösbar
+	\item Pivots auf Diagonale bringen (Nullzeilen/-spalten hinzufügen oder streichen) $\rightarrow (A''|b'')$
+	\item Ersetze 0 auf Diagonale mit $-1$.
+	\item $c=b''$, Spalten von $A''$ mit $-1$ sind Basis von Lös$(A,0)$.
+\end{enumerate}
+
+\subsection*{Kern von $f_A$ bestimmen}
+Löse LGS $Ax=0$.
+
+\subsection*{Transformationsmatrix $T_{B'}^B$ bestimmen}
+$B=(b_1,\dots,b_n)$ und $B'=(b'_1,\dots,b'_n)$.
+
+\begin{enumerate}
+	\item $b'_1,\dots,b'_n,b_1,\dots,b_n$ Spalten in $A$.
+	\item Letzte $n$ Spalten von $\rZSF(A)$: $T_{B'}^B$.
+\end{enumerate}
+
+\subsection*{Matrixdarstellung $M_D^B(f)$ bestimmen}
+$f:K^n\to K^m$, $B,D$ Basen von $K^n,K^m$.
+\begin{enumerate}
+	\item $d_1,\dots,d_m,f(b_1),\dots,f(b_n)$ Sp. in $A$.
+	\item Letzte $n$ Sp. von $\rZSF(A)$: $M_D^B(f)$
+\end{enumerate}
+
+\subsection*{Austauschverfahren von Steinitz}
+$B$ Basis, $F=(y_1,\dots,y_r)$ lin. unabh. in $V$.
+
+Konstruiere Basis $B'$, die $F$ enthält: \\
+Schreibe $B$ in $B'$, dann wiederhole für $i=1,\dots,r$:
+\begin{enumerate}
+	\item $B'$ als Spalten in $A$
+	\item $(A,y_i)$ in $\rZSF$, suche in der letzten Spalte den ersten Eintrag $\neq 0$.
+	\item Streiche entsprechenden Vektor aus $B'$ und füge $y_i$ als letzten hinzu.
+\end{enumerate}
+
+\subsection*{Gleichungen eines Unterraums}
+$F$ Familie im $K^n$.
+
+\begin{enumerate}
+	\item $F$ als Zeilen in $B\in\Mat(m \times n,K)$.
+	\item Bestimme Basis $(y_1,\dots,y_k)$ von $\Ker(f_B)=$ Lös$(B,0)$.
+	\item $y_1,\dots,y_k$ als Zeilen in $A$, \\
+		$\implies$ Lös$(A,0)=\Lin(F)$ 
+\end{enumerate}
+
+\subsection*{Durchschnitt zweier Unterräume}
+$F,G$ Familien im $K^n$.
+\begin{enumerate}
+	\item Bestimme jeweils Gleichungen für $F$ und $G$ (siehe oben).
+	\item Schreibe alle Zeilen in $A$.
+	\item Basis von $\Ker(f_A)=$ Lös$(A'',0)$ ist Basis des Durchschnitts.
+\end{enumerate}
