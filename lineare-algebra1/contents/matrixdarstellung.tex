@@ -1,0 +1,27 @@
+\section*{Matrixdarstellung lin. Abb.}
+
+\subsection*{Koordinatenvektor $M_B(x)$}
+Basis $B=(b_1,\dots,b_n)$.\\
+Vektor $x=(\lambda_1 b_1,\dots,\lambda_n b_n)$. \\
+$\implies M_B(x) = (\lambda_1,\dots,\lambda_n)^t$
+
+\subsection*{Matrixdarstellung $M_D^B(f)$}
+Basen $B,D$ von $V$ bzw. $W$. \\
+$f:V\to W$ linear.
+
+$M_D^B(f)=(M_D(f(b_1)),\dots,M_D(f(b_n)))$
+
+Insb.: $M_D^B: \Hom_K(V,W) \to \Mat(m \times n, K)$
+ist Isomorphismus.
+
+\subsection*{Rechnen mit Koordinaten}
+\subsubsection*{Bild eines Vektors}
+$f: V\to W, $ linear. $x\in V$.
+
+$M_D(f(x))=M_D^B \circ M_B(x)$
+
+\subsubsection*{Komposition}
+$f: U\to V, g: V\to W$ linear. \\
+$B,C,D$ Basen von $U,V,W$.
+
+$M_D^B(g \circ f) = M_D^C(g) \circ M^B_C(f)$
