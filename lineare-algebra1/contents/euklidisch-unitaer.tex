@@ -1,4 +1,12 @@
 \section*{Euklidische \& unitäre Räume}
+$\K\in\{\R,\C\}$
+
+\subsection*{Komplexe Zahlen $\C$}
+$z=x+iy$
+\begin{itemize}
+	\item $|z| = \sqrt{x^2 + y^2}$
+	\item $\overline{z} = x - iy$
+\end{itemize}
 
 \subsection*{Skalarprodukt $\langle\cdot,\cdot\rangle$}
 Für $\langle\cdot,\cdot\rangle: V \times V \to \K$ muss gelten:
@@ -11,7 +19,13 @@ Für $\langle\cdot,\cdot\rangle: V \times V \to \K$ muss gelten:
 \subsubsection*{Standardskalarprodukt}
 $\displaystyle \langle\cdot,\cdot\rangle: \K^n \times \K^n \to \K: (x,y)\mapsto \sum_{i=1}^n \overline{x_i}\cdot y_i$
 
-\subsubsection*{Euklidischer/Unitäre Räume}
+\subsubsection*{Euklidischer/Unitärer Raum}
+Euklidischer Raum: $\R$-VR mit Skalarpr. \\
+Unitärer Raum: $\C$-VR mit Skalarprodukt.
+
+\subsubsection*{Cauchy-Schwarzsche Ungleichung}
+Im eukl./unit. Raum $V$ gilt: \\
+$|\langle x,y\rangle| \le \sqrt{\langle x,x \rangle}\cdot\sqrt{\langle y,y \rangle}$
 
 \subsection*{Norm $\|\cdot\|$}
 Für $\|\cdot\|:V\to\R_{\ge 0}$ muss gelten:
@@ -20,3 +34,7 @@ Für $\|\cdot\|:V\to\R_{\ge 0}$ muss gelten:
 	\item $\|\lambda x\|=|\lambda|\cdot\|x\|$
 	\item $\|x+y\| \le \|x\| + \|y\|$
 \end{itemize}
+
+\subsubsection*{Euklidische Norm}
+In einem eukl./unit. Raum $V$, definiere:
+$\|\cdot\|: V\to\R_{\ge0}:x\mapsto \sqrt{\langle x,x \rangle}$
