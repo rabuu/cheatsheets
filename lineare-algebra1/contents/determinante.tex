@@ -1,0 +1,90 @@
+\section*{Determinante}
+$A\in\Mat_n(K)$
+
+\subsection*{Leibniz-Formel}
+$\displaystyle \det(A) := \sum_{\sigma\in\S_n} \sgn(\sigma)\cdot a_{1\sigma(1)}\cdot\dots\cdots a_{n\sigma(n)}$
+
+\subsection*{Dreiecksmatrizen}
+Für obere/untere Dreiecksmatrizen ist die Determinante
+das Produkt der Diagonaleinträge.
+
+\subsection*{Transponierte}
+$\det(A) = \det(A^t)$
+
+\subsection*{Kleine Matrizen}
+$2\times2$: $a\cdot d - b\cdot c$ \\
+$3\times3$: Sarrus
+
+\subsection*{Determinante als Volumenform}
+
+\subsubsection*{Multilineare Abbildungen}
+$f:V^n\to W$ multilinear, wenn
+$f$ in jedem Argument linear ist.
+
+\subsubsection*{Alternierende multi. Abbildungen}
+Wenn $f(x_1,\dots,x_n)=0$, sobald zwei Argumente gleich sind,
+ist $f$ alternierend.
+
+$f(x_{\sigma(1)},\dots,x_{\sigma(n)}) = \sgn(\sigma)\cdot f(x_1,\dots,x_n)$
+
+\subsubsection*{Determinante als Volumenform}
+$\det : \Mat_n(K)\to K$ ist alternierend multilinear
+mit $\det(\mathbbm{1}_n)=1$.
+
+Ist $f: \Mat_n(K)\to K$ alt. mult., dann
+$f(A)=f(\mathbbm{1}_n) \cdot \det(A)$
+
+\subsection*{Determinante und Gauß}
+Es gilt bei Änderung von $A$ auf $A'$:
+\begin{itemize}
+	\item Zeilen/Spalten tauschen:\\ $\det(A')=-\det(A)$
+	\item Zeile/Spalte mit $\lambda$ skalieren:\\ $\det(A')=\lambda\det(A)$
+	\item Zeilen/Sp. aufeinander addieren:\\ $\det(A')=\det(A)$
+	\item Nullzeile/-spalte: $\det(A)=0$
+	\item Gleiche Zeilen/Sp.: $\det(A)=0$
+\end{itemize}
+
+\subsection*{Determinantenmultiplikationssatz}
+$\det(A \circ B)=\det(A) \cdot \det(B)$
+
+\subsection*{Invertierbarkeit}
+$A$ inv.bar $\iff \det(A) \neq 0$. \\
+Dann $\det(A^{-1}) = (\det(A))^{-1}$
+
+\subsection*{Kästchensatz}
+Wenn $A=\mat{B & C \\ 0 & D}$
+mit $B,D$ quadratisch.
+
+$\det(A)=\det(B)\cdot\det(D)$
+
+\subsection*{Adjunkte}
+$A \in \Mat_n(K), n \ge 2$
+
+\subsubsection*{Ersetzungs-/Streichungsmatrix}
+$A_i(b)$ ersetzt die $i$-te Spalte von $A$ mit $b$.
+
+$A_{ji}$ ist $A$ ohne $j$-te Zeile und $i$-te Spalte.
+
+\subsubsection*{Kofaktor und Adjunkte}
+$a^\#_{ij} := (-1)^{i+j}\cdot\det(A_{ji})$ \\
+$A^\# := (a^\#_{ij})\in\Mat_n(K)$
+
+\subsubsection*{Satz über die Adjunkte}
+$A^\# \circ A = A \circ A^\# = \det(A) \cdot \mathbbm{1}_n$
+
+\subsubsection*{Inverse über Adjunkte}
+$A$ inv.bar $\implies A^{-1}=\frac{1}{\det(A)}\cdot A^\#$
+
+\subsection*{Laplacescher Entwicklungssatz}
+Entwickle $\det$ nach Zeile oder Spalte:
+$\displaystyle \det(A)=\sum_{j=1}^n(-1)^{i+j}\cdot a_{ij} \cdot \det(A_{ij})$ \\
+(Ersetze Laufindex durch $i$ für Spalte)
+
+Vorzeichen: Beachte Schachbrettmuster.
+
+\subsection*{Cramersche Regel}
+$A\in\Mat_n(K)$ inv.bar und $b\in K^n$.
+
+$Ax=b$ hat eindtg. Lös. $x=(x_1,\dots,x_n)^t$.
+
+$x_i = \frac{1}{\det(A)}\cdot\det(A_i(b))$
