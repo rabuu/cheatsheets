@@ -1,0 +1,72 @@
+\section*{Orthogonal/-normal}
+$V$ eukl./unit. Raum. \\
+$x,y\in V,M,N\subseteq V$ und $U \le V$.
+
+$x\perp y \iff \langle x,y \rangle = 0$ \\
+$M \perp N \iff \forall m\in M, n\in N: m \perp n$
+
+\subsection*{Orthogonales Komplement $U^\perp$}
+$U^\perp := \{v \in V \mid z \perp U\}$ \\
+$U \le V \implies U^\perp \le V$ \\
+$V = U \oplus U^\perp$
+
+\subsection*{Orthogonal und linear unabhängig}
+Eine Orthogonale Familie in $V\setminus\{0\}$ ist linear unabhängig.
+
+\subsection*{Orthonormal(-basis)}
+$B=(x_i \mid i\in I)$ orthonormal, wenn
+$x_i$ paarweise orthogonal und alle normiert.
+
+$B$ Basis \rightarrow~ Orthonormalbasis (ONB).
+
+\subsection*{Parsevalsche Gleichung}
+$(b_i \mid i\in I)$ ONB.
+
+$\displaystyle x=\sum_{i\in I}\langle b_i,x \rangle\cdot b_i$ (endlich)
+
+\subsection*{Gram-Schmidt}
+Jeder endlich-dimensionale eukl./unit. Raum besitzt eine ONB.
+
+\subsubsection*{Orthonormalisierungsverfahren}
+$M\subseteq K^n$ mit einem Skalarprodukt $\langle\cdot,\cdot\rangle$.
+\begin{enumerate}
+	\item Basis $(x_1,\dots,x_r)$ von $\Lin(M)$
+	\item Wiederhole für $i=1,\dots,r$: \\
+		$\displaystyle y_i = x_i - \sum_{j=1}^{i-1}\langle z_j,x_i \rangle\cdot z_j$ \\
+		$\displaystyle z_i = \frac{1}{\|y_i\|}\cdot y_i$
+	\item $(z_1,\dots,z_r)$ ist ONB von $\Lin(M)$
+\end{enumerate}
+
+\subsection*{Adjungierte Matrix}
+$A\in\Mat_n(\K)$
+
+Adjungierte $A^* := \overline{A}^t$
+
+\subsection*{Orthogonale/unitäre Matrix}
+$A$ ist orthogonal ($\R$) bzw. unitär ($\C$), wenn $A^* \circ A = \mathbbm{1}_n$
+
+\subsubsection*{Orthogonale und unitäre Gruppe}
+$O(n)$/$U(n)$ sind alle orth./unit. Matrizen.
+
+\subsubsection*{Determinante orth./unit. Matrizen}
+$A$ orth./unit. $\implies |\det(A)|=1$
+
+\subsubsection*{Charakterisierung orth./unit. Matrizen}
+Gleichbedeutend:
+\begin{itemize}
+	\item $A$ ist orthogonal bzw. unitär
+	\item $A$ ist invertierbar mit $A^{-1}=A^*$
+	\item Zeilen/Spalten von $A$ sind ONB von $\K^n$ (Standardskalarprodukt)
+\end{itemize}
+
+\subsection*{Orthogonale Summe}
+$V$ eukl./unit. Raum., $U_i \le V$.
+
+$V = U_1 \perp \dots \perp U_r$, wenn \\
+$V = U_1 \oplus \dots \oplus U_r$ und alle $U_i$ paarweise orthogonal.
+
+\subsection*{Orthogonale Projektion}
+$x$ lässt sich in einem eukl./unit. Raum eindeutig als
+$x=u+u'$ darstellen, wobei $u\in U$ und $u' \in U^\perp$.
+
+$\pi_U:V\to V: x=u+u' \mapsto u$
