@@ -1,0 +1,43 @@
+\section*{Diagonalisierbarkeit}
+
+$f\in\End_K(V)$ und $A\in\Mat_n(K)$.
+
+$\exists B$ Basis: $M_B^B(f)$ Diagonalmatrix bzw. \\
+$\exists T\in\Gl_n(K)$: $T^{-1}\circ A \circ T$ Diagonalmatrix. \\
+$\implies$ $f$ bzw. $A$ ist diagonalisierbar.
+
+\subsection*{Endomorphismen}
+Gleichbedeutend:
+\begin{itemize}
+	\item $f$ diagonalisierbar
+	\item $V$ hat Basis aus Eigenvekt. von $f$
+	\item $\lambda_1,\dots,\lambda_r$ pw. versch. EW von $f$ \\
+		$\implies V = \bigoplus \Eig(f,\lambda_i)$ \\
+		bzw. $\dim_K(V)=\sum \dim_K\Eig(f, \lambda_i)$
+\end{itemize}
+
+\subsection*{Quadratische Matrizen}
+Gleichbedeutend:
+\begin{itemize}
+	\item $A$ diagonalisierbar
+	\item $K^n$ hat Basis aus Eigenvekt. von $A$
+	\item $\lambda_1,\dots,\lambda_r$ pw. versch. EW von $A$ \\
+		$\implies K^n = \bigoplus \Eig(A,\lambda_i)$ \\
+		bzw. $n=\sum \dim_K\Eig(A, \lambda_i)$
+\end{itemize}
+
+\subsection*{Einfaches Kriterium}
+Hat $A\in\Mat_n(K)$ genau $n$ pw. versch. EW, ist $A$ diagonalisierbar.
+
+\subsection*{Diagonalisierung}
+$A\in\Mat_n(K)$.
+\begin{enumerate}
+	\item Berechne und faktorisiere $\chi_A$.
+	\item Ein Faktor nicht linear \\
+		$\rightarrow$ $A$ nicht diagonalisierbar.
+	\item Bestimme EW $\lambda_1,\dots,\lambda_r$ mit ihren algeb. Vielfachheiten $n_i$.
+	\item Bestimme Eigenraumbasen mit Lös$(\lambda_i\mathbbm{1}_n-A,0)$.
+	\item $n_i$ \& Dim. stimmen nicht überein \\ $\rightarrow$ $A$ nicht diagonalisierbar. 
+	\item Basen als Spalten in $T$ und $\lambda_i$ entsprechend auf Diagonale von $D$ \\
+		$\implies T^{-1}\circ A \circ T = D$
+\end{enumerate}

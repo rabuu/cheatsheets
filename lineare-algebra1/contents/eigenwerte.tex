@@ -1,0 +1,49 @@
+\section*{Eigenwerte}
+
+\subsection*{Charakteristisches Polynom $\chi_A$}
+$\chi_A := \det(t\cdot\mathbbm{1}_n - A)\in K[t]$
+
+\subsubsection*{Spur einer Matrix}
+$\Spur(A)=$ Summe der Diagonaleinträge.
+
+\subsubsection*{Form von $\chi_A$}
+$\chi_A=t^n + \alpha_{n-1}t^{n-1}+\dots+\alpha_1 t + \alpha_0 \in K[t]$
+mit $\alpha_{n-1}=-\Spur(A)$ und $\alpha_0=(-1)^n\cdot\det(A)$.
+
+\subsection*{Konjugation quadratischer Matrizen}
+$A,B\in\Mat_n(K)$ konjugiert bzw. ähnlich, wenn
+$\exists T\in\Gl_n(K): B=T^{-1}\circ A \circ T$
+
+\subsubsection*{Eigenschaften}
+$A,B\in\Mat_n(K)$ konjugiert: \\
+$\chi_A=\chi_B,\quad \det(A)=\det(B)$ \\ und $\Spur(A)=\Spur(B)$
+
+\subsection*{Endomorphismen}
+$\dim_K(V) \ge 1$, Basis $B$ und $f\in\End_K(V)$.
+
+$\chi_f = \chi_{M_B^B(f)},\quad \det(f)=\det(M_B^B(f))$\\
+und $\Spur(f)=\Spur(M_B^B(f))$
+
+\subsection*{Eigenwerte und -vektoren}
+$\lambda \in K$, $f\in\End_K(V)$ bzw. $A\in\Mat_n(K)$.
+
+$\exists 0\neq x\in V: f(x)=\lambda x$ \\
+bzw. $\exists 0\neq x\in K^n: Ax = \lambda x$
+
+$\implies \lambda$ ist Eigenwert, $x$ ist Eigenvektor.
+
+\subsubsection*{Eigenräume}
+$\Eig(f,\lambda) := \{y\in V \mid f(y)=\lambda y\}$ \\
+$\Eig(A,\lambda) := \{y\in K^n \mid Ay=\lambda y\}$
+
+\subsection*{Eigenwerte und charakt. Polynom}
+Die Eigenwerte von $f$ bzw. $A$ sind genau die Nullstellen von $\chi_f$ bzw. $\chi_A$ in $K$.
+
+\subsection*{Dreiecksmatrizen}
+Für obere/untere Dreiecksmatr. sind die Diagonaleinträge genau die Eigenwerte.
+$\chi_A=(t-a_{11})\cdot\dots\cdot(t-a_{nn})$
+
+\subsection*{Linear unabhängige Eigenvektoren}
+$x_1,\dots,x_n$ Eigenvektoren zu paarweise verschiedenen Eigenwerten.
+
+Dann ist $(x_1,\dots,x_n)$ linear unabhängig.
