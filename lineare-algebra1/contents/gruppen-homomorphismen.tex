@@ -8,8 +8,19 @@
 \end{itemize}
 In abelschen Gruppen: $g\times h = h \times g$
 
+\subsubsection*{Rechenregeln}
+\begin{itemize}
+	\item $(g^{-1})^{-1}=g$ und $(gh)^{-1}=h^{-1}g^{-1}$
+	\item $g^n \cdot g^m = g^{n+m}$ und $(g^m)^n = g^{m\cdot n}$
+	\item $ga=gb\Rightarrow a=b \Leftarrow ag=bg$
+\end{itemize}
+
 \subsubsection*{Untergruppe $U\le G$}
 $\forall u,v\in U: u\times v \in U$ und $u^{-1}\in U$
+
+\subsubsection*{Durchschnitt von Untergruppen}
+$\forall i\in I: U_i \le G$ \\
+$\displaystyle \bigcap_{i\in I}U_i \le G$
 
 \subsection*{Erzeugnis}
 Gruppe $G$ und $M \subseteq G$.
@@ -17,12 +28,22 @@ Gruppe $G$ und $M \subseteq G$.
 $\displaystyle \langle M \rangle := \bigcap_{M\subseteq U \le G}U$ \\
 $= \{g_1^{\alpha_1}\times\cdots\times g_n^{\alpha_n} \mid g_i\in M,\alpha_i\in\Z\} $
 
+\subsubsection*{Zyklische Gruppen}
+Gruppe heißt zyklisch, wenn sie von einem Element erzeugt werden kann.
+
 \subsection*{Gruppenhomomorphismus $\varphi:G \to H$}
 $(G, \times)$ und $(H, *)$ Gruppen. \\
 $\forall g,g'\in G: \varphi(g\times g')=\varphi(g) * \varphi(g')$
 
-\subsubsection*{Bild und Kern}
+\subsubsection*{Komposition}
+$\varphi_1: G_1 \to G_2,\varphi_2: G_2 \to G_3$ Grp.hom. \\
+$\implies \varphi_2 \circ \varphi_1: G_1 \to G_3$ Grphom. 
+
+\subsubsection*{Eigenschaften}
 \begin{itemize}
+	\item $\varphi(e_G)=e_H$ und $\varphi(g^{-1})=(\varphi(g))^{-1}$
+	\item $\varphi$ bij. $\implies \varphi^{-1}$ Grp.hom.
+	\item Untergruppen bleiben erhalten
 	\item $\im(\varphi):=\varphi(G) \le H$
 	\item $\Ker(\varphi) := \varphi^{-1}(e_H) \le G$
 	\item $\varphi$ injektiv $\iff \Ker(\varphi)=\{e_G\}$
@@ -33,14 +54,26 @@ $\S_n := \Sym(\{1,\dots,n\})$\\
 $=\{\sigma \mid \sigma \text{ ist Permutation}\}$\\
 ($\sigma : \{1,\dots,n\}\to\{1,\dots,n\}$ bijektiv)
 
+\subsubsection*{Mächtigkeit der $\S_n$}
+Die $\S_n$ enthält genau $n!$ Elemente.
+
 \subsubsection*{Zyklen und Transpositionen}
 $\sigma = (a_1 \dots a_k)$ ist \textit{k-Zyklus}:
 Vertauscht $a_1$ bis $a_k$ zyklisch, lässt den Rest.
 
 $\tau  = (i j)$ ist 2-Zyklus bzw. \textit{Transposition}.
 
+\subsubsection*{Zyklenzerlegung}
+Permutationen können als Produkt von
+\begin{itemize}
+	\item disjunkten Zyklen
+	\item Transpositionen
+	\item Transp. benachb. Zahlen
+\end{itemize}
+geschrieben werden.
+
 \subsubsection*{Signum $\sgn$}
-$\sgn : (\S_n, \circ) \to (\{1,-1\},\cdot) \in \Hom$
+$\exists_1 \sgn : (\S_n, \circ) \to (\{1,-1\},\cdot) \in \Hom$ \\
 $\sgn(\tau)=-1, \quad \sgn(\tau_1 \circ \dots \circ \tau_k)=(-1)^k$
 
 \subsection*{Faktorgruppen}
@@ -55,6 +88,11 @@ $ G/U = \{gU \mid g \in G \}, \quad |G:U| = |G/U| $
 Endl. Gruppe $G$ und $U \le G$.
 
 $|G| = |U|\cdot|G:U|$
+
+\subsubsection*{Ordnung eines Elements}
+$G$ Gruppe, $g\in G$.
+
+Ordnung $o(g):=|\langle g \rangle|$ teilt $|G|$.
 
 \subsubsection*{Faktorgruppe (G/U,\times)}
 Abel. Gruppe $(G,\times)$ und $U \le G$.
