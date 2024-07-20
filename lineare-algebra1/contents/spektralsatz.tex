@@ -1,0 +1,76 @@
+\section*{Spektralsatz}
+
+\subsection*{Adjungierte Abbildung $f^*$}
+$f\in\End_{\K}(V)$.
+
+$\exists_1 f^*:\langle f(x),y \rangle = \langle x, f^*(y) \rangle$
+
+Für $(x_1,\dots,x_n)$ ONB und $y\in V$: \\
+$\displaystyle f^*(y)=\sum_{i=1}^n \langle f(x_i),y \rangle \cdot x_i$
+
+Auch: $f^{**}=f$, dh. $\langle f^*(x),y\rangle = \langle x,f(y)\rangle$
+
+\subsubsection*{Matrixdarstellung der Adjungierten}
+$B$ ist ONB und $f\in\End_{\K}(V)$.
+
+$M_B^B(f^*)=M_B^B(f)^* = \overline{M_B^B(f)}^t$
+
+\subsection*{Selbstadjungiert/hermitesch}
+$f\in\End_{\K}(V)$, $A\in\Mat_n(\K)$.
+
+$f$ selbstadjungiert ($\R$) bzw. \\ hermitesch ($\C$), wenn $f=f^*$.
+
+$A$ symmetrisch ($\R$) bzw. hermitesch ($\C$), wenn $A=A^*$.
+
+\subsubsection*{Endomorphismus und Matrix}
+$f\in\End_{\K}(V)$ und $B$ eine ONB.
+
+$f$ slbstadj./hrm. $\iff M_B^B(f)$ sym./hrm.
+
+\subsubsection*{Eigenwerte}
+$f$ selbstadjungiert.
+
+Dann $\chi_f \in\R[t]$ und zerfällt über $\R$.
+Alle Eigenwerte sind reell.
+
+\subsection*{Spektralsatz für selbstadj. End.}
+$f\in\End_{\K}(V)$ selbstadj. $\iff$ $V$ ONB aus Eigenvektoren von $f$ hat
+und alle Eigenwerte reell sind.
+
+\subsection*{Spektralsatz für sym./hrm. Matrizen}
+$A\in\Mat_n(\K)$ sym./hrm.
+
+$\exists T\in O(n)$ bzw. $U(n):$ \\
+$T^{-1}\circ A \circ T=T^*\circ A \circ T=D$,
+wobei $D$ Diagonalmatrix mit reellen EW ist.
+
+$A=T\circ D \circ T^*$ ist Eigenwertzerlegung.
+
+\subsection*{Spektralzerlegung für selbstadj. End.}
+$f$ selbstadj. mit EW $\lambda_1,\dots,\lambda_r$. \\
+$\pi_i$ orth. Projektion von $V$ auf $\Eig(f,\lambda_i)$.
+
+Dann $V=\Eig(f,\lambda_i)\perp\dots\perp \Eig(f,\lambda_r)$
+
+und $f = \lambda_1\cdot\pi_1 + \dots + \lambda_r\cdot\pi_r$.
+
+\subsection*{Hauptachsentransformation}
+
+\subsubsection*{Bilinearform $b$}
+$b:V\times V \mapsto \R$ linear in beiden Arg.
+
+Symmetrisch, wenn $b(x,y)=b(y,x)$.
+
+$\rightarrow q_b: V\to\R:x\mapsto b(x,x)$ quadr. Form.
+
+($b(x,y)=\frac{1}{2}(q_b(x+y)-q_b(x)-q_b(y))$)
+
+\subsubsection*{Hpt.achsentransf.satz für quadr. Formen}
+$A\in\Mat_n(\R)$ sym.
+
+$\exists (x_1,\dots,x_n)$ ONB (Std.skalarprodukt) \\
+mit $A\circ x_i = \lambda_i \cdot x_i$
+
+$\displaystyle q_A(x)=\sum_{i=1}^n\lambda_i\cdot\langle x_i,x\rangle^2$
+
+$x_i$ die Hauptachsen der quadr. Form.
