@@ -7,8 +7,8 @@
 	\item $\exists 1\in R: 1\cdot a = a \cdot 1 = a$
 	\item $a \cdot (b+c)=a\cdot b + a\cdot c$ \\
 		und $(b+c)\cdot a = b\cdot a + c \cdot a$
-	\item Kommutativ: $a\cdot b=b \cdot a$
 \end{itemize}
+In kommutativen Ringen: $a\cdot b=b \cdot a$
 
 \subsubsection*{Einheit in $R$}
 $\exists a^{-1}\in R: a\cdot a^{-1}=a^{-1}\cdot a = 1$ \\
@@ -23,7 +23,6 @@ Komm. Ring mit Eins, wobei $K^* = K\setminus\{0\}$ \\
 ($(K\setminus\{0\},\cdot)$ ist abel. Gruppe)
 
 \subsubsection*{Nullteilerfreiheit von Körpern}
-$(K,+,\cdot)$ Körper. \\
 $a,b\in K \setminus\{0\} \implies a\cdot b \neq 0$
 
 \subsection*{$\Z_n=\Z / n\Z$}
@@ -34,8 +33,17 @@ Wenn $n$ Primzahl, dann sogar Körper.
 $\displaystyle K[t] = \left\{\sum_{k=0}^n a_k\cdot t^k \mid a_k \in K, n\in\N \right\}$ \\
 ist komm. Ring mit Eins $t^0$.
 
+\subsubsection*{Koeffizientenvergleich}
+$f=g \iff a_k = b_k \forall k$
+
 \subsubsection*{Grad und Leitkoeffizient}
-$\deg(f)=n, \quad \lc(f)=a_n$
+$\deg(f)=n$, $\deg(0)=-\infty$ \\
+($f$ konstant, wenn $\deg(f)\le0$) \\
+$\lc(f)=a_n$, $\lc(0)=0$
+
+$\lc(f)=1 \lor f=0 \implies f$ normiert
+
+\subsubsection*{Gradformeln}
 \begin{itemize}
 	\item $\deg(f+g) \le \max\{\deg(f),\deg(g)\}$
 	\item $\deg(f\cdot g) = \deg(f)+\deg(g)$
