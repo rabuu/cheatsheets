@@ -1,0 +1,38 @@
+\section*{Positiv definite Matrizen}
+$A\in\Mat_n(\K)$
+
+Positiv definit: $\overline{x}^t \circ A \circ x > 0 \quad\forall x\in\K^n$ \\
+Negativ definit: $\overline{x}^t \circ A \circ x < 0 \quad\forall x\in\K^n$ \\
+Indefinit: $\overline{x}^t \circ A \circ x > 0 > \overline{y}^t \circ A \circ y$\\ (für geeignete $x,y\in\K^n$)
+
+\subsection*{Hauptmatrix/-minor}
+$A\in\Mat_n(\K)$.
+
+$A(k)$ ist $k\times k$-Matrix oben links.
+
+$A(k)$ ist $k$-te Hauptmatrix,\\ $\det A(k)$ ist $k$-ter Hauptminor.
+
+\subsection*{Positiv definite Matrizen}
+$A\in\Mat_n(\K)$ sym./hrm. und $T\in\Gl_n(\K)$.
+
+$A$ pos. definit $\iff T^* \circ A \circ T$ pos. definit.
+
+\subsection*{Negativ definite Matrizen}
+$A$ neg. definit $\iff -A$ pos. definit.
+
+\subsection*{Hurwitz-Kriterium für pos. Definitheit}
+Für $A$ sym./hrm. ist gleichbedeutend:
+\begin{itemize}
+	\item $A$ ist positiv definit
+	\item Alle Eigenwerte sind positiv
+	\item Alle Hauptminoren sind positiv
+\end{itemize}
+
+\subsubsection*{Für neg. Definitheit bzw. Indefinitheit}
+$A$ neg. def. $\iff A$ nur neg. EW.
+
+$A$ indef. $\iff A$ ein pos. \& ein neg. EW.
+
+\subsection*{Skalarprodukte durch pos. def. Matrizen}
+$b_A:\K^n \times \K^n \to \K: (x,y)\mapsto \overline{x}^t \circ A \circ y$
+Sk.prdkt $\iff A$ sym./hrm \& pos. def.
