@@ -1,12 +1,26 @@
 \section*{Gauß-Algorithmus}
 
+\subsection*{Elementare Operationen}
+Elementare Operationen für jeweils Zeilen oder Spalten:
+\begin{itemize}
+	\item Zeile/Spalte tauschen
+	\item Zeile/Spalte mit $\lambda$ multiplizieren
+	\item Zeile/Spalte mit Vielfachem einer anderen addieren
+\end{itemize}
+
+\subsection*{Zeilen-Stufen-Form}
+Spaltenweise von links nach rechts unter Pivots Nullen erzeugen.
+
+Für reduzierte ZSF: Pivots auf 1 skalieren
+und dann von rechts nach links Nullen über Pivots erzeugen.
+
 \subsection*{Bestimmung des Rangs}
-Anzahl der Nicht-Nullzeilen einer ZSF von $A$.
+Anzahl der Nicht-Nullzeilen einer ZSF.
 
 \subsection*{Bestimmung der Inversen}
 \begin{enumerate}
-	\item Stelle $C = (A, \mathbbm{1}_n)$ auf
-	\item Überführe $C$ in ZSF: $C'=(A',B)$
+	\item $C = (A, \mathbbm{1}_n)$
+	\item $C'=(A',B)=\rZSF(C)$
 	\item $\rang(A')=n \implies $ Inverse ist $B$
 \end{enumerate}
 
@@ -22,7 +36,7 @@ Anzahl der Nicht-Nullzeilen einer ZSF von $A$.
 \subsection*{Basisberechnung}
 $F$ ist EZS von $U \subseteq K^n$.
 \begin{enumerate}
-	\item Vektoren aus $F$ als Spalten in $A$
+	\item Vektoren aus $F$ als Zeilen in $A$
 	\item $A$ in ZSF
 	\item Erste $\rang(A)$ Zeilen sind Basis
 \end{enumerate}
@@ -48,4 +62,7 @@ $F$ Familie von $m$ Vektoren aus $K^n$.
 \end{enumerate}
 
 \subsection*{Bild von $f_A$ bestimmen}
-Erste $\rang(A)$ Spalten von $(\text{ZSF}(A^t))^t$ sind Basis von $\im(f)$.
+\begin{enumerate}
+	\item ZSF von $A^t$ berechnen
+	\item Erste $\rang(A)$ Zeilen sind Basis von $\im(f)$
+\end{enumerate}
