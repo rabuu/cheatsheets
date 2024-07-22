@@ -1,10 +1,21 @@
 \section*{Tipps \& Tricks}
 
+\subsection*{Matrizen}
+
+\subsubsection*{Inverse einer $2\times2$-Matrix}
+$A=\mat{a & b \\ c & d}$ und $\det(A) \neq 0$.
+
+$\displaystyle \implies A^{-1} = \frac{1}{\det(A)}\cdot\mat{d & -b \\ -c & a}$
+
+\subsubsection*{Einfache $3\times3$-Determinante}
+$A=\mat{a & 0 & b \\ 0 & c & 0 \\ d & 0 & e}$ \\
+$\implies \det(A)=a\cdot c \cdot e - b \cdot c \cdot d$
+
 \subsection*{Einfach Unterräume zeigen}
 
 \subsubsection*{Über das Bild}
-$\displaystyle U=\left\{\mat{x+y \\ 2x-z} \mid x,y,z\in\R \right\}$ \\
-Beispielaufgabe: $U$ Unterraum von $\R^2$?
+Beispielaufgabe: $U$ Unterraum von $\R^2$? \\
+$\displaystyle U=\left\{\mat{x+y \\ 2x-z} \mid x,y,z\in\R \right\}$
 
 Sei $\displaystyle A=\mat{1 & 1 & 0 \\ 2 & 0 & -1} \in\Mat(2 \times 3, \R)$.
 
@@ -12,10 +23,20 @@ $f_A: \R^3 \to \R^2: x \mapsto Ax$ linear. \\
 $\implies \im(f_A)=U \le \R^2$
 
 \subsubsection*{Über den Kern}
-$\displaystyle U'=\left\{\mat{x\\y\\z}\in\R^3 \mid x=y \land 2y+3z=0\right\}$ \\
-Beispielaufgabe: $U'$ Unterraum von $\R^3$?
+Beispielaufgabe: $U'$ Unterraum von $\R^3$? \\
+$\displaystyle U'=\left\{\mat{x\\y\\z}\in\R^3 \mid x=y \land 2y+3z=0\right\}$
 
 Sei $\displaystyle A'=\mat{1 & -1 & 0 \\ 0 & 2 & 3} \in\Mat(2\times3, \R)$.
 
 $f_{A'}: \R^3 \to \R^2: x\mapsto A'x$ linear. \\
 $\implies \Ker(f_{A'})=U' \le \R^3$.
+
+\subsection*{Orthonormalbasis bestimmen}
+Rechnung vereinfacht sich oft,
+wenn man zunächst eine orthogonale Basis bestimmt
+und erst am Ende normiert.
+
+\subsection*{Polynome}
+\subsubsection*{Nullpolynom}
+Hat ein Polynom mehr paarweise verschiedene Nullstellen als sein Grad,
+ist es das Nullpolynom.
