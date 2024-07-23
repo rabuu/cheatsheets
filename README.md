@@ -12,4 +12,4 @@ Mir ist aufgefallen, dass bspw. `pdflatex` alles etwas anders spaced,
 weshalb es vom Layout nicht ganz passt.
 
 ## Fertige PDFs
-Die fertigen PDFs können auf der [GitHub Releases](https://github.com/rabuu/cheatsheets/releases/latest) Seite heruntergeladen werden.
+Die fertigen PDFs können auf der [GitHub Releases](https://github.com/rabuu/cheatsheets/releases/) Seite heruntergeladen werden.
