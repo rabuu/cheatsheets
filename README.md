@@ -1,8 +1,8 @@
 # Cheatsheets für meine Uni Klausuren
 
 Das sind meine persönlichen Cheatsheets für:
-- [Analysis I](./analysis1)
-- [Lineare Algebra I](./lineare-algebra1)
+- [Analysis I](./ana1)
+- [Lineare Algebra I](./lina1)
 
 Für mehr Informationen siehe [meine Website](https://rbuurman.de/krimskrams/cheatsheets).
 
