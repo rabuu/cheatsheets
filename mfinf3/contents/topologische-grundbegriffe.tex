@@ -1,0 +1,85 @@
+\section*{Topologische Grundbegriffe}
+
+\subsection*{$\e$-Umgebung}
+$M$ ist MR, $a\in M$, $\e > 0$.
+\[U_\e(a) := \{x \in M \mid d(x,a) < \e\}\]
+\subsubsection*{Eigenschaften}
+\begin{itemize}
+	\item $x \neq y \Rightarrow \exists \e: U_\e(x) \cap U_\e(y) = \emptyset$
+	\item $\e$-Umgebungen sind offen
+\end{itemize}
+
+\subsection*{Offen \& Abgeschlossen}
+$M$ ist MR. $U,O,A \subseteq M$ und $a \in U$.
+
+Innerer Punkt $a$: $\exists \e>0: U_\e(a) \subseteq U$.
+
+$O$ offen: Jeder Pkt in $O$ ist innerer Pkt.
+
+$A$ abgeschlossen: $M \setminus A$ offen.
+
+\subsection*{Abschluss \& Inneres}
+$M$ ist MR, $U \subseteq M$.
+
+Abschluss $\bar U$: Schnitt abg. Teilm. mit $U$
+
+Inneres $\mathring U$: Vereinigung off. Teilm. mit $U$
+
+\subsubsection*{Eigenschaften}
+\begin{itemize}
+	\item $\mathring U$ sind alle inneren Punkte
+	\item $\bar U = U \cup \partial U = U \cup \HP(U)$
+\end{itemize}
+
+\subsection*{Häufungs- \& Randpunkt}
+$M$ ist MR, $U \subseteq M, a \in M$.
+
+\subsubsection*{Häufungspunkt $a \in \HP(U)$}
+$\forall \e: \exists x \in U\setminus\{a\}: 0 < d(x,a) < \e$
+
+bzw.: $\forall \e: U_\e(a) \cap (U \setminus \{a\}) \neq \emptyset$
+
+\subsubsection*{Randpunkt $a \in \partial U$}
+$\forall \e: U_\e(a) \cap U \neq \emptyset \land U_\e(a) \cap (M \setminus U) \neq \emptyset$
+
+\subsection*{Beschränkt \& Kompakt}
+$M$ ist MR, $U \subseteq M$.
+
+\subsubsection*{$U$ ist beschränkt}
+\[\exists r>0, a\in M: \forall x\in U: d(x,a) \le r\]
+
+\subsubsection*{$(U_i)_{i\in I}$ ist offene Überdeckung}
+$U_i$ offen und $U \subseteq \bigcup_{i\in I} U_i$
+
+\subsubsection*{$U$ ist kompakt}
+Jede offene Überdeckung von $U$ besitzt endliche Teilüberdeckung.
+
+\subsubsection*{Eigenschaften}
+\begin{itemize}
+	\item Kompakt $\implies$ abgeschl. \& beschr.
+	\item $A \subseteq \R^n$: Kmpkt. $\Leftrightarrow$ abg. \& besch.
+\end{itemize}
+
+\subsection*{Folgen in metrischen Räumen}
+$M$ ist MR. Folge $(a_n)_{n\in\N}$ mit $a_n\in M$.
+
+\subsubsection*{Konvergenz mit Grenzwert $a$}
+\[\forall \e: \exists n_\e: \forall n \ge n_\e: d(a_n, a) < \e\]
+
+$a_n \to a \iff d(a_n,a) \to 0$
+
+$a_n \to a \land b_n \to b \implies d(a_n,b_n) \to d(a,b)$.
+
+\subsubsection*{Cauchy-Folge}
+\[\forall \e: \exists n_\e: \forall m>n \ge n_\e: d(a_m, a_n) < \e\]
+Konvergent $\implies$ Cauchy-Folge
+
+\subsubsection*{Beschränkte Folge}
+$(a_n)_{n\in\N}$ beschr., wenn $\{a_n \mid n\in\N\}$ beschr.
+
+Cauchy- \& konv. Folgen sind beschränkt.
+
+\subsubsection*{Komponentenfolge}
+$(a_k)_{k\in\N} \in \R^n$ und $c \in \R^n$.
+
+$a_k \to c_k \iff a_{ki} \to c_i$

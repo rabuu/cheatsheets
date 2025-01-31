@@ -1,0 +1,65 @@
+\section*{Differentialrechnung}
+Sei $D\subseteq \R^n$ offen, $a\in D$.
+
+\subsection*{Jacobi-Matrix}
+\[
+	f'(a) := \mat{
+		\frac{\partial f_1}{\partial x_1}(a) & \ldots & \frac{\partial f_1}{\partial x_n}(a) \\
+		\vdots & \ddots & \vdots \\
+		\frac{\partial f_m}{\partial x_1}(a) & \ldots & \frac{\partial f_m}{\partial x_n}(a)
+	}
+\]
+
+\subsubsection*{Gradient}
+Für skalare Funktionen: $\nabla f(a) := f'(a)^T$
+
+\subsection*{Totale Differenzierbarkeit}
+$f: D \to \R^m$ in $a$ total diff.bar, wenn
+\begin{enumerate}
+	\item $f$ in $a$ partiell diff.bar und
+	\item $f(x)=f(a)+f'(a)\cdot(x-a) + R(x)$ mit $\lim_{x\to a}\frac{\|R(x)\|}{\|x-a\|}=0$
+\end{enumerate}
+
+\subsubsection*{Zusammenhang partielle Diff.barkeit}
+Partielle Ableitungen von $f$ existieren und sind stetig
+$\implies f$ ist (total) diff.bar
+
+\subsection*{Differenzierbarkeit/Stetigkeit}
+$f$ (total) diff.bar $\implies f$ stetig
+
+\subsection*{Richtungsableitung}
+$f: D \to \R, a\in D, v\in\R^n$ mit $\|v\|=1$.
+
+\[\frac{\partial f}{\partial v}(a) := \lim_{h\to0}\frac{f(a+h\cdot v) - f(a)}{h}\]
+
+\subsubsection*{Zusammenhang Gradient}
+\[\frac{\partial f}{\partial v}(a)=f'(a)\cdot v = \|f'(a)\| \cdot \cos\alpha\]
+
+\subsection*{Mehrfaches partielles Ableiten}
+
+\subsubsection*{Schwarz}
+Ist $f:D\to\R$ $k$-mal stetig diff.bar, ist die Reihenfolge beim Ableiten egal.
+
+\subsubsection*{Hesse-Matrix}
+\[
+	H_f(a) := \mat{
+		\frac{\partial^2 f}{\partial x_1\partial x_1}(a) & \ldots & \frac{\partial^2 f}{\partial x_1 \partial x_n}(a) \\
+		\vdots & \ddots & \vdots \\
+		\frac{\partial^2 f}{\partial x_n\partial x_1}(a) & \ldots & \frac{\partial^2 f}{\partial x_n \partial x_n}(a)
+	}
+\]
+
+\subsection*{Extremstellen}
+
+\subsubsection*{Extremstellen sind kritische Punkte}
+$a$ Extremstelle $\implies f'(a)=(0,\ldots,0)$
+
+\subsubsection*{Hinreichende Bed. für Extremstellen}
+$f$ 2-fach stetig diff.bar und $a$ kritisch.
+
+Betrachte $H_f(a)$:
+\begin{itemize}
+	\item pos. definit $\implies$ iso. lok. Min.
+	\item neg. definit $\implies$ iso. lok. Max.
+	\item indefinit $\implies$ Sattelpunkt
+\end{itemize}

@@ -1,0 +1,48 @@
+\section*{Metrische Räume}
+
+\subsection*{Norm}
+$V$ ist $\K$-VR. Norm $\|\cdot\|: V\to\R_{\ge 0}$:
+\begin{enumerate}
+	\item $\|x\| = 0 \iff x = 0$
+	\item $\|\lambda x\| = |\lambda| \cdot \|x\|$
+	\item $\|x+y\| \le \|x\| + \|y\|$
+\end{enumerate}
+Normen:
+\begin{itemize}
+	\item $\|x\|_2 := \sqrt{|x_1|^2 + \ldots + |x_d|^2}$
+	\item $\|x\|_\infty := \max|x_i|$
+\end{itemize}
+Äquivalent, wenn: $c\|x\| \le \|x\|' \le C\|x\|$
+
+\subsubsection*{Eigenschaften}
+\begin{itemize}
+	\item $\|x\| \ge 0$
+	\item $\|x-y\| \ge |(\|x\| - \|y\|)|$
+	\item Normen auf $\R^n$ sind äquivalent
+\end{itemize}
+
+\subsection*{Skalarprodukt}
+$V$ ist $\K$-VR. S.produkt $\langle\cdot,\cdot\rangle : V\times V \to \K$:
+\begin{enumerate}
+	\item $\langle x, \lambda y + \mu z\rangle = \lambda \langle x,y\rangle + \mu \langle x, z\rangle$
+	\item $\langle x,y\rangle = \overline{\langle y,x \rangle}$
+	\item $\langle x,x \rangle\in\R$ und $\langle x,x \rangle > 0$ für $x \neq 0$
+\end{enumerate}
+$\|x\| := \sqrt{\langle x, x \rangle}$ ist Norm.
+
+\subsubsection*{Cauchy-Schwarz-Ungleichung}
+\[|\langle x,y \rangle| \le \|x\| \cdot \|y\|\]
+Gleichheit, wenn $x$ und $y$ lin. unabh.
+
+\subsection*{Metrik}
+$M$ nicht-leer. Metrik $d: M \times M \to \R$:
+\begin{enumerate}
+	\item $d(x,y)=0 \iff x=y$
+	\item $d(x,y) = d(y,x)$
+	\item $d(x,y) \le d(x,z) + d(z,y)$
+\end{enumerate}
+\subsubsection*{Eigenschaften}
+\begin{itemize}
+	\item $d(x,y) \ge 0$
+	\item $d(x,y) := \|x-y\|$ ist Metrik
+\end{itemize}
