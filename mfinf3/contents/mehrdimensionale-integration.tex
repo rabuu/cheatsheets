@@ -1,0 +1,29 @@
+\section*{Mehrdim. Integration}
+
+\subsection*{Parameterintegrale}
+$D=[a,b]\times[c,d]\subseteq\R^2$, $f:D\to\R$ stetig.
+
+Dann existiert $F:[a,b]\to\R$ und stetig:
+$F(x)=\int_c^d f(x,t)dt$
+
+Wenn $\frac{\partial}{\partial x}f$ stetig:
+$F'(x) = \int_c^d \frac{\partial}{\partial x}f(x,t)dt$
+
+\subsubsection*{Satz von Fubini}
+$\int_a^b F(x) = \int_a^b \int_c^d f(x,t)dt = \int_c^d \int_a^b f(x,t)dt$
+
+\subsection*{Leibniz-Regel}
+$f:[a,b]\times[c,d]\to\R$, $f$ und $f_x$ stetig.
+
+$g,h: [a,b] \to [c,d]$ stetig diffbar.
+
+Dann $F(x)=\int_{g(x)}^{h(x)}f(x,t)dt$ diffbar mit:
+
+$F'(x) = \int_{g(x)}^{h(x)} f_x(x,t)dt + f(x,h(x))\cdot h'(x) - f(x,g(x))\cdot g'(x)$
+
+\subsection*{Mehrfachintegrale}
+
+Riemann-intbar: Ober- $=$ Unterintegral.
+
+\subsubsection*{Iterierte Integrale}
+Auf $I=[a,b]=[a_1,b_1]\times\ldots\times[a_n,b_n]\subseteq\R^n$ ist Integrationsreihenfolge egal.
