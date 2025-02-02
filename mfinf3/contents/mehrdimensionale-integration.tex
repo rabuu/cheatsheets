@@ -27,3 +27,17 @@ Riemann-intbar: Ober- $=$ Unterintegral.
 
 \subsubsection*{Iterierte Integrale}
 Auf $I=[a,b]=[a_1,b_1]\times\ldots\times[a_n,b_n]\subseteq\R^n$ ist Integrationsreihenfolge egal.
+
+\subsection*{Integration über $M \subseteq \R^n$}
+
+\subsubsection*{Beispiel: Dreieck}
+$f(x,y) = x^2 + y^2$
+
+$M = \{(x,y)^T \mid 0 \le x \le 1, 0 \le y \le x \}$
+
+Bestimme $x$-Schnitt: \\
+$M(x) = \{y \mid (x,y)^T \in M \} = [0,x]$
+
+Dann können wir berechnen: \\
+$\int_M f(x,y)d(x,y) = \int_0^1 \int_{M(x)}f(x,y)dydx$ \\
+$ = \int_0^1 \int_0^x (x^2+y^2)dydx$
