@@ -1,0 +1,47 @@
+\section*{Fourier Reihen}
+
+\subsection*{Eulersche Formel}
+$e^{i\varphi} = \cos\varphi + i \sin\varphi$
+
+\subsection*{$T$-periodische Funktionen}
+$f: \R \to \K$ mit $f(t + T) = f(t)$
+
+\subsubsection*{Normierung: $2\pi$-periodisch}
+$f(t)$ ist $T$-periodisch.
+
+$\omega := \frac{2\pi}{T}$
+
+$F(t) = f(\frac{t}{\omega})$ ist $2\pi$-periodisch.
+
+\subsubsection*{Integration über $T$-periodische Funktion}
+$\int_0^T f(t)dt = \int_a^{T+a}f(t)dt$
+
+\subsection*{Trigonometrisches Polynom}
+
+\subsubsection*{Sinus-Cosinus-Form}
+$f(t) = \frac{a_0}{2} + \sum_{n=1}^N (a_n \cos(n\omega t) + b_n\sin(n\omega t))$
+
+\subsubsection*{Exponentialform}
+$f(t) = \sum_{k=-N}^{N} c_k e^{ik\omega t}$
+
+\subsubsection*{Umrechnung}
+$a_0=2c_0$, $a_n = c_n + c_{-n}$, $b_n=(c_n - c_{-n})i$
+
+$c_0=\frac{a_0}{2}$, $c_k = \frac{a_k - ib_k}{2}$, $c_{-k}=\frac{a_k+ib_k}{2}$
+
+\subsection*{Fourier-Reihe $S_f(t)$}
+$S_f(t) &= \sum_{k=-\infty}^\infty c_k e^{ik\omega t}$
+
+$= \frac{a_0}{2} + \sum_{n=1}^\infty (a_n\cos(n\omega t)+b_n\sin(n\omega t))$
+
+\subsubsection*{Formeln von Euler-Fourier}
+$a_n = \frac{2}{T} \int_0^T f(t)\cos(n\omega t)dt$
+
+$b_n = \frac{2}{T} \int_0^T f(t)\sin(n\omega t)dt$
+
+$c_k = \frac{1}{T} \int_0^T f(t) e^{-ik\omega t}dt$
+
+\subsubsection*{Konvergenz}
+Partialsummen $S_N(t)$ von $S_f(t)$
+
+$\lim_{N\to\infty}\|f(t)-S_N(t)\|_2 = 0$

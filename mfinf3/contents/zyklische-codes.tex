@@ -1,0 +1,23 @@
+\section*{Zyklische Codes}
+
+Generatorpoly. $g$, Kontrollpoly. $h$ mit
+$g(x) \cdot h(x) = x^n + 1$
+
+$C = \{f \cdot g \mid f \in \Z_2[x]_{x^n + 1}\} \subseteq \Z_2[x]_{x^n + 1}$
+
+$\forall c \in C: h \cdot c = 0 \pmod{x^n+1}$
+
+\subsection*{CRC}
+$k := n - \deg(g)$
+
+\subsubsection*{Codierung}
+\begin{enumerate}
+	\item Datenpoly. $M$ mit $\deg M < k$
+	\item $M' = M \cdot x^{n-k}$
+	\item $M' = Q \cdot g + R$
+	\item $C = M' - R$
+\end{enumerate}
+
+\subsubsection*{Verifizierung}
+Ist $C$ durch $g$ teilbar?
+

@@ -1,0 +1,18 @@
+\section*{RSA-Verschlüsselung}
+
+\subsection*{Schlüsselerzeugung}
+\begin{enumerate}
+	\item Primzahlen $p,q$ und $n := p \cdot q$
+	\item $\varphi(n) = (p-1)\cdot(q-1)$
+	\item $e$ teilerfremd zu $\varphi(n)$
+	\item $0<d<\varphi(n)$, $ed \equiv 1 \pmod{\varphi(n)}$
+	\item Public: $(e,n)$, Private: $d$
+\end{enumerate}
+
+\subsection*{Verschlüsselung}
+Nachricht $m$ mit $0 \le m < n$.
+
+$c = m^e \mod n$
+
+\subsection*{Entschlüsselung}
+$m = c^d \mod n$
