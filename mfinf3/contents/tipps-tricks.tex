@@ -1,0 +1,24 @@
+\section*{Tipps \& Tricks}
+
+\subsection*{Inverse von $2\times2$-Matrix}
+\[A = \mat{a & b \\ c & d} \implies A^{-1} = \frac{1}{\det A}\mat{d & -b \\ -c & a}\]
+
+\subsection*{Eigenwerte berechnen}
+$\chi_A = \det(\lambda \cdot \mathbbm{1} - A)$
+
+Nullstellen von $\chi_A$ sind EW von $A$.
+
+\subsection*{Definitheit einer Matrix}
+\begin{itemize}
+	\item Alle EW von $A$ sind $> 0$ \\
+		$\implies$ positiv definit
+	\item Alle EW von $A$ sind $< 0$ \\
+		$\implies$ negativ definit
+	\item Es gibt positive und negative EW \\
+		$\implies$ indefinit
+\end{itemize}
+
+\subsubsection*{Kriterium von Sylvester}
+Pos. definit $\iff$ Hauptminoren pos.
+
+Neg. definit $\iff$ Vorzeichen von Hauptminoren: $-$, $+$, $-$, \ldots
