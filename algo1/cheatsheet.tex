@@ -1,0 +1,70 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+%\usepackage[LY1,T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[top=2mm,bottom=3mm,left=2mm,right=2mm,headsep=1mm,includehead]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{booktabs}
+
+\usepackage{algorithm2e}
+
+\usepackage{amsmath}
+\usepackage{bbm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\bigO}{\mathcal{O}}
+
+\DeclareMathOperator{\key}{key}
+\DeclareMathOperator{\Bal}{Bal}
+\DeclareMathOperator{\indeg}{indeg}
+\DeclareMathOperator{\outdeg}{outdeg}
+
+\newcommand\mat[1]{
+	\begin{pmatrix}
+		#1
+	\end{pmatrix}
+}
+
+\usepackage{blindtext}
+
+\usepackage{titlesec}
+\input{../layout.tex}
+
+\usepackage{hyperref}
+\newcommand\nohyper[1]{\begin{NoHyper}#1\end{NoHyper}}
+
+\usepackage{lastpage,fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Rasmus Buurman}
+\fancyhead[C]{\textsc{Algorithmen und Datenstrukturen}}
+\fancyhead[R]{Seite \thepage{}/\nohyper{\pageref{LastPage}}}
+\renewcommand\headrulewidth{0.5pt}
+
+\begin{document}
+\small
+\begin{multicols*}{5}
+	\input{contents/laufzeit.tex}
+	\input{contents/rekursionsgleichungen.tex}
+	\input{contents/sortieralgorithmen.tex}
+	\input{contents/mediansuche.tex}
+	\input{contents/suchen.tex}
+	\input{contents/datenstrukturen.tex}
+	\input{contents/hashing.tex}
+	\input{contents/amortisierte-analyse.tex}
+	\input{contents/suchbaeume.tex}
+	\input{contents/graphen.tex}
+	\input{contents/tipps-tricks.tex}
+\end{multicols*}
+\end{document}

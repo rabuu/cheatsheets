@@ -1,0 +1,99 @@
+\section*{Sortieralgorithmen}
+
+\subsection*{SelectionSort}
+\begin{algorithm}[H]
+	\For{$i \gets 1$ \KwTo $n$}{
+		$a \gets$ Minimum von $A$\;
+		$B[i]=a$\;
+		Lösche $a$ aus $A$\;
+	}
+	\KwRet $B$\;
+\end{algorithm}
+Laufzeit: $\bigO(n^2)$
+
+\subsection*{ExpoSort}
+\begin{algorithm}[H]
+	\If{$n>1$}{
+		ExpoSort($A$, $n-1$)\;
+		\If{$A[n-1] > A[n]$}{
+			swap $A[n-1]$, $A[n]$\;
+		}
+		ExpoSort($A$, $n-1$)
+	}
+\end{algorithm}
+Laufzeit: $\Theta(2^n)$
+
+\subsection*{InsertionSort}
+\begin{algorithm}[H]
+	\For{$j\gets 2$ \KwTo $A$.len} {
+		$k \gets A[j]$\;
+		$i \gets j-1$\;
+		\While{$i>0$ und $A[i]>k$}{
+			$A[i+1] \gets A[i]$\;
+			$i \gets i-1$\;
+		}
+		$A[i+1] \gets k$\;
+	}
+\end{algorithm}
+Laufzeit: $\bigO(n^2)$
+
+\subsection*{BubbleSort}
+\begin{algorithm}[H]
+	\For{$i \gets 1$ \KwTo $A.len - 1$}{
+		\For{$j \gets A.len$ \textbf{downto} $i+1$}{
+			\If{$A[j]<A[j-1]$}{
+				swap $A[j]$, $A[j-1]$\;
+			}
+		}
+	}
+\end{algorithm}
+Laufzeit: $\Theta(n^2)$
+
+\subsection*{MergeSort}
+\subsubsection*{merge($X[1\ldots k]$, $Y[1\ldots l]$)}
+\begin{algorithm}[H]
+	\If{$k=0$}{
+		\KwRet $Y[1\ldots l]$\;
+	}
+	\If{$l=0$}{
+		\KwRet $X[1\ldots k]$\;
+	}
+	\eIf{$X[1] \le Y[1]$}{
+		\KwRet $X[1] \circ \text{merge}(X[2\ldots k], Y[1\ldots l])$\;
+	}{
+		\KwRet $Y[1] \circ \text{merge}(X[1\ldots k], Y[2\ldots l])$\;
+	}
+\end{algorithm}
+
+\subsubsection*{MergeSort($A[1\ldots n]$)}
+\begin{algorithm}[H]
+	\eIf{$n>1$}{
+		$l \gets$ MSort($A[1\ldots \lfloor\frac{n}{2}\rfloor]$)\;
+		$r \gets$ MSort($A[\lfloor\frac{n}{2}\rfloor+1 \ldots n]$)\;
+		\KwRet merge($l$, $r$)\;
+	}{
+		\KwRet $A$\;
+	}
+\end{algorithm}
+
+Laufzeit: $\Theta(n\log n)$
+
+\subsection*{QuickSort}
+\begin{algorithm}[H]
+	\If{$|A| = 1$}{
+		\KwRet $A$\;
+	}
+	Wähle $p\in A$ als Pivot\;
+	$A_{<} \gets \{a\in A \mid a < p\}$\;
+	$A_{=} \gets \{a\in A \mid a = p\}$\;
+	$A_{>} \gets \{a\in A \mid a > p\}$\;
+	\KwRet [QS($A_{<}$), $A_{=}$, QS($A_{>}$)]\;
+\end{algorithm}
+
+\subsubsection*{Laufzeit (randomisiert)}
+worst: $\Theta(n^2)$, best: $\Theta(n)$, avg: $\bigO(n\log n)$
+
+\subsubsection*{Laufzeit (mit Median)}
+worst: $\bigO(n\log n)$
+
+\subsection*{TODO: Counting-/RadixSort}

@@ -1,0 +1,19 @@
+\section*{Rekursionsgleichungen}
+
+\subsection*{Manuelle Methode}
+\begin{enumerate}
+	\item Rek. einige Schritte ausschreiben
+	\item Mit $i$ allgemein ausdrücken
+	\item $i$ auf geeignetes $f(n)$ setzen und so auf $T(1)$ reduzieren
+\end{enumerate}
+
+\subsection*{Mastertheorem}
+$T(n) = a\cdot T(\frac{n}{b}) + f(n)$, \\
+$a \ge 1, b > 1$, $k:=\log_b(a)$, $f$ nicht-negativ.
+\begin{enumerate}
+	\item $\exists\e>0: f \in \bigO(n^{k - \e}) \implies T \in \Theta(n^k)$
+	\item $f \in \Theta(n^k) \implies T \in \Theta(n^k \cdot \log n)$
+	\item $\exists\e>0: f \in \Omega(n^{k + \e})$ und \\
+		$\exists c<1: a\cdot f(\frac{n}{b}) \le c\cdot f(n)$ \\
+		$\implies T \in \Theta(f(n))$
+\end{enumerate}

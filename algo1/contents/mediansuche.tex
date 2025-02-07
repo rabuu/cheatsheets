@@ -1,0 +1,25 @@
+\section*{Mediansuche}
+
+\subsection*{QuickSelect($A$, $k$) (bzw. MdM)}
+\begin{algorithm}[H]
+	\If{$|A| \le 25$}{
+		\KwRet \enquote{brute force Lösung}\;
+	}
+	$m \gets \lceil\frac{n}{5}\rceil$\;
+	\For{$i \gets 1$ \KwTo $m$}{
+		$M_i \gets$ Med5($A[5i-4 \ldots 5i]$)\;
+	}
+	mdm $\gets$ Sel($M$, $\lfloor\frac{m}{2}\rfloor$)\;
+	$A_{<} \gets \{a\in A \mid a < \text{mdm}\}$\;
+	$A_{=} \gets \{a\in A \mid a = \text{mdm}\}$\;
+	$A_{>} \gets \{a\in A \mid a > \text{mdm}\}$\;
+	\uIf{$|A_{<}| \ge k$}{
+		\KwRet Sel($A_{<}$, $k$)\;
+	}\uElseIf{$|A_{<}| + |A_{=}| \ge k$}{
+		\KwRet mdm\;
+	}\uElse{
+		\KwRet Sel($A_{>}$, $k- |A_{<}| - |A_{=}|$)\;
+	}
+\end{algorithm}
+
+Laufzeit: $\bigO(n)$

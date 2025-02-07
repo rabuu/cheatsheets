@@ -1,0 +1,59 @@
+\section*{Graphen}
+
+\subsection*{Topologische Sortierung $\nu$}
+$(V,E)$ ist DAG. $\nu: V \to \{1,\ldots,|V|\}$ mit
+$\forall (u,w)\in E: \nu(u) < \nu(w)$
+
+\begin{itemize}
+	\item Top. Sortierung ex. $\iff$ azyklisch
+	\item Algorithmus hat Laufzeit $\bigO(n+m)$
+\end{itemize}
+
+\subsection*{Kürzeste Pfade}
+
+\subsubsection*{SSSP auf DAGs}
+Relax in topologischer Sortierung.
+
+Laufzeit: $\bigO(n+m)$
+
+\subsubsection*{Dijkstra (SSSP)}
+Annahme: Keine negativen Gewichte.
+\begin{algorithm}[H]
+	$d(s) \gets 0$\;
+	\ForAll{$v\in V \setminus \{s\}$}{
+		$d(v) \gets \infty$\;
+	}
+	$S \gets \{s\}$\;
+	\While{$S \neq V$}{
+		Bestimme $v \notin S$, adj. zu $S$\;
+		$d'(v) \gets \min(d(u) + w(u,v))$\;
+		$S \gets S \cup \{v\}$\;
+		$d(v) \gets d'(v)$\;
+	}
+\end{algorithm}
+
+Implementiere mit PriorityQueue (die $V \setminus S$ enthält).
+
+Dann Laufzeit: $\bigO((|V|+|E|)\cdot\log|V|)$
+
+\subsubsection*{Bellman-Ford}
+\begin{algorithm}[H]
+	$d(s) \gets 0$\;
+	\ForAll{$v\in V \setminus \{s\}$}{
+		$d(v) \gets \infty$\;
+	}
+	\For{$i=1$ \KwTo $|V|-1$}{
+		\ForEach{$(u,v)\in E$}{
+			\If{$d(v)>d(u)+w(u,v)$}{
+				$d(v) \gets d(u) + w(u,v)$\;
+				$\pi(v) \gets u$\;
+			}
+		}
+	}
+	\ForEach{$(u,v)\in E$}{
+		\If{$d(v)>d(u)+w(u,v)$}{
+			\KwRet \enquote{Negativer Zyklus}\;
+		}
+	}
+	\KwRet \enquote{Kein negativer Zyklus}\;
+\end{algorithm}

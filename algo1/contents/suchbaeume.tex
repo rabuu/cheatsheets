@@ -1,0 +1,27 @@
+\section*{Suchbäume}
+
+\subsection*{Binäre Suchbäume}
+Eigenschaft: links $\le$, rechts $\ge$.
+
+\subsubsection*{Löschen (wenn beide Kinder existieren)}
+\begin{enumerate}
+	\item $b$: Linkester Kn. im rechten Teilbaum
+	\item Ersetze zu löschenden Knoten mit $b$
+	\item Ersetze $b$ mit rechtem Kind
+\end{enumerate}
+
+\subsection*{AVL-Baum}
+Bin. Suchbaum mit $\forall u: |\Bal(u)| \le 1$.
+
+Rebalancieren durch Rechts-, Links- oder Doppelrotation.
+
+\subsection*{$(a,b)$-Baum}
+$a \ge 2$, $b \ge 2a - 1$.
+\begin{itemize}
+	\item Daten in Blättern (alle gleiche Tiefe)
+	\item $a \le$ Kinder $\le b$ (Ausnahme Wurzel)
+	\item Kn. mit $k$ Kindern hat $k-1$ Schlüssel:\\
+		$v_i$ größtes Element in $i$-tem Teilbaum
+\end{itemize}
+
+Erhalte Invariante: Split und Merge.

@@ -1,0 +1,18 @@
+\section*{Laufzeit}
+$f \in\bigO(g) \iff \limsup_{n\to\infty}\frac{f(n)}{g(n)} < \infty$
+
+$f \in o(g) \iff \limsup_{n\to\infty}\frac{f(n)}{g(n)} = 0$
+
+$f \in\Omega(g) \iff g \in \bigO(f)$
+
+$f \in \omega(g) \iff g\in o(f)$
+
+$f \in \Theta(g) \iff f\in\big(g) \land f \in\Omega(g)$
+
+\subsection*{Regeln und (Gegen-)Beispiele}
+\begin{itemize}
+	\item $\log_a(n) \in \Theta(\log_b(n))$
+	\item $\log\log n \prec \log n \prec \log(n^{\log n})$
+	\item $\sqrt{n} \prec n\log n \prec n^d \prec 2^n \prec n! \prec n^n$
+	\item $3^n \notin \bigO(2^n)$
+\end{itemize}
