@@ -1,0 +1,38 @@
+\section*{Minimale Spannbäume}
+Gegeben: Zusammenhängender, ungerichteter Graph mit $w: E \to \R^+$.
+
+\subsection*{Jarn\'ik-Prim}
+\begin{algorithm}[H]
+	\ForAll{$u\in V$}{
+		$u.\key \gets \infty$\;
+		$u.pre \gets$ NIL\;
+	}
+	Wähle $s\in V$, $s.\key \gets 0$\;
+	$PQ \gets V$\;
+	\While{$PQ \neq \emptyset$}{
+		$u \gets$ ExtractMin($PQ$)\;
+		\ForAll{$v\in Adj(u)$}{
+			\If{$v\in Q$ und $w(u,v) < v.\key$}{
+				$v.pre \gets u$\;
+				$v.\key \gets w(u,v)$\;
+			}
+		}
+	}
+	\KwRet $\{(v.pre, v) \mid v \in V\setminus\{s\}\}$
+\end{algorithm}
+Laufzeit: $\bigO(|E| \cdot \log|V|)$
+
+\subsection*{Kruskal}
+\begin{algorithm}[H]
+	Sortiere Kanten aufsteigend nach $w$\;
+	$A \gets \emptyset$\;
+	\ForAll{$e\in E$ (sortiert)}{
+		\If{$A \cup \{e\}$ hat keinen Zykel}{
+			$A \gets A \cup\{e\}$\;
+			\If{$|A| = n-1$}{
+				\KwRet $A$\;
+			}
+		}
+	}
+\end{algorithm}
+Laufzeit (mit UnionFind): $\bigO(|E|\cdot\log|V|)$
