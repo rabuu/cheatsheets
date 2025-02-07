@@ -1,0 +1,78 @@
+\section*{Durchmusterung v. Graphen}
+
+\subsection*{Tiefensuche}
+\begin{algorithm}[H]
+	\ForAll{$u\in V$}{
+		$u.color \gets$ WHITE\;
+		$u.pre \gets$ NIL\;
+	}
+	$t \gets 0$\;
+	\ForAll{$u\in V$}{
+		\If{$u.color =$ WHITE}{
+			DFS-Visit($G$, $u$)\;
+		}
+	}
+\end{algorithm}
+
+\subsubsection*{DFS-Visit($G$, $u$)}
+\begin{algorithm}[H]
+	$t \gets t+1$\;
+	$u.d \gets t$\;
+	$u.color \gets$ GRAY\;
+	\ForAll{$v \in Adj(u)$}{
+		\If{$v.color =$ WHITE}{
+			$v.pre \gets u$\;
+			DFS-Visit($G$, $v$)\;
+		}
+	}
+	$u.color \gets$ BLACK\;
+	$t \gets t + 1$\;
+	$u.f \gets t$\;
+\end{algorithm}
+
+\subsubsection*{Kantenklassifikation}
+\begin{enumerate}
+	\item Baumkante: im Tiefensuchwald
+	\item Rückwärtskante: $(u,v)$, $v$ ist Vorfahre
+	\item Vorwärtskante: $(u,v)$, $v$ ist Nachfahre
+	\item Querkante: sonst
+\end{enumerate}
+
+\subsection*{Breitensuche}
+\begin{algorithm}[H]
+	\ForAll{$u\in V \setminus\{s\}$}{
+		$u.color \gets$ WHITE\;
+		$u.d \gets \infty$\;
+		$u.pre \gets$ NIL\;
+	}
+	$s.color \gets$ GRAY\;
+	$s.d \gets 0$\;
+	$s.pre \gets$ NIL\;
+	$Q \gets \emptyset$\;
+	Enqueue($Q$, $s$)\;
+	\While{$Q \neq \emptyset$}{
+		$u \gets$ Dequeue($Q$)\;
+		\ForAll{$v \in Adj(u)$}{
+			\If{$v.color =$ WHITE}{
+				$v.color \gets$ GRAY\;
+				$v.d \gets u.d + 1$\;
+				$v.pre \gets u$\;
+				Enqueue($Q$m $v$)\;
+			}
+		}
+		$u.color \gets$ BLACK\;
+	}
+\end{algorithm}
+
+\subsection*{Laufzeit von DFS und BFS}
+Adjazenzliste: $\bigO(|V|+|E|)$
+
+Adjazenzmatrix: $\bigO(|V|^2)$
+
+\subsection*{Starke Zusammenhangskomponenten}
+\begin{enumerate}
+	\item DFS und merke Endzeiten $v.f$
+	\item Transponiere Graph: $G^T$
+	\item DFS auf $G^T$ in Reihenfolge absteigender Endzeiten $v.f$
+	\item Tiefensuchbäume sind SCC
+\end{enumerate}

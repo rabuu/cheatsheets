@@ -36,7 +36,7 @@ Implementiere mit PriorityQueue (die $V \setminus S$ enthält).
 
 Dann Laufzeit: $\bigO((|V|+|E|)\cdot\log|V|)$
 
-\subsubsection*{Bellman-Ford}
+\subsubsection*{Bellman-Ford (SSSP)}
 \begin{algorithm}[H]
 	$d(s) \gets 0$\;
 	\ForAll{$v\in V \setminus \{s\}$}{
@@ -52,8 +52,25 @@ Dann Laufzeit: $\bigO((|V|+|E|)\cdot\log|V|)$
 	}
 	\ForEach{$(u,v)\in E$}{
 		\If{$d(v)>d(u)+w(u,v)$}{
-			\KwRet \enquote{Negativer Zyklus}\;
+			\KwRet \enquote{Negativer Zykel}\;
 		}
 	}
-	\KwRet \enquote{Kein negativer Zyklus}\;
+	\KwRet \enquote{Kein negativer Zykel}\;
 \end{algorithm}
+Laufzeit: $\bigO(|V|\cdot|E|)$
+
+\subsubsection*{Floyd-Warshall (APSP)}
+\begin{algorithm}[H]
+	$M \in \Mat(n\times n)$ mit Gewichten\;
+	$D^{(0)} \gets M$\;
+	\For{$k \in [1,n]$}{
+		Sei $D^{(k)}\in\Mat(n\times n)$\;
+		\For{$(s,t)\in[1,n]\times[1,n]$}{
+			$a \gets d_{k-1}(s,t)$\;
+			$b \gets d_{k-1}(s,k)+d_{k-1}(k,t)$\;
+			$d_k(s,t) \gets \min\{a, b\}$\;
+		}
+	}
+	\KwRet $D^{(n)}$\;
+\end{algorithm}
+Laufzeit: $\bigO(|V|^3)$
