@@ -1,0 +1,63 @@
+\section*{Algorithmenentwurf}
+
+\subsection*{Greedy Algorithmen}
+Lokal optimale Entscheidungen in der Hoffnung auf globale Optimalität.
+
+\subsubsection*{Beweismethoden}
+\begin{itemize}
+	\item \enquote{greedy stays ahead} 
+	\item Austauschargument
+\end{itemize}
+
+\subsection*{Dynamische Programmierung}
+
+\subsubsection*{Fibonacci Zahlen}
+\begin{algorithm}[H]
+	$DP[0] \gets 1$, $DP[1] \gets 1$\;
+	\For{$i=3$ \KwTo $n$}{
+		$DP[i] \gets DP[i-1] + DP[i-2]$\;
+	}
+	\KwRet $DP[n]$\;
+\end{algorithm}
+
+\subsubsection*{Zerlegungsproblem}
+\begin{algorithm}[H]
+	\KwIn{Array $A$, Länge $n$}
+	$DP \gets \emptyset$\;
+	$DP[0] \gets 0$\;
+	$\ell \gets \emptyset$\;
+	\For{$j \gets 1$ \KwTo $n$}{
+		$q \gets -\infty$\;
+		\For{$i \gets 1$ \KwTo $j$}{
+			\If{$q < A[i] + DP[j-i]$}{
+				$q \gets A[i] + DP[j-i]$\;
+				$\ell[j] \gets i$\;
+			}
+		}
+		$DP[j] \gets q$\;
+	}
+	\KwRet $DP[n]$ und $\ell[n]$\;
+\end{algorithm}
+
+\subsubsection*{Einkaufsproblem (Knapsack)}
+Laufzeit: $\bigO(n \cdot B)$
+
+\begin{algorithm}[H]
+	\KwIn{Preise $p_i$, Werte $w_i$, Budget $B$}
+	\For{$j \gets 1$ \KwTo $n$}{
+		$DP(0,j) \gets 0$\;
+	}
+	\For{$b \gets 1$ \KwTo $B$}{
+		$DP(b,0) \gets 0$\;
+	}
+	\For{$j \gets 1$ \KwTo $n$}{
+		\For{$b \gets 1$ \KwTo $B$}{
+			\eIf{$p_j > b$}{
+				$DP(b,j) \gets DP(b,j-1)$\;
+			}{
+				$DP(b,j) \gets \max\{DP(b,j-1),$\\ $DP(b-p_j,j-1)+w_j\}$\;
+			}
+		}
+	}
+	\KwRet $DP[B,n]$\;
+\end{algorithm}
