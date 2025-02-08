@@ -7,12 +7,35 @@ $\forall (u,w)\in E: \nu(u) < \nu(w)$
 \begin{itemize}
 	\item Top. Sortierung ex. $\iff$ azyklisch
 	\item Algorithmus hat Laufzeit $\bigO(n+m)$
+		(Suche Knoten mit $\indeg=0$ und lösche diese dann samt Kanten)
 \end{itemize}
 
 \subsection*{SSSP auf DAGs}
-Relax in topologischer Sortierung.
-
 Laufzeit: $\bigO(n+m)$
+
+\begin{algorithm}[H]
+	\ForAll{$v\in V$ (topologisch sortiert)} {
+		\If{$v=s$}{
+			$d(s) \gets 0$\;
+			\textbf{continue}\;
+		}
+		$d(v) \gets \infty$\;
+		\ForAll{$(u,v) \in E$}{
+			\If{$d(v) > d(u) + w(u,v)$}{
+				$d(v) \gets d(u) + w(u,v)$\;
+				$\pi(v) \gets u$\;
+			}
+		}
+		
+	}
+\end{algorithm}
+
+\subsection*{Welchen SSSP Algorithmus?}
+\begin{itemize}
+	\item Keine neg. Gewichte $\implies$ Dijkstra
+	\item Negative Gewichte, aber keine Zykel\\ $\implies (n-1)$-mal Bellman-Ford
+	\item Negative Zykel\\ $\implies (n-1+n)$-mal Bellman-Ford
+\end{itemize}
 
 \subsection*{Dijkstra (SSSP)}
 Annahme: Keine negativen Gewichte.
@@ -23,8 +46,8 @@ Annahme: Keine negativen Gewichte.
 	}
 	$S \gets \{s\}$\;
 	\While{$S \neq V$}{
-		Bestimme $v \notin S$, adj. zu $S$\;
-		$d'(v) \gets \min(d(u) + w(u,v))$\;
+		Bestimme $v \notin S$, adj. zu $S$, so dass
+		$d'(v) \gets \min_{(u,v),u\in S}(d(u) + w(u,v))$ minimal ist\;
 		$S \gets S \cup \{v\}$\;
 		$d(v) \gets d'(v)$\;
 	}
