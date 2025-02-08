@@ -93,8 +93,11 @@ $\Theta(n \log n)$, instable, in-place\\
 	$A_{<} \gets \{a\in A \mid a < p\}$\;
 	$A_{=} \gets \{a\in A \mid a = p\}$\;
 	$A_{>} \gets \{a\in A \mid a > p\}$\;
-	\KwRet [QS($A_{<}$), $A_{=}$, QS($A_{>}$)]\;
+	\KwRet [QSort($A_{<}$), $A_{=}$, QSort($A_{>}$)]\;
 \end{algorithm}
+
+\subsection*{Vergleichbasiertes Sortieren}
+$\Omega(n \log n)$
 
 \subsection*{CountingSort}
 Annahme: Alle Zahlen in $[1,K]$

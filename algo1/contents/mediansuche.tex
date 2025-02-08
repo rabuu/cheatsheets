@@ -4,22 +4,22 @@
 Laufzeit: $\bigO(n)$
 
 \begin{algorithm}[H]
-	\If{$|A| \le 25$}{
-		\KwRet \enquote{brute force Lösung}\;
+	\If{$n \le 25$}{
+		\KwRet BruteForce($A$, $k$)\;
 	}
 	$m \gets \lceil\frac{n}{5}\rceil$\;
 	\For{$i \gets 1$ \KwTo $m$}{
-		$M_i \gets$ Med5($A[5i-4 \ldots 5i]$)\;
+		$M_i \gets$ MedOf5($A[5i-4 \ldots 5i]$)\;
 	}
-	mdm $\gets$ Sel($M$, $\lfloor\frac{m}{2}\rfloor$)\;
+	mdm $\gets$ QSel($M$, $\lfloor\frac{m}{2}\rfloor$)\;
 	$A_{<} \gets \{a\in A \mid a < \text{mdm}\}$\;
 	$A_{=} \gets \{a\in A \mid a = \text{mdm}\}$\;
 	$A_{>} \gets \{a\in A \mid a > \text{mdm}\}$\;
 	\uIf{$|A_{<}| \ge k$}{
-		\KwRet Sel($A_{<}$, $k$)\;
+		\KwRet QSel($A_{<}$, $k$)\;
 	}\uElseIf{$|A_{<}| + |A_{=}| \ge k$}{
 		\KwRet mdm\;
 	}\uElse{
-		\KwRet Sel($A_{>}$, $k- |A_{<}| - |A_{=}|$)\;
+		\KwRet QSel($A_{>}$, $k- |A_{<}| - |A_{=}|$)\;
 	}
 \end{algorithm}
