@@ -1,6 +1,8 @@
 \section*{Mediansuche}
 
 \subsection*{QuickSelect($A$, $k$) (bzw. MdM)}
+Laufzeit: $\bigO(n)$
+
 \begin{algorithm}[H]
 	\If{$|A| \le 25$}{
 		\KwRet \enquote{brute force Lösung}\;
@@ -21,5 +23,3 @@
 		\KwRet Sel($A_{>}$, $k- |A_{<}| - |A_{=}|$)\;
 	}
 \end{algorithm}
-
-Laufzeit: $\bigO(n)$

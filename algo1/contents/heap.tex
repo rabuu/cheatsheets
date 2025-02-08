@@ -1,21 +1,11 @@
-\section*{Datenstrukturen}
-
-\subsection*{Basics}
-\begin{itemize}
-	\item Array
-	\item Liste: einfach oder doppelt verkettet
-	\item Stack: LIFO, \textsc{Push}, \textsc{Pop}
-	\item Queue: FIFO, \textsc{Enqueue}, \textsc{Dequeue}
-\end{itemize}
-
-\subsection*{(Min-)Heap}
+\section*{(Min-) Heap}
 Vollst. Binärbaum mit Eigenschaft:
 
 $u$ Parent von $v \implies \key(u) \le \key(v)$
 
 Alle Operationen mit Laufzeit $\bigO(\log n)$.
 
-\subsubsection*{Heapify($u$)}
+\subsection*{Heapify($u$)}
 Annahme: Parent $u$ größer als Child.
 Aber beide Teilbäume erfüllen H-Eigenschaft.
 \begin{enumerate}
@@ -24,32 +14,32 @@ Aber beide Teilbäume erfüllen H-Eigenschaft.
 	\item Stoppe, wenn H-Eigenschaft erfüllt
 \end{enumerate}
 
-\subsubsection*{IncreaseKey($u$)}
+\subsection*{IncreaseKey($u$)}
 \begin{enumerate}
 	\item Erhöhe Schlüssel von $u$
 	\item Heapify($u$)
 \end{enumerate}
 
-\subsubsection*{DecreaseKey($H,u,b$)}
+\subsection*{DecreaseKey($H,u,b$)}
 \begin{enumerate}
 	\item Setze Schlüssel von $u$ auf $b$
 	\item Tausche hoch, bis H-Eigensch. erfüllt
 \end{enumerate}
 
-\subsubsection*{ExtractMin}
+\subsection*{ExtractMin}
 \begin{enumerate}
 	\item Minimum steht in Wurzel
 	\item Füge letztes Blatt als neue Wurzel ein
 	\item Heapify(Wurzel)
 \end{enumerate}
 
-\subsubsection*{InsertElement}
+\subsection*{InsertElement}
 \begin{enumerate}
 	\item Füge Element als letztes Blatt ein.
 	\item Analog zu DecreaseKey
 \end{enumerate}
 
-\subsubsection*{Initialisierung}
+\subsection*{Initialisierung}
 Heap kann in $\bigO(n)$ aufgebaut werden.
 
 \subsection*{PriorityQueue}

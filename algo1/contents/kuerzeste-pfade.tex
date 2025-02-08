@@ -1,4 +1,4 @@
-\section*{Graphen}
+\section*{Kürzeste Pfade in Graphen}
 
 \subsection*{Topologische Sortierung $\nu$}
 $(V,E)$ ist DAG. $\nu: V \to \{1,\ldots,|V|\}$ mit
@@ -9,14 +9,12 @@ $\forall (u,w)\in E: \nu(u) < \nu(w)$
 	\item Algorithmus hat Laufzeit $\bigO(n+m)$
 \end{itemize}
 
-\subsection*{Kürzeste Pfade}
-
-\subsubsection*{SSSP auf DAGs}
+\subsection*{SSSP auf DAGs}
 Relax in topologischer Sortierung.
 
 Laufzeit: $\bigO(n+m)$
 
-\subsubsection*{Dijkstra (SSSP)}
+\subsection*{Dijkstra (SSSP)}
 Annahme: Keine negativen Gewichte.
 \begin{algorithm}[H]
 	$d(s) \gets 0$\;
@@ -36,7 +34,9 @@ Implementiere mit PriorityQueue (die $V \setminus S$ enthält).
 
 Dann Laufzeit: $\bigO((|V|+|E|)\cdot\log|V|)$
 
-\subsubsection*{Bellman-Ford (SSSP)}
+\subsection*{Bellman-Ford (SSSP)}
+Laufzeit: $\bigO(|V|\cdot|E|)$
+
 \begin{algorithm}[H]
 	$d(s) \gets 0$\;
 	\ForAll{$v\in V \setminus \{s\}$}{
@@ -57,9 +57,10 @@ Dann Laufzeit: $\bigO((|V|+|E|)\cdot\log|V|)$
 	}
 	\KwRet \enquote{Kein negativer Zykel}\;
 \end{algorithm}
-Laufzeit: $\bigO(|V|\cdot|E|)$
 
-\subsubsection*{Floyd-Warshall (APSP)}
+\subsection*{Floyd-Warshall (APSP)}
+Laufzeit: $\bigO(|V|^3)$
+
 \begin{algorithm}[H]
 	$M \in \Mat(n\times n)$ mit Gewichten\;
 	$D^{(0)} \gets M$\;
@@ -73,4 +74,3 @@ Laufzeit: $\bigO(|V|\cdot|E|)$
 	}
 	\KwRet $D^{(n)}$\;
 \end{algorithm}
-Laufzeit: $\bigO(|V|^3)$
