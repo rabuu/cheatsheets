@@ -1,1 +1,19 @@
 \section*{Suchen}
+
+\subsection*{Binäre Suche}
+Annahme: Geordnetes endliches Array
+
+Laufzeit: $\bigO(\log n)$
+
+\subsection*{Exponentielle Suche}
+Annahme: Geordnetes unendl. Array
+\begin{enumerate}
+	\item Finde Intervall $A[2^{i-1}+1 \ldots 2^i]$
+	\item Binäre Suche auf diesem Intervall
+\end{enumerate}
+Laufzeit: $\bigO(\log n)$
+
+\subsection*{Interpolationssuche}
+Binäre Suche mit Tipp:
+
+$m = \ell + \lfloor \frac{a-A[\ell]}{A[r]-A[\ell]}\cdot(r-\ell)\rfloor$
