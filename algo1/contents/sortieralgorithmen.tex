@@ -96,4 +96,23 @@ $\Theta(n \log n)$, instable, in-place\\
 	\KwRet [QS($A_{<}$), $A_{=}$, QS($A_{>}$)]\;
 \end{algorithm}
 
-\subsection*{TODO: Counting-/RadixSort}
+\subsection*{CountingSort}
+Annahme: Alle Zahlen in $[1,K]$
+
+$\bigO(n+K)$, stable, nicht in-place
+\begin{enumerate}
+	\item Zähle Anzahl der Elemente
+	\item Addiere akkumuliert auf
+	\item Fülle Ausgabe rückwärts auf
+\end{enumerate}
+
+\subsection*{RadixSort}
+Annahme: $d$ ist max. Anzahl der Stellen
+
+$\bigO(d \cdot (n + K))$, stable, in-place
+
+\begin{algorithm}[H]
+	\For{$i \gets 1$ \KwTo $d$}{
+		stable sort $A$ nach Stelle $i$\;
+	}
+\end{algorithm}
