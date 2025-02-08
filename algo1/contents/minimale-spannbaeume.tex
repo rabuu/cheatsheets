@@ -2,6 +2,8 @@
 Gegeben: Zusammenhängender, ungerichteter Graph mit $w: E \to \R^+$.
 
 \subsection*{Jarn\'ik-Prim}
+Laufzeit: $\bigO(|E| \cdot \log|V|)$
+
 \begin{algorithm}[H]
 	\ForAll{$u\in V$}{
 		$u.\key \gets \infty$\;
@@ -20,9 +22,10 @@ Gegeben: Zusammenhängender, ungerichteter Graph mit $w: E \to \R^+$.
 	}
 	\KwRet $\{(v.pre, v) \mid v \in V\setminus\{s\}\}$
 \end{algorithm}
-Laufzeit: $\bigO(|E| \cdot \log|V|)$
 
 \subsection*{Kruskal}
+Laufzeit (mit UnionFind): $\bigO(|E|\cdot\log|V|)$
+
 \begin{algorithm}[H]
 	Sortiere Kanten aufsteigend nach $w$\;
 	$A \gets \emptyset$\;
@@ -35,4 +38,10 @@ Laufzeit: $\bigO(|E| \cdot \log|V|)$
 		}
 	}
 \end{algorithm}
-Laufzeit (mit UnionFind): $\bigO(|E|\cdot\log|V|)$
+
+\subsubsection*{UnionFind}
+\begin{itemize}
+	\item MakeSet($x$) erstellt Singleton $\{x\}$
+	\item Union($x$, $y$) vereinigt die Mengen, die $x$ und $y$ enthalten
+	\item FindSet($x$) gibt Repräsentanten der Menge mit $x$ zurück
+\end{itemize}
