@@ -14,7 +14,7 @@ Laufzeit: $\bigO(|E| \cdot \log|V|)$
 	\While{$PQ \neq \emptyset$}{
 		$u \gets$ ExtractMin($PQ$)\;
 		\ForAll{$v\in Adj(u)$}{
-			\If{$v\in Q$ und $w(u,v) < v.\key$}{
+			\If{$v\in PQ$ und $w(u,v) < v.\key$}{
 				$v.pre \gets u$\;
 				$v.\key \gets w(u,v)$\;
 			}

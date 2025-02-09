@@ -14,7 +14,7 @@ Lokal optimale Entscheidungen in der Hoffnung auf globale Optimalität.
 \subsubsection*{Fibonacci Zahlen}
 \begin{algorithm}[H]
 	$DP[0] \gets 1$, $DP[1] \gets 1$\;
-	\For{$i=3$ \KwTo $n$}{
+	\For{$i \gets 3$ \KwTo $n$}{
 		$DP[i] \gets DP[i-1] + DP[i-2]$\;
 	}
 	\KwRet $DP[n]$\;

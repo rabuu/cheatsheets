@@ -1,7 +1,7 @@
 \section*{Amortisierte Analyse}
 
 \subsection*{Aggregat Methode}
-Gesamtkosten von $n$ Operationen $K_n$.
+$n$ Operationen kosten insgesamt $K_n$.
 Amortisierte Kosten pro Operation: $\frac{K_n}{n}$.
 
 \subsection*{Account Methode}
@@ -11,6 +11,6 @@ und zeige, dass sie sich bei $n$ Operationen gegeneinander abbezahlen.
 \subsection*{Potential Methode}
 Definiere Potentialfunktion $\Phi$, die Zustand von Datenstruktur bewertet.
 \begin{itemize}
-	\item $\hat{c_i} = c_i + \Phi(D_i) - \Phi(D_{i-1})$
-	\item $\sum \hat{c_i} = \sum c_i + \Phi(D_n) - \Phi(D_0)$
+	\item $\hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1})$
+	\item $\sum \hat{c}_i = \sum c_i + \Phi(D_n) - \Phi(D_0)$
 \end{itemize}

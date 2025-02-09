@@ -7,7 +7,7 @@ $\forall (u,w)\in E: \nu(u) < \nu(w)$
 \begin{itemize}
 	\item Top. Sortierung ex. $\iff$ azyklisch
 	\item Algorithmus hat Laufzeit $\bigO(n+m)$
-		(Suche Knoten mit $\indeg=0$ und lösche diese dann samt Kanten)
+		(Suche Knoten mit $\indeg=0$ und lösche diesen dann samt Kanten)
 \end{itemize}
 
 \subsection*{SSSP auf DAGs}
@@ -65,15 +65,15 @@ Laufzeit: $\bigO(|V|\cdot|E|)$
 	\ForAll{$v\in V \setminus \{s\}$}{
 		$d(v) \gets \infty$\;
 	}
-	\For{$i=1$ \KwTo $|V|-1$}{
-		\ForEach{$(u,v)\in E$}{
+	\For{$i \gets 1$ \KwTo $|V|-1$}{
+		\ForAll{$(u,v)\in E$}{
 			\If{$d(v)>d(u)+w(u,v)$}{
 				$d(v) \gets d(u) + w(u,v)$\;
 				$\pi(v) \gets u$\;
 			}
 		}
 	}
-	\ForEach{$(u,v)\in E$}{
+	\ForAll{$(u,v)\in E$}{
 		\If{$d(v)>d(u)+w(u,v)$}{
 			\KwRet \enquote{Negativer Zykel}\;
 		}
