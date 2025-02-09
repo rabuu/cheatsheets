@@ -7,7 +7,7 @@ $f \in\Omega(g) \iff g \in \bigO(f)$
 
 $f \in \omega(g) \iff g\in o(f)$
 
-$f \in \Theta(g) \iff f\in\big(g) \land f \in\Omega(g)$
+$f \in \Theta(g) \iff f\in\bigO(g) \land f \in\Omega(g)$
 
 \subsection*{Regeln und (Gegen-)Beispiele}
 \begin{itemize}
@@ -15,4 +15,5 @@ $f \in \Theta(g) \iff f\in\big(g) \land f \in\Omega(g)$
 	\item $\log\log n \prec \log n \prec \log(n^{\log n})$
 	\item $\sqrt{n} \prec n\log n \prec n^d \prec 2^n \prec n! \prec n^n$
 	\item $3^n \notin \bigO(2^n)$
+	\item $\cos \notin \bigO(\sin) \land \cos \notin \Omega(\sin)$
 \end{itemize}

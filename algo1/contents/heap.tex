@@ -14,13 +14,13 @@ Aber beide Teilbäume erfüllen H-Eigenschaft.
 	\item Stoppe, wenn H-Eigenschaft erfüllt
 \end{enumerate}
 
-\subsection*{IncreaseKey($u$)}
+\subsection*{IncreaseKey($u,b$)}
 \begin{enumerate}
-	\item Erhöhe Schlüssel von $u$
+	\item Erhöhe Schlüssel von $u$ auf $b$
 	\item Heapify($u$)
 \end{enumerate}
 
-\subsection*{DecreaseKey($H,u,b$)}
+\subsection*{DecreaseKey($u,b$)}
 \begin{enumerate}
 	\item Setze Schlüssel von $u$ auf $b$
 	\item Tausche hoch, bis H-Eigensch. erfüllt
@@ -33,7 +33,7 @@ Aber beide Teilbäume erfüllen H-Eigenschaft.
 	\item Heapify(Wurzel)
 \end{enumerate}
 
-\subsection*{InsertElement}
+\subsection*{InsertElement($u$)}
 \begin{enumerate}
 	\item Füge Element als letztes Blatt ein.
 	\item Analog zu DecreaseKey

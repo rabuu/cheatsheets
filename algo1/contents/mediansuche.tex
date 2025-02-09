@@ -9,7 +9,7 @@ Laufzeit: $\bigO(n)$
 	}
 	$m \gets \lceil\frac{n}{5}\rceil$\;
 	\For{$i \gets 1$ \KwTo $m$}{
-		$M_i \gets$ MedOf5($A[5i-4 \ldots 5i]$)\;
+		$M[i] \gets$ MedOf5($A[5i-4 \ldots 5i]$)\;
 	}
 	mdm $\gets$ QSel($M$, $\lfloor\frac{m}{2}\rfloor$)\;
 	$A_{<} \gets \{a\in A \mid a < \text{mdm}\}$\;
