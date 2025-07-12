@@ -1,0 +1,30 @@
+\section*{Automaten}
+
+\subsection*{DEA $(Q,\Sigma,\delta,q_0,F)$}
+$\delta: Q \times \Sigma \to Q$, $q_0 \in Q$, $F \subseteq Q$.
+
+\subsubsection*{Produktautomat}
+TODO: WENN HIER NOCH PLATZ IST
+
+\subsection*{NEA $(Q, \Sigma, \delta, q_0, F)$}
+$\delta : Q \times (\Sigma \cup \{\e\}) \to \mathcal{P}(Q)$ (sonst wie DEA)
+\begin{itemize}
+	\item NEA und DEA sind äquivalent
+\end{itemize}
+
+\subsubsection*{Potenzautomat}
+TODO: WENN HIER NOCH PLATZ IST
+
+\subsection*{Minimalautomat}
+
+\subsubsection*{Äquivalente Zustände eines DEAs}
+$p \equiv q$: $\delta^*(p,w) \in F \iff \delta^*(q,w) \in F$
+
+\subsubsection*{Table filling algorithm}
+\begin{enumerate}
+	\item Tabelle für Zustände $\{z,z'\}$ mit $z \neq z'$
+	\item Markiere, wenn $z\in F$ und $z' \notin F$
+	\item $\forall \sigma\in\Sigma.$ Markiere, wenn\\$\{\delta(z,\sigma),\delta(z',\sigma)\}$ markiert
+	\item Wiederhole 3, bis keine Änderung
+	\item $\{z,z'\}$ unmarkiert $\implies z \equiv z'$
+\end{enumerate}
