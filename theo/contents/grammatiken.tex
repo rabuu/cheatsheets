@@ -1,0 +1,22 @@
+\section*{Grammatiken}
+
+\subsection*{Allgemeine Grammatik $(V,\Sigma,P,S)$}
+$\Sigma \cap V = \emptyset$, $P \subseteq (V \cup \Sigma)^+ \times (V \cup \Sigma)^*$, $S \in V$
+
+\subsection*{Kontextfreie Grammatik}
+$P \subseteq V \times (V \cup \Sigma)^*$
+
+\subsection*{Reguläre Grammatik}
+$P \subseteq V \times \Sigma \cup \Sigma V$
+
+Produktionen: $A \to a$ oder $A \to aB$
+
+\subsection*{Chomsky Hierachie}
+Regeln in $P$: $w_1 \to w_2$
+\begin{enumerate}[start=0]
+	\item Allgemein (TM)
+	\item Kontextsensitiv: $|w_1| \le |w_2|$
+	\item Kontextfrei: Typ 1 \& $w_1 \in V$ (Keller)
+	\item Regulär: Typ 2 \& $w_2 \in \Sigma \cup \Sigma V$ (DEA)
+\end{enumerate}
+($S \to \e$ immer erlaubt)

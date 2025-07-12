@@ -1,0 +1,52 @@
+\section*{Kontextfreie Sprachen}
+
+\subsection*{Chomsky Normalform (CNF)}
+Alle Produktionsregeln der Form:
+\begin{itemize}
+	\item $A \to BC$, wobei $B,C \neq S$
+	\item $A \to a$
+	\item ($S \to \e$)
+\end{itemize}
+
+$\forall$kontextfr. Spr. $\exists$ Gramm. in CNF
+\subsubsection*{Konstruktion}
+\begin{enumerate}
+	\item Ersetze $S$ durch $S'$\\
+		Füge hinzu: $S \to S'$
+
+	\item Eliminiere $A \to \e$ \\
+		Sonderfall: $X \to A$
+
+	\item Eliminiere $A \to B$ \\
+		Sonderfall 1: $B \to A$ \\
+		Sonderfall 2: $B \to X$, $A \to X$ gelöscht
+
+	\item Lange rechte Seiten aufsplitten
+
+	\item Ersetze Terminale ggf. d. Variablen
+\end{enumerate}
+
+\subsection*{CYK-Algorithmus}
+Gramm. in CNF und Wort $w$ mit $|w|=n$
+\begin{enumerate}
+	\item Tabelle: $n \times n$
+	\item Diagonale ablesen ($X \to a$)
+	\item Iterativ Nebendiagonalen ausfüllen
+	\item $w \in L \iff S \in \text{Ecke}$
+\end{enumerate}
+
+\subsection*{Kontextfreies Pumping-Lemma}
+$L$ kontextfrei. Dann:
+
+$\exists k\in\N: \forall w \in L, |w| \ge k: w = uvxyz$,
+
+$|vxy| \le k$, $|vy| > 0$, $\forall i \ge 0: uv^ixy^iz \in L$
+
+\subsection*{Kellerautomat $(Q,\Sigma,\Gamma,\delta,q_0,F)$}
+$\delta: Q \times (\Sigma \cup \{\e\}) \times (\Gamma \cup \{\e\}) \to \mathcal{P}(Q \times (\Gamma \cup \{\e\}))$
+
+\subsection*{Eigenschaften}
+\begin{itemize}
+	\item Kontextfrei $\iff$ $\exists$ Kellerautomat
+	\item Abgeschlossen unter $\cup$ (nicht $\cap$!)
+\end{itemize}
