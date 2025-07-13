@@ -1,0 +1,41 @@
+\section*{Berechenbarkeit}
+
+\subsection*{DTM $(Q,\Sigma,\Gamma,\delta,q_0,q_a,q_r)$}
+$\Sigma \subset \Gamma, \boxtimes \in \Gamma \setminus \Sigma$\\
+$\delta : Q \times \Gamma \to Q \times \Gamma \times \{L, R\}$
+
+\subsubsection*{NTM (äquivalent)}
+$\delta : Q \times \Gamma \to \mathcal{P}(Q \times \Gamma \times \{L, R\})$
+
+\subsection*{Sprachen}
+$\A$ erkennbar/aufzählbar, $\E$ entscheidbar
+
+$\E = \A \cap \text{co-$\A$}=\text{co-$\E$}$
+
+$\A$ und $\E$ abgeschlossen unter $\cup$, $\cap$ und $\circ$
+
+\subsubsection*{Beispiele und besondere Sprachen}
+\begin{itemize}
+	\item $A_{TM}=\{\langle M,w \rangle \mid\text{$M$ akz. $w$}\} \in \A \setminus \E$
+	\item $\overline{A_{TM}} \notin \A$
+	\item $\text{HALT}=\{\langle M,w \rangle \mid \text{$M$ hält $w$}\}$ gleich
+\end{itemize}
+
+\subsection*{Reduktion}
+$L_1 \preceq_m L_2 \iff \exists f: w\in L_1 \Leftrightarrow f(w) \in L_2$,\\
+wobei $f$ berechenbar sein muss.
+
+\subsubsection*{Eigenschaften}
+$L_1 \preceq_m L_2$, dann:
+\begin{itemize}
+	\item $\overline{L_1} \preceq_m \overline{L_2}$
+	\item $L_2 \in \E \implies L_1 \in \E$
+	\item $L_2 \in \A \implies L_1 \in \A$
+\end{itemize}
+
+\subsection*{Satz von Rice}
+Sei $\mathcal{U}$ eine nicht-triviale Eigenschaft.
+Dann: $L_{\mathcal{U}} = \{\langle M \rangle \mid L(M) \in \mathcal{U}\} \notin \E$
+
+\subsubsection*{Nicht-triviale Eigenschaft $\mathcal{U}$}
+$\mathcal{U} \subseteq \A$, aber $\emptyset \neq \mathcal{U} \neq \A$
