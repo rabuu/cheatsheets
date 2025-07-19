@@ -13,7 +13,12 @@ $\emptyset, \e$ und $x \in \Sigma$ sind reg. Ausdrücke.
 $R_1 \cup R_2$, $R_1 \circ R_2$ und $R^*$ sind reg. Ausdr.
 
 \subsubsection*{Reg. Ausdruck $\longrightarrow$ DEA}
-TODO: WENN HIER NOCH PLATZ IST
+Konstruiere NEA:
+\begin{itemize}
+	\item $\cup$: Neuer Start, $\e$ zu beiden Starts
+	\item $\circ$: $\e$ von Endzuständen zu Start
+	\item $*$: Neuer Start, $\e$ zu alten Start, $\e$ von Endzuständen zu altem Start
+\end{itemize}
 
 \subsubsection*{DEA $\longrightarrow$ reg. Ausdruck}
 $R_{ij}^{(k)}$: von $i$ zu $j$, nutze nur $1,\ldots,k$
