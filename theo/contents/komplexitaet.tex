@@ -1,0 +1,47 @@
+\section*{Komplexität}
+$t_M(w)$ Schritte von $M$ auf $w$
+
+$\text{Time}_M(n) = \max\{t_M(w) \mid |w|=n\}$
+
+$\text{TIME}(f(n)) = \{L \subseteq \{0,1\}^* \mid \exists \text{DTM $M$}: \text{$M$ entscheidet $L$}, \text{Time}_M(n)\in\bigO(f(n))\}$
+
+$\text{NTIME}(f(n)) = \{L \subseteq \{0,1\}^* \mid \exists \text{NTM $N$}: L(N)=L, \text{Time}_N(n)\in\bigO(f(n))\}$
+
+$\displaystyle P = \bigcup_{k\in\N}\text{TIME}(n^k)$\quad (NP mit NTIME)
+
+\begin{itemize}
+	\item Details der TM sind (fast) egal
+	\item $\text{TIME}(f(n)) \subseteq \text{SPACE}(f(n))$
+	\item regulär/kontextfrei $\implies$ P
+	\item $P \subseteq NP$
+\end{itemize}
+
+\subsection*{Beweis für $L \in P$}
+Gib polynomielle DTM mit $L(M)=L$ an.
+
+\subsection*{Beweis für $L \in NP$}
+Gib polynomiellen Verifizier an.
+
+Zeuge $z$: polyn. in Eingabelänge.
+
+Verifizier in polynomieller Laufzeit.
+
+\subsection*{Polynomzeit-Reduktion}
+Wie normale Reduktion, aber $f$ muss in polynomieller Zeit berechenbar sein.
+
+\subsubsection*{Eigenschaften}
+\begin{itemize}
+	\item $A \preceq_p B \land B \preceq_p C \implies A \preceq_p C$
+	\item $A \preceq_p B \land B \in P \implies A \in P$
+\end{itemize}
+
+\subsection*{NP-Vollständigkeit (NPC)}
+$L$ NP-schwer: $\forall L'\in NP: L' \preceq_p L$
+
+$L$ NP-vollständig: $L \in NP \land L$ NP-schwer
+
+\subsubsection*{Satz von Cook-Levin}
+SAT ist NP-vollständig.
+
+\subsubsection*{Beweis für $L$ NP-vollständig}
+Zeige: $L \in NP$ und $L' \preceq_p L$ für ein NP-schweres Problem $L'$.
