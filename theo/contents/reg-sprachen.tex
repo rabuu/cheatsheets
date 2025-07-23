@@ -1,8 +1,8 @@
-\section*{Reguläre Sprachen (REG)}
+\section*{Reguläre Sprachen}
 $\iff$: DEA, reg. Ausdr., reg. Grammatik
-\begin{itemize}
-	\item $L \text{ endlich} \implies L \in \text{REG}$
-\end{itemize}
+
+\subsection*{Endliche Sprachen sind regulär}
+$L \text{ endlich} \implies L \in \text{REG}$
 
 \subsection*{Abgeschlossenheit}
 $\overline{L}$, $L_1 \cup L_2$, $L_1 \cap L_2$, $L_1 \setminus L_2$, $L_1 L_2$, $L^*$
@@ -37,11 +37,42 @@ $
 
 \subsection*{Pumping-Lemma}
 $L \in \text{REG}$. Dann:\\
-$\exists k \in \N:\forall w \in L, |w| \ge k: w = xyz$,
+$\exists k \in \N:\forall w \in L, |w| \ge k: \exists w = xyz$,
 
 $|xy| \le k$, $|y| > 0$, $\forall i \ge 0: xy^i z \in L$
+
+\subsubsection*{Beispiel: $\{0^n 1^n \mid n \in \N\}$ nicht regulär}
+Sei $k \in \N$ beliebig.
+
+Wähle Wort $w=0^k 1^k$ mit $|w|=2k>k$.
+
+Sei $w=xyz$ eine beliebige Zerlegung mit\\
+$|xy| \le k$ und $|y| > 0$.
+
+Dann ist $w = 0^{|xy|}0^{k-|xy|}1^k$.
+
+Wähle $i=2$, dann gilt:\\
+$xy^iz=xyyz=0^{k+|y|}1^k \notin L$, da $k+|y|\neq k$.
+
+$L$ nicht pumpbar, also nicht regulär.
 
 \subsection*{Myhill-Nerode}
 $\displaystyle x \sim_L y \iff \forall z\in \Sigma^*: xz \in L \Leftrightarrow yz \in L$
 
 $L \in \text{REG} \iff |\{[u]_{\sim_L} \mid u \in \Sigma^*\}| < \infty$
+
+Äquivalenzklassen bilden Zustände für Minimalautomaten.
+
+\subsubsection*{Beispiel: $\{w \in \Sigma^* \mid \text{4 teilt $|w|$}\}$ regulär}
+Äquivalenzklassen:
+\begin{align*}
+	[\e]_L&=\{w \mid |w| \equiv 0 \pmod4\}\\
+	[a]_L&=\{w \mid |w| \equiv 1 \pmod4\}\\
+	[aa]_L&=\{w \mid |w| \equiv 2 \pmod4\}\\
+	[aaa]_L&=\{w \mid |w| \equiv 3 \pmod4\}
+\end{align*}
+Endliche viele Äq.klassen, also regulär.
+
+\subsubsection*{Beispiel: $\{a^n b^m \mid m > n\}$ nicht regulär}
+$a^i \nsim_L a^{i+k}$ für $k > 0$,\\
+da $a^i b^{i+1} \in L$, aber $a^{i+k}b^{i+1} \notin L$.
