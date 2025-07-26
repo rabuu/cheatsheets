@@ -17,3 +17,39 @@ $P(X \cap Y) = P(X) \cdot P(Y)$
 $\displaystyle \mathbb{E}(X) = \sum_i x_i \cdot P(X = x_i)$
 
 $\displaystyle \text{Var}(X) = \mathbb{E}[(X-\mathbb{E}(X))^2] = \mathbb{E}(X^2) - \mathbb{E}(X)^2$
+
+\subsection*{Modelle}
+Hypothesenklasse: Menge an Funktionen
+
+\subsubsection*{Parametrisierte Modelle}
+Parameter $\theta$ definiert Funktion im Hypothesenraum
+
+Finde $\theta$ mit minimalem Loss auf Daten.
+
+\subsubsection*{Beispiel: Rechtecksklassifikation}
+Hypothesenklasse $\mathcal{H}$: Menge aller Rechtecke.
+
+$h\in\mathcal{H}$ definiert durch $\theta=(o_1,o_2,u_1,u_2)$.
+
+\subsubsection*{Generalisierung}
+Wie gut ist ein Modell auf neuen Daten.
+
+Underfitting: Komplexität $\mathcal{H} <$ Daten
+
+Overfitting: Komplexität $\mathcal{H} >$ Daten
+
+\subsubsection*{No-Free-Lunch Theorem}
+Ein Algorithmus kann nur für ein spezifisches Problem geeignet sein.
+
+Es gibt nicht den besten Algorithmus.
+
+\subsection*{Modellselektion}
+Vermeide: Ganzen Datensatz benutzen (Memorisierung)
+
+\subsubsection*{Test- und Validierungsset}
+Teile das Dataset auf in: Trainingsset, Validierungsset, Testset
+
+\subsubsection*{$K$-fold Kreuzvalidierung}
+Wir teilen auf: $K$ Sätze von Trainings-/Validierungssets, ein Satz Testset.
+
+Nutze nacheinander eins der $K$ Sets als Validation, Mittelung über alle Durchführungen.
