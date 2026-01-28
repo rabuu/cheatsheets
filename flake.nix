@@ -10,9 +10,13 @@
         pkgs = import nixpkgs { inherit system; };
       in {
         devShells.default = pkgs.mkShell {
+          name = "cheatsheets";
           packages = with pkgs; [
             texlive.combined.scheme-full
             texlab
+
+            typst
+            tinymist
           ];
         };
       }
