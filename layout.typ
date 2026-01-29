@@ -6,7 +6,7 @@
   margin-y: 2.2em,
   columns: 4,
   column-gutter: 1em,
-  font-size: 10pt,
+  font-size: 9pt,
   heading-size: auto,
   colors: (
     color.orange,
@@ -46,6 +46,8 @@
       v(0.1em)
     },
   )
+
+  set text(size: font-size)
 
   set std.columns(gutter: column-gutter)
 
