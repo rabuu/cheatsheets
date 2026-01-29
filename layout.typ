@@ -72,8 +72,8 @@
       radius: 0.6mm,
       inset: 1.0mm,
       width: 100%,
-      above: 0.8em,
-      below: 0.5em,
+      above: 1em,
+      below: 0.4em,
       fill: color,
       smallcaps(it.body),
     )
