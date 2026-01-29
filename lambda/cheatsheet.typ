@@ -1,4 +1,5 @@
 #import "../layout.typ": *
+#import "@preview/curryst:0.6.0": *
 
 #show: layout.with(title: "λ-Kalkül und Kombinatorische Logik")
 
@@ -13,6 +14,8 @@
 #let be = math.class("relation", $triangle.r_beta$)
 #let beq = math.class("relation", $eq_beta$)
 #let eta1 = math.class("relation", $triangle.r_(1 eta)$)
+#let be-eta = math.class("relation", $triangle.r_(beta eta)$)
+#let beq-eta = math.class("relation", $eq_(beta eta)$)
 #let num = math.underline
 
 #let KN = math.class("unary", math.bold("N"))
@@ -85,13 +88,62 @@ TODO
 TODO
 
 = Formale Theorien λβ / λβη
-TODO
+
+#stack(
+  dir: ltr,
+  prooftree(rule(label: [(α)], $lambda x.M = lambda y.M[y\/x]$)),
+  [, $space y in.not FV(M)$],
+)
+#stack(
+  dir: ltr,
+  spacing: 1em,
+  prooftree(rule(label: [(β)], $(lambda x.M)N = M[N\/x]$)),
+  prooftree(rule(label: [(ρ)], $M = M$)),
+)
+#stack(
+  dir: ltr,
+  spacing: 2em,
+  prooftree(dir: ttb, rule(label: [(σ)], $M = N$, $N = M$)),
+  prooftree(rule(label: [(τ)], $M = N$, $N = P$, $M = P$)),
+)
+#stack(
+  dir: ltr,
+  spacing: 2em,
+  prooftree(rule(label: [(μ)], $N = N'$, $M N = M N'$)),
+  prooftree(rule(label: [(ν)], $M = M'$, $M' N = M' N$)),
+)
+#stack(
+  dir: ltr,
+  spacing: 0.5em,
+  prooftree(rule(label: [(ξ)], $M = M'$, $lambda x.M = lambda x.M'$)),
+  stack(
+    dir: ltr,
+    prooftree(rule(label: [(η)], $lambda x.M x = M$)),
+    [, $space x in.not FV(M)$],
+  ),
+)
+
+== Abwandlungen
+$λ β_triangle.r$: ohne (η) (σ)
+#h(2.2em)
+λβ: ohne (η)
+
+$λ β η_triangle.r$: ohne (σ)
+#h(3em)
+λβη: alles
 
 == Korrektheit und Vollständigkeit
-TODO
+$
+  M & be N       & <==> & "λβ"_triangle.r  & tack & M = N \
+  M & #be-eta N  & <==> & "λβη"_triangle.r & tack & M = N \
+  M & beq N      & <==> & "λβ"             & tack & M = N \
+  M & #beq-eta N & <==> & "λβη"            & tack & M = N
+$
 
 = Unentscheidbarkeitsresultate
-TODO
+- $"NF"_beta := {M | M "hat β-NF"}$
+- $beq$
+- Prädikatenlogik erster Stufe PL
 
 = Kombinatorische Logik
 
