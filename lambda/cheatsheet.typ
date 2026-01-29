@@ -2,39 +2,81 @@
 
 #show: layout.with(title: "λ-Kalkül und Kombinatorische Logik")
 
+#show math.equiv: math.scripts
+#show math.eq: math.scripts
+
+#let FV = "FV"
+#let al1 = $equiv_(1 alpha)$
+#let al = $equiv_alpha$
+#let be1 = math.class("relation", $triangle.r_(1 beta)$)
+#let be1-rev = math.class("relation", $triangle.l_(1 beta)$)
+#let be = math.class("relation", $triangle.r_beta$)
+#let beq = math.class("relation", $eq_beta$)
+#let eta1 = math.class("relation", $triangle.r_(1 eta)$)
+#let num = math.underline
+
+#let KN = math.class("unary", math.bold("N"))
+#let KV = math.class("unary", math.bold("V"))
+#let KD = math.class("unary", math.bold("D"))
+#let KR = math.class("unary", math.bold("R"))
+
 = λ-Kalkül
 
 == Syntax
-TODO
+TODO?
 
 == Substitution
-TODO
++ $x[N\/x] := N$
++ $a[N\/x] := a$, falls $x eq.not a$
++ $(P Q)[N\/x] := (P[N\/x] Q[N\/x])$
++ $(lambda x.P)[N\/x] := lambda x.P$
++ $(lambda y.P)[N\/x] := lambda y.P[N\/x]$,\ falls $x eq.not y$ und nicht: $y in FV(N)$ und $x in FV(P)$.
++ $(lambda y.P)[N\/x] := lambda z.P[z\/y][N\/x]$, $z in.not FV(N P)$.
 
 == α-Konversion
-TODO
+$P[lambda x.M] al1 P[lambda y.M[y\/x]]$, $y in.not FV(M)$
+
+$P al Q :<==> P al1 ... al1 Q$
+
+=== Einige Lemmata
+TODO?
 
 == β-Kontraktion
-TODO
+$P[(lambda x.M)N] be1 P[M[N\/x]]$
+
+$P be Q :<==> P #stack(be1, al1) ... #stack(be1, al1) Q$
+
+$P beq Q :<==> P #stack(be1, be1-rev, al1) ... #stack(be1, be1-rev, al1) Q$
 
 == Church-Rosser-Theorem
-TODO
+$P be M and P be N ==> exists T: M be T and N be T$
+
+$M beq N ==> exists T: M be T and N be T$
 
 == L- und QL-Reduktionsfolgen
 TODO
 
+$M$ hat β-NF $==>$ jede mit $M$ beginnende L-Reduktionsfolge terminiert.
+
 == Fixpunktkombinatoren
-TODO
+$Y x beq x(Y x) quad$ bzw. $quad Y x be x(Y x)$
+
+TODO: Konkrete Terme
+
+$forall N: exists M: forall n >= 0: M y_1 ... y_n beq N[M\/x]$
 
 == η-Kontraktion
-TODO
+$P[lambda x.M x] eta1 P[M]$, $quad x in.not FV(M)$
 
 = λ-Def.barkeit rek. Funktionen
 
 == Church-Ziffern
-TODO
+$num(0) = lambda x y.y, quad num(1) = lambda x y. x y, quad num(2) = lambda x y. x(x y), quad ...$
 
-== Kombinatoren
-TODO
+- $KN num(k) beq num(k+1)$
+- $KV num(k+1) beq num(k)$
+- $KD P Q num(0) beq P quad KD P Q num(k+1) beq Q$
+- $KR P Q num(0) beq P quad KR P Q num(k+1) beq Q num(k) (KR P Q num(k))$
 
 == Primitiv-rekursive Funktionen
 TODO
