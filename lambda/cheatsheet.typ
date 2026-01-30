@@ -124,13 +124,13 @@ TODO
 )
 
 == Abwandlungen
-$λ β_triangle.r$: ohne (η) (σ)
-#h(2.2em)
-λβ: ohne (η)
-
-$λ β η_triangle.r$: ohne (σ)
-#h(3em)
-λβη: alles
+#grid(
+  columns: 2,
+  column-gutter: 2em,
+  row-gutter: 1em,
+  [ λβ: ohne (η) ], [ $λ β_triangle.r$: ohne (η) (σ) ],
+  [ λβη: alles ], [ $λ β η_triangle.r$: ohne (σ) ],
+)
 
 == Korrektheit und Vollständigkeit
 $
