@@ -7,21 +7,31 @@
 #show math.eq: math.scripts
 
 #let FV = "FV"
-#let al1 = $equiv_(1 alpha)$
-#let al = $equiv_alpha$
-#let be1 = math.class("relation", $triangle.r_(1 beta)$)
-#let be1-rev = math.class("relation", $triangle.l_(1 beta)$)
-#let be = math.class("relation", $triangle.r_beta$)
-#let beq = math.class("relation", $eq_beta$)
-#let eta1 = math.class("relation", $triangle.r_(1 eta)$)
-#let be-eta = math.class("relation", $triangle.r_(beta eta)$)
-#let beq-eta = math.class("relation", $eq_(beta eta)$)
+
+#let rel(r) = math.class("relation", r)
+#let al1 = rel($equiv_(1 alpha)$)
+#let al = rel($equiv_alpha$)
+#let be1 = rel($triangle.r_(1 beta)$)
+#let be1-rev = rel($triangle.l_(1 beta)$)
+#let be = rel($triangle.r_beta$)
+#let beq = rel($eq_beta$)
+#let eta1 = rel($triangle.r_(1 eta)$)
+#let be-eta = rel($triangle.r_(beta eta)$)
+#let beq-eta = rel($eq_(beta eta)$)
+#let weak1 = rel($triangle.r_(1 w)$)
+#let weak = rel($triangle.r_w$)
+#let weakeq = rel($eq_w$)
+
 #let num = math.underline
 
-#let KN = math.class("unary", math.bold("N"))
-#let KV = math.class("unary", math.bold("V"))
-#let KD = math.class("unary", math.bold("D"))
-#let KR = math.class("unary", math.bold("R"))
+#let combinator(k) = math.class("unary", math.bold(k))
+#let KN = combinator("N")
+#let KV = combinator("V")
+#let KD = combinator("D")
+#let KR = combinator("R")
+#let KK = combinator("K")
+#let KS = combinator("S")
+#let KI = combinator("I")
 
 = λ-Kalkül
 
@@ -151,37 +161,106 @@ $
 TODO
 
 == Schwache Kontraktion
-TODO
+$U[KK X Y] weak1 U[X]$
+
+$U[KS X Y Z] weak1 U[X Z (Y Z)]$
 
 == Formale Theorie CLw
-TODO
+#stack(
+  dir: ltr,
+  spacing: 1em,
+  prooftree(rule(label: [(K)], $KK X Y = X$)),
+  prooftree(rule(label: [(S)], $KS X Y Z = X Z (Y Z)$)),
+)
+
+Dazu: (ρ), (τ), (μ), (ν)
+
+Für $"CLw"_triangle.r$: (σ)
+
+$
+  X & weakeq Y & <==> & "CLw"            & tack & X = Y \
+  X & weak Y   & <==> & "CLw"_triangle.r & tack & X = Y \
+$
 
 = Verhältnis zw. λ-Kalk. und CL
 
 == CL $arrow.squiggly$ λ
-TODO
++ $x_lambda := x$
++ $KK_lambda := lambda x y.x$
++ $KS_lambda := lambda x y z. x z (y z)$
++ $(X Y)_lambda := X_lambda Y_lambda$
+
+$X weak Y ==> X_lambda be Y_lambda quad X weakeq Y ==> X_lambda beq Y_lambda$
 
 == λ $arrow.squiggly$ CL
-TODO
++ $x_"CL" := x$
++ $(M N)_"CL" := M_"CL" N_"CL"$
++ $(lambda x.M)_"CL" := [x].M_"CL"$, wobei:
+  + $[x].x := KS KK KK$
+  + $[x].Y := KS Y$, falls $x in.not FV(Y)$
+  + $[x].U x := U$, falls $x in.not FV(U)$
+  + $[x].(U V) := KS([x].U)([x].V)$, sonst.
+
+  $([x].Y) Z weak Y[Z\/x]$
 
 == Kombinatorische Vollständigkeit
-TODO
+$V$ mit ${x_1, ..., x_n} subset.eq FV(V)$
+
+Dann existiert $U$, in dem $x_1, ..., x_n$ nicht vorkommen, so dass:
+$U X_1 ... X_n weak V[X_1\/x_1]...[X_n\/x_n]$
 
 == Unterschiede
-TODO
+Folgendes gilt _nicht_:
+$
+  M_"CL" & weak   & N_"CL" & ==> &  M be N \
+  M_"CL" & weak   & N_"CL" & <== &  M be N \
+  M_"CL" & weakeq & N_"CL" & ==> & M beq N \
+  M_"CL" & weakeq & N_"CL" & ==> & M beq N \
+$
+
+TODO: Eta?
 
 = Einfach getypter λ-Kalkül
 
-== λ$->$
-TODO
+== Kalkül λ$->$
+#prooftree(rule(label: [(Id)], $Gamma, x:sigma tack x: sigma$))
+#prooftree(rule(label: [($->$I)], $Gamma, x:sigma tack M: tau$, $Gamma tack (lambda x.M): sigma -> tau$))
+#prooftree(rule(label: [($->$E)], $Gamma tack M: sigma -> tau$, $Gamma tack N: sigma$, $Gamma tack (M N) : tau$))
+
+$Gamma tack M:sigma ==> M$ ist stark normalisierbar.
 
 == Typisierungsalgorithmus
-TODO
+=== Gleichungssystem $E(Gamma tack M: sigma)$:
+
+$E(Gamma tack x:sigma) := {sigma = Gamma(x)}$
+
+$E(Gamma tack lambda x.M : sigma) := \ quad quad {sigma = alpha -> beta} union E(Gamma, x:alpha tack M: beta)$
+
+$E(Gamma tack M N : sigma) := \ quad quad E(Gamma tack M: alpha -> sigma) union E(Gamma tack N: alpha)$
+
+=== Unifikationsregeln:
+#prooftree(rule(label: [(id)], $E union.dot {sigma = sigma}$, $E$))
+#prooftree(rule(label: [(sym)], $E union.dot {sigma = alpha}$, [$sigma$ keine Typvariable], $E union {alpha = sigma}$))
+#prooftree(rule(label: [(fail)], $E union.dot {alpha = sigma}$, [$alpha$ in $sigma$], [FAIL]))
+#prooftree(rule(
+  label: [(subst)],
+  $E union.dot {alpha = sigma}$,
+  [$alpha$ nicht in $sigma$],
+  [$alpha$ in $E$],
+  $E[sigma\/alpha] union {alpha = sigma}$,
+))
+#prooftree(rule(
+  label: [(func)],
+  $E union.dot {tau_1 -> tau_2 = sigma_1 -> sigma_2}$,
+  $E union {tau_1 = sigma_1, tau_2 = sigma_2}$,
+))
 
 = Curry-Howard-Isomorphismus
+
+== Kalkül P$->$
 TODO
 
 = Polymorph getypter λ-Kalkül
 
-== λ2
+== Kalkül λ2
 TODO
