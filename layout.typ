@@ -2,8 +2,7 @@
   name: "Rasmus Buurman",
   title: none,
   flipped: true,
-  margin-x: 1em,
-  margin-y: 2.2em,
+  margin: 1em,
   columns: 4,
   column-gutter: 1em,
   font-size: 9pt,
@@ -27,7 +26,7 @@
   set page(
     paper: "a4",
     flipped: flipped,
-    margin: (x: margin-x, y: margin-y),
+    margin: (x: margin, top: margin + 1.2em, bottom: margin),
     columns: columns,
     header: {
       grid(
