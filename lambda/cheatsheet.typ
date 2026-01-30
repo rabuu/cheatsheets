@@ -263,4 +263,6 @@ TODO
 = Polymorph getypter λ-Kalkül
 
 == Kalkül λ2
-TODO
+Zusätzlich zu λ$->$:
+#prooftree(rule(label: [($forall$I)], $Gamma tack M:sigma$, $a in.not FV(Gamma)$, $Gamma tack M: forall alpha . sigma$))
+#prooftree(rule(label: [($forall$E)], $Gamma tack M: forall alpha . sigma$, $Gamma tack M: sigma[tau\/alpha]$))
