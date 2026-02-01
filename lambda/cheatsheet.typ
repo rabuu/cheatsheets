@@ -105,7 +105,14 @@ $num(0) = lambda x y.y, quad num(1) = lambda x y. x y, quad num(2) = lambda x y.
 TODO
 
 == Partiell-rekursive Funktionen
-TODO
+$g, h$ prim.rek. \
+$f(arrow(m)) = h(mu k. g(arrow(m), k) = 0)$ partiell rekursiv.
+
+Dabei $mu k. g(arrow(m), k) = 0$:
+- das kleinste $k$, so dass $g(arrow(m), k) = 0$,
+- undefiniert, falls kein solches $k$ existiert.
+
+λ-Term $<==>$ partiell-rekursive Funktion
 
 = Formale Theorien λβ / λβη
 
