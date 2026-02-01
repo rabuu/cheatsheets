@@ -186,6 +186,16 @@ $
   M & #beq-eta N & <==> & "λβη"            & tack & M = N
 $
 
+== Alternative Regeln für Extensionalität
+#prooftree(rule(label: [(χ)], [$M P = N P$ für alle $P$], $M = N$))
+#stack(
+  dir: ltr,
+  prooftree(rule(label: [(ζ)], $M x = N x$, $M = N$)),
+  [, $space x in.not FV(M N)$],
+)
+
+(η) kann gegen eine der beiden ausgetauscht werden.
+
 = Unentscheidbarkeitsresultate
 - $"NF"_beta := {M | M "hat β-NF"}$
 - $beq$
@@ -213,6 +223,7 @@ Dazu: (ρ), (τ), (μ), (ν)
 
 Für $"CLw"_triangle.r$: (σ)
 
+=== Korrektheit und Vollständigkeit
 $
   X & weakeq Y & <==> & "CLw"            & tack & X = Y \
   X & weak Y   & <==> & "CLw"_triangle.r & tack & X = Y \
@@ -239,6 +250,10 @@ $X weak Y ==> X_lambda be Y_lambda quad X weakeq Y ==> X_lambda beq Y_lambda$
 
   $([x].Y) Z weak Y[Z\/x]$
 
+  $(X_lambda)_"CL" = X$
+
+  $(M_"CL")_lambda #beq-eta M$
+
 == Kombinatorische Vollständigkeit
 $V$ mit ${x_1, ..., x_n} subset.eq FV(V)$
 
@@ -253,8 +268,6 @@ $
   M_"CL" & weakeq & N_"CL" & ==> & M beq N \
   M_"CL" & weakeq & N_"CL" & ==> & M beq N \
 $
-
-TODO: Eta?
 
 = Einfach getypter λ-Kalkül
 
