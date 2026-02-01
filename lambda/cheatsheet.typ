@@ -32,6 +32,8 @@
 #let KK = combinator("K")
 #let KS = combinator("S")
 #let KI = combinator("I")
+#let KY = combinator("Y")
+#let KTH = combinator(math.Theta)
 
 = λ-Kalkül
 
@@ -74,14 +76,24 @@ $P be M and P be N ==> exists T: M be T and N be T$
 $M beq N ==> exists T: M be T and N be T$
 
 == L- und QL-Reduktionsfolgen
-TODO
 
-$M$ hat β-NF $==>$ jede mit $M$ beginnende L-Reduktionsfolge terminiert.
+=== L-Reduktionsfolge
+$beta$-Redktionsfolge, bei der _immer_ das linkeste Redex kontrahiert wird.
+
+=== QL-Reduktionsfolge
+$beta$-Redktionsfolge, bei der "immer wieder" das linkeste Redex kontrahiert wird.
+
+
+=== Normalisierung
+$M$ besitzt eine β-Normalform\
+$==>$ jede L/QL-Reduktionsfolge $(M,...)$ terminiert.
 
 == Fixpunktkombinatoren
 $Y x beq x(Y x) quad$ bzw. $quad Y x be x(Y x)$
 
-TODO: Konkrete Terme
+$KY := lambda x. (lambda y. x (y y)) (lambda y. x (y y))$
+
+$KTH := (lambda z x. x (z z x))(lambda z x. x (z z x))$
 
 $forall N: exists M: forall n >= 0: M y_1 ... y_n beq N[M\/x]$
 
