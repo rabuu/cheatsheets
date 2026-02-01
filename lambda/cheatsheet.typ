@@ -92,6 +92,16 @@ $num(0) = lambda x y.y, quad num(1) = lambda x y. x y, quad num(2) = lambda x y.
 - $KR P Q num(0) beq P quad KR P Q num(k+1) beq Q num(k) (KR P Q num(k))$
 
 == Primitiv-rekursive Funktionen
++ $0 : NN^0 -> NN$
++ $s: NN -> NN$ mit $s(m) = m + 1$
++ $pi^n_i : NN^n -> NN$ mit $pi^n_i (arrow(m_n)) = m_i$, $n >= 1, i <= n$
++ $f: NN^n -> NN$ mit $f(arrow(m_n)) = h(g_1(arrow(m_n)),...,g_k (arrow(m_n)))$,\
+  $h: NN^k -> NN$ und alle $g_i: NN^n -> NN$ prim.rek.
++ $f: NN^(k+1) -> NN$ mit $f(0, arrow(m_k)) = g(arrow(m_k))$\
+  und $f(n+1, arrow(m_k)) = h(n, f(n, arrow(m_k)), arrow(m_k))$,\
+  $g: NN^k -> NN$ und $h:NN^{k+2} -> NN$ prim.rek., $k >= 0$
+
+=== λ-Übersetzung
 TODO
 
 == Partiell-rekursive Funktionen
