@@ -36,7 +36,7 @@
 = λ-Kalkül
 
 == Syntax
-TODO?
+$x quad | quad (M space N) quad | quad (lambda x. M)$
 
 == Substitution
 + $x[N\/x] := N$
@@ -175,7 +175,7 @@ $
 = Kombinatorische Logik
 
 == Syntax
-TODO
+$x quad | quad KK quad | quad KS quad | quad (X space Y)$
 
 == Schwache Kontraktion
 $U[KK X Y] weak1 U[X]$
