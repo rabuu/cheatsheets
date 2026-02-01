@@ -52,7 +52,14 @@ $P[lambda x.M] al1 P[lambda y.M[y\/x]]$, $y in.not FV(M)$
 $P al Q :<==> P al1 ... al1 Q$
 
 === Einige Lemmata
-TODO?
+Annahme: keine Namenskollisionen.
+- $z in.not FV(M) => M[z\/x][P\/z] al M[P\/x]$
+- $z in.not FV(M) => M[z\/x][x\/z] al M$
+- $M[Q\/x][P\/x] al M[(Q[P\/x])\/x]$
+- $y in.not FV(P)$\
+  $=> M[Q\/y][P\/x] al M[P\/x][(Q[P\/x])\/y]$
+- $y in.not FV(P), x in.not FV(Q)$\
+  $=> M[Q\/y][P\/x] al M[P\/x][Q\/y]$
 
 == β-Kontraktion
 $P[(lambda x.M)N] be1 P[M[N\/x]]$
