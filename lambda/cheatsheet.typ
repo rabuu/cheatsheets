@@ -142,25 +142,25 @@ Dabei $mu k. g(arrow(m), k) = 0$:
 )
 #stack(
   dir: ltr,
-  spacing: 1em,
+  spacing: 1fr,
   prooftree(rule(label: [(β)], $(lambda x.M)N = M[N\/x]$)),
   prooftree(rule(label: [(ρ)], $M = M$)),
 )
 #stack(
   dir: ltr,
-  spacing: 2em,
+  spacing: 1fr,
   prooftree(dir: ttb, rule(label: [(σ)], $M = N$, $N = M$)),
   prooftree(rule(label: [(τ)], $M = N$, $N = P$, $M = P$)),
 )
 #stack(
   dir: ltr,
-  spacing: 2em,
+  spacing: 1fr,
   prooftree(rule(label: [(μ)], $N = N'$, $M N = M N'$)),
   prooftree(rule(label: [(ν)], $M = M'$, $M' N = M' N$)),
 )
 #stack(
   dir: ltr,
-  spacing: 0.5em,
+  spacing: 1fr,
   prooftree(rule(label: [(ξ)], $M = M'$, $lambda x.M = lambda x.M'$)),
   stack(
     dir: ltr,
@@ -307,7 +307,13 @@ $E(Gamma tack M N : sigma) := \ quad quad E(Gamma tack M: alpha -> sigma) union 
 = Curry-Howard-Isomorphismus
 
 == Kalkül P$->$
-TODO
+#align(center, prooftree(rule(label: [(Id)], $Delta, sigma tack sigma$)))
+#stack(
+  dir: ltr,
+  spacing: 1fr,
+  prooftree(rule(label: [($->$I)], $Delta, sigma tack tau$, $Delta tack sigma -> tau$)),
+  prooftree(rule(label: [($->$E)], $Delta tack sigma -> tau$, $Delta tack sigma$, $Delta tack tau$)),
+)
 
 = Polymorph getypter λ-Kalkül
 
