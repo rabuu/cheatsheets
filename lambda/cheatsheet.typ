@@ -121,7 +121,11 @@ $num(0) = lambda x y.y, quad num(1) = lambda x y. x y, quad num(2) = lambda x y.
   $g: NN^k -> NN$ und $h:NN^{k+2} -> NN$ prim.rek., $k >= 0$
 
 === λ-Übersetzung
-TODO
++ $num(0)$
++ $KN$
++ $lambda x_1 ... x_n. x_i$
++ $lambda arrow(x). P (Q_1 arrow(x)) ... (Q_k arrow(x))$, wobei $h mapsto P$, $g_i mapsto Q_i$
++ $lambda u arrow(x). KR (P arrow(x)) (lambda u v. Q u v arrow(x)) u$, wobei $g mapsto P$, $h mapsto Q$
 
 == Partiell-rekursive Funktionen
 $g, h$ prim.rek. \
