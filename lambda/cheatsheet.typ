@@ -126,7 +126,7 @@ $num(0) = lambda x y.y, quad num(1) = lambda x y. x y, quad num(2) = lambda x y.
   $h: NN^k -> NN$ und alle $g_i: NN^n -> NN$ prim.rek.
 + $f: NN^(k+1) -> NN$ mit $f(0, arrow(m_k)) = g(arrow(m_k))$\
   und $f(n+1, arrow(m_k)) = h(n, f(n, arrow(m_k)), arrow(m_k))$,\
-  $g: NN^k -> NN$ und $h:NN^{k+2} -> NN$ prim.rek., $k >= 0$
+  $g: NN^k -> NN$ und $h:NN^(k+2) -> NN$ prim.rek., $k >= 0$
 
 === λ-Übersetzung
 + $num(0)$
