@@ -78,6 +78,8 @@ $P be M and P be N ==> exists T: M be T and N be T$
 
 $M beq N ==> exists T: M be T and N be T$
 
+#colbreak()
+
 == Reduktionsfolgen
 
 === β-Reduktionsfolge
@@ -125,6 +127,8 @@ $P[lambda x.M x] eta1 P[M]$, $quad x in.not FV(M)$
 
 Erweitere $be$ und $beq$ um η-Kontr. für #be-eta bzw. #beq-eta.
 
+#colbreak()
+
 = λ-Def.barkeit rek. Funktionen
 
 == Church-Ziffern
@@ -161,6 +165,8 @@ Dabei $mu k. g(arrow(m), k) = 0$:
 - undefiniert, falls kein solches $k$ existiert.
 
 λ-Term $<==>$ partiell-rekursive Funktion
+
+#colbreak()
 
 = Formale Theorien λβ / λβη
 
@@ -225,6 +231,8 @@ $
 
 (η) kann gegen eine der beiden ausgetauscht werden.
 
+#colbreak()
+
 = Unentscheidbarkeitsresultate
 - $"NF"_beta := {M | M "hat β-NF"}$
 - $beq$
@@ -257,6 +265,8 @@ $
   X & weakeq Y & <==> & "CLw"            & tack & X = Y \
   X & weak Y   & <==> & "CLw"_triangle.r & tack & X = Y \
 $
+
+#colbreak()
 
 = Verhältnis zw. λ-Kalk. und CL
 
@@ -298,6 +308,8 @@ $
   M_"CL" & weakeq & N_"CL" & ==> & M beq N \
 $
 
+#colbreak()
+
 = Einfach getypter λ-Kalkül
 
 == Kalkül λ$->$
@@ -332,6 +344,8 @@ $E(Gamma tack M N : sigma) := \ quad quad E(Gamma tack M: alpha -> sigma) union 
   $E union.dot {tau_1 -> tau_2 = sigma_1 -> sigma_2}$,
   $E union {tau_1 = sigma_1, tau_2 = sigma_2}$,
 ))
+
+#colbreak()
 
 = Curry-Howard-Isomorphismus
 
