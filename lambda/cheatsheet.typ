@@ -256,7 +256,7 @@ $X weak Y ==> X_lambda be Y_lambda quad X weakeq Y ==> X_lambda beq Y_lambda$
 + $(M N)_"CL" := M_"CL" N_"CL"$
 + $(lambda x.M)_"CL" := [x].M_"CL"$, wobei:
   + $[x].x := KS KK KK$
-  + $[x].Y := KS Y$, falls $x in.not FV(Y)$
+  + $[x].Y := KK Y$, falls $x in.not FV(Y)$
   + $[x].U x := U$, falls $x in.not FV(U)$
   + $[x].(U V) := KS([x].U)([x].V)$, sonst.
 
