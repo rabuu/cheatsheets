@@ -6,12 +6,13 @@
 #show math.equiv: math.scripts
 #show math.eq: math.scripts
 
-#let id = math.op("≏")
-#let idef = math.op(":≏")
+#let rel(r) = math.class("relation", r)
+
+#let id = rel("≏")
+#let idef = rel(":≏")
 
 #let FV = "FV"
 
-#let rel(r) = math.class("relation", r)
 #let al1 = rel($equiv_(1 alpha)$)
 #let al = rel($equiv_alpha$)
 #let be1 = rel($triangle.r_(1 beta)$)
