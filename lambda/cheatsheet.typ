@@ -231,9 +231,9 @@ $U[KS X Y Z] weak1 U[X Z (Y Z)]$
   prooftree(rule(label: [(S)], $KS X Y Z = X Z (Y Z)$)),
 )
 
-Dazu: (ρ), (τ), (μ), (ν)
+Dazu: (ρ), (τ), (μ), (ν), (σ)
 
-Für $"CLw"_triangle.r$: (σ)
+Für $"CLw"_triangle.r$: ohne (σ)
 
 === Korrektheit und Vollständigkeit
 $
