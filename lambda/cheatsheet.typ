@@ -6,6 +6,9 @@
 #show math.equiv: math.scripts
 #show math.eq: math.scripts
 
+#let id = math.op("≏")
+#let idef = math.op(":≏")
+
 #let FV = "FV"
 
 #let rel(r) = math.class("relation", r)
@@ -41,17 +44,17 @@
 $x quad | quad (M space N) quad | quad (lambda x. M)$
 
 == Substitution
-+ $x[N\/x] := N$
-+ $a[N\/x] := a$, falls $x eq.not a$
-+ $(P Q)[N\/x] := (P[N\/x] Q[N\/x])$
-+ $(lambda x.P)[N\/x] := lambda x.P$
-+ $(lambda y.P)[N\/x] := lambda y.P[N\/x]$,\ falls $x eq.not y$ und nicht: $y in FV(N)$ und $x in FV(P)$.
-+ $(lambda y.P)[N\/x] := lambda z.P[z\/y][N\/x]$, $z in.not FV(N P)$.
++ $x[N\/x] idef N$
++ $a[N\/x] idef a$, falls $x eq.not a$
++ $(P Q)[N\/x] idef (P[N\/x] Q[N\/x])$
++ $(lambda x.P)[N\/x] idef lambda x.P$
++ $(lambda y.P)[N\/x] idef lambda y.P[N\/x]$,\ falls $x eq.not y$ und nicht: $y in FV(N)$ und $x in FV(P)$.
++ $(lambda y.P)[N\/x] idef lambda z.P[z\/y][N\/x]$, $z in.not FV(N P)$.
 
 == α-Konversion
 $P[lambda x.M] al1 P[lambda y.M[y\/x]]$, $y in.not FV(M)$
 
-$P al Q :<==> P al1 ... al1 Q$
+$P al Q quad :<==> quad P al1 ... al1 Q$
 
 === Einige Lemmata
 Annahme: keine Namenskollisionen.
@@ -91,19 +94,19 @@ $==>$ jede L/QL-Reduktionsfolge $(M,...)$ terminiert.
 == Fixpunktkombinatoren
 $Y x beq x(Y x) quad$ bzw. $quad Y x be x(Y x)$
 
-$KY := lambda x. (lambda y. x (y y)) (lambda y. x (y y))$
+$KY idef lambda x. (lambda y. x (y y)) (lambda y. x (y y))$
 
-$KTH := (lambda z x. x (z z x))(lambda z x. x (z z x))$
+$KTH idef (lambda z x. x (z z x))(lambda z x. x (z z x))$
 
 $forall N: exists M: forall n >= 0: M y_1 ... y_n beq N[M\/x]$
 
 === Beispiel
 _Finde P, so dass $P M N O be P O N M$._
 
-Sei $F := lambda p m n o. p o n m$.
-Setze $P := KTH F$.
+Sei $F idef lambda p m n o. p o n m$.
+Setze $P idef KTH F$.
 
-Dann $P m n o = KTH F m n o be F P m n o be P o n m$.
+Dann $P m n o id KTH F m n o be F P m n o be P o n m$.
 
 == η-Kontraktion
 $P[lambda x.M x] eta1 P[M]$, $quad x in.not FV(M)$
@@ -111,7 +114,7 @@ $P[lambda x.M x] eta1 P[M]$, $quad x in.not FV(M)$
 = λ-Def.barkeit rek. Funktionen
 
 == Church-Ziffern
-$num(0) = lambda x y.y, quad num(1) = lambda x y. x y, quad num(2) = lambda x y. x(x y), quad ...$
+$num(0) idef lambda x y.y, quad num(1) idef lambda x y. x y, quad num(2) idef lambda x y. x(x y), quad ...$
 
 - $KN num(k) beq num(k+1)$
 - $KV num(k+1) beq num(k)$
@@ -244,25 +247,25 @@ $
 = Verhältnis zw. λ-Kalk. und CL
 
 == CL $arrow.squiggly$ λ
-+ $x_lambda := x$
-+ $KK_lambda := lambda x y.x$
-+ $KS_lambda := lambda x y z. x z (y z)$
-+ $(X Y)_lambda := X_lambda Y_lambda$
++ $x_lambda idef x$
++ $KK_lambda idef lambda x y.x$
++ $KS_lambda idef lambda x y z. x z (y z)$
++ $(X Y)_lambda idef X_lambda Y_lambda$
 
 $X weak Y ==> X_lambda be Y_lambda quad X weakeq Y ==> X_lambda beq Y_lambda$
 
 == λ $arrow.squiggly$ CL
-+ $x_"CL" := x$
-+ $(M N)_"CL" := M_"CL" N_"CL"$
-+ $(lambda x.M)_"CL" := [x].M_"CL"$, wobei:
-  + $[x].x := KS KK KK$
-  + $[x].Y := KK Y$, falls $x in.not FV(Y)$
-  + $[x].U x := U$, falls $x in.not FV(U)$
-  + $[x].(U V) := KS([x].U)([x].V)$, sonst.
++ $x_"CL" idef x$
++ $(M N)_"CL" idef M_"CL" N_"CL"$
++ $(lambda x.M)_"CL" idef [x].M_"CL"$, wobei:
+  + $[x].x idef KS KK KK$
+  + $[x].Y idef KK Y$, falls $x in.not FV(Y)$
+  + $[x].U x idef U$, falls $x in.not FV(U)$
+  + $[x].(U V) idef KS([x].U)([x].V)$, sonst.
 
   $([x].Y) Z weak Y[Z\/x]$
 
-  $(X_lambda)_"CL" = X$
+  $(X_lambda)_"CL" id X$
 
   $(M_"CL")_lambda #beq-eta M$
 
