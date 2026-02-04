@@ -97,6 +97,14 @@ $KTH := (lambda z x. x (z z x))(lambda z x. x (z z x))$
 
 $forall N: exists M: forall n >= 0: M y_1 ... y_n beq N[M\/x]$
 
+=== Beispiel
+_Finde P, so dass $P M N O be P O N M$._
+
+Sei $F := lambda p m n o. p o n m$.
+Setze $P := KTH F$.
+
+Dann $P m n o = KTH F m n o be F P m n o be P o n m$.
+
 == η-Kontraktion
 $P[lambda x.M x] eta1 P[M]$, $quad x in.not FV(M)$
 
