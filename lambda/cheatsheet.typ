@@ -57,7 +57,6 @@ $P[lambda x.M] al1 P[lambda y.M[y\/x]]$, $y in.not FV(M)$
 $P al Q quad :<==> quad P al1 ... al1 Q$
 
 === Einige Lemmata
-Annahme: keine Namenskollisionen.
 - $z in.not FV(M) => M[z\/x][P\/z] al M[P\/x]$
 - $z in.not FV(M) => M[z\/x][x\/z] al M$
 - $M[Q\/x][P\/x] al M[(Q[P\/x])\/x]$
@@ -78,18 +77,30 @@ $P be M and P be N ==> exists T: M be T and N be T$
 
 $M beq N ==> exists T: M be T and N be T$
 
-== L- und QL-Reduktionsfolgen
+== Reduktionsfolgen
+
+=== β-Reduktionsfolge
+$(M_1, M_2, ...)$, wobei $M_1 be1 M_2 be1 ...$
 
 === L-Reduktionsfolge
-$beta$-Redktionsfolge, bei der _immer_ das linkeste Redex kontrahiert wird.
+$beta$-Reduktionsfolge, bei der _immer_ das linkeste Redex kontrahiert wird.
 
 === QL-Reduktionsfolge
-$beta$-Redktionsfolge, bei der "immer wieder" das linkeste Redex kontrahiert wird.
+$beta$-Reduktionsfolge, bei der "immer wieder" das linkeste Redex kontrahiert wird.
 
+== Normalisierbarkeit
 
-=== Normalisierung
-$M$ besitzt eine β-Normalform\
-$==>$ jede L/QL-Reduktionsfolge $(M,...)$ terminiert.
+$P$ ist in β-Normalform $:<==>$ $P$ enthält kein β-Redex
+
+$P$ normalisierbar $:<==>$ $P$ hat eine β-NF
+
+$P$ stark normalisierbar\ $:<==>$ es gibt keine unendliche β-RF von $P$
+
+$M$ hat eine β-Normalform\
+$==>$ jede L/QL-Reduktionsfolge $(M,...)$ terminiert
+
+Um Normalisierbarkeit eines Terms zu widerlegen:
+Zeige, dass L-Reduktionsfolge nicht terminiert.
 
 == Fixpunktkombinatoren
 $Y x beq x(Y x) quad$ bzw. $quad Y x be x(Y x)$
@@ -110,6 +121,8 @@ Dann $P m n o id KTH F m n o be F P m n o be P o n m$.
 
 == η-Kontraktion
 $P[lambda x.M x] eta1 P[M]$, $quad x in.not FV(M)$
+
+Erweitere $be$ und $beq$ um η-Kontr. für #be-eta bzw. #beq-eta.
 
 = λ-Def.barkeit rek. Funktionen
 
