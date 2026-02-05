@@ -362,5 +362,10 @@ $E(Gamma tack M N : sigma) := \ quad quad E(Gamma tack M: alpha -> sigma) union 
 
 == Kalkül λ2
 Zusätzlich zu λ$->$:
-#prooftree(rule(label: [($forall$I)], $Gamma tack M:sigma$, $a in.not FV(Gamma)$, $Gamma tack M: forall alpha . sigma$))
+#prooftree(rule(
+  label: [($forall$I)],
+  $Gamma tack M:sigma$,
+  $alpha in.not FV(Gamma)$,
+  $Gamma tack M: forall alpha . sigma$,
+))
 #prooftree(rule(label: [($forall$E)], $Gamma tack M: forall alpha . sigma$, $Gamma tack M: sigma[tau\/alpha]$))
